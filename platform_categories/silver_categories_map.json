@@ -1,0 +1,1415 @@
+[
+  {
+    "silver_category_id": 9,
+    "platform": "1688",
+    "platform_l1_id": "10208",
+    "platform_l2_id": null,
+    "platform_l3_id": null,
+    "platform_category_name": "食品/饮料",
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 45,
+    "platform": "1688",
+    "platform_l1_id": "122916001",
+    "platform_l2_id": "125",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 32,
+    "platform": "1688",
+    "platform_l1_id": "122916001",
+    "platform_l2_id": "125496001",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 33,
+    "platform": "1688",
+    "platform_l1_id": "122916001",
+    "platform_l2_id": "125496001",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 47,
+    "platform": "1688",
+    "platform_l1_id": "122916001",
+    "platform_l2_id": "125496001",
+    "platform_l3_id": "201229009",
+    "platform_category_name": null,
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 65,
+    "platform": "1688",
+    "platform_l1_id": "122916001",
+    "platform_l2_id": "125496001",
+    "platform_l3_id": "1033759",
+    "platform_category_name": null,
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 22,
+    "platform": "1688",
+    "platform_l1_id": "122916001",
+    "platform_l2_id": "125484002",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 33,
+    "platform": "1688",
+    "platform_l1_id": "122916001",
+    "platform_l2_id": "125496001",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 32,
+    "platform": "1688",
+    "platform_l1_id": "122916001",
+    "platform_l2_id": "125496001",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 22,
+    "platform": "1688",
+    "platform_l1_id": "122916001",
+    "platform_l2_id": "125",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 45,
+    "platform": "1688",
+    "platform_l1_id": "122916001",
+    "platform_l2_id": "125496001",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 29,
+    "platform": "1688",
+    "platform_l1_id": "122916001",
+    "platform_l2_id": "125496001",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 14,
+    "platform": "1688",
+    "platform_l1_id": "122916001",
+    "platform_l2_id": null,
+    "platform_l3_id": null,
+    "platform_category_name": "园艺/户外",
+    "confidence": 0.8
+  },
+  {
+    "silver_category_id": 59,
+    "platform": "1688",
+    "platform_l1_id": "122916001",
+    "platform_l2_id": "125",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 22,
+    "platform": "1688",
+    "platform_l1_id": "122916001",
+    "platform_l2_id": "125",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 57,
+    "platform": "1688",
+    "platform_l1_id": "122916001",
+    "platform_l2_id": "125",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 35,
+    "platform": "1688",
+    "platform_l1_id": "122916001",
+    "platform_l2_id": "125",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 22,
+    "platform": "1688",
+    "platform_l1_id": "122916001",
+    "platform_l2_id": "125496001",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 22,
+    "platform": "1688",
+    "platform_l1_id": "122916001",
+    "platform_l2_id": "125492001",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 64,
+    "platform": "1688",
+    "platform_l1_id": "122916001",
+    "platform_l2_id": "125",
+    "platform_l3_id": "124066001",
+    "platform_category_name": null,
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 63,
+    "platform": "1688",
+    "platform_l1_id": "122916001",
+    "platform_l2_id": "125",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 35,
+    "platform": "1688",
+    "platform_l1_id": "122916001",
+    "platform_l2_id": "125",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 22,
+    "platform": "1688",
+    "platform_l1_id": "122916001",
+    "platform_l2_id": "125496001",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 32,
+    "platform": "1688",
+    "platform_l1_id": "122916001",
+    "platform_l2_id": "125496001",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 32,
+    "platform": "1688",
+    "platform_l1_id": "122916001",
+    "platform_l2_id": "125496001",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 3,
+    "platform": "1688",
+    "platform_l1_id": "122916002",
+    "platform_l2_id": null,
+    "platform_l3_id": null,
+    "platform_category_name": "数码配件",
+    "confidence": 0.7
+  },
+  {
+    "silver_category_id": 50,
+    "platform": "1688",
+    "platform_l1_id": "13",
+    "platform_l2_id": "122930001",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 20,
+    "platform": "1688",
+    "platform_l1_id": "13",
+    "platform_l2_id": "122930001",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 5,
+    "platform": "1688",
+    "platform_l1_id": "13",
+    "platform_l2_id": null,
+    "platform_l3_id": null,
+    "platform_category_name": "家居/日用",
+    "confidence": 0.7
+  },
+  {
+    "silver_category_id": 32,
+    "platform": "1688",
+    "platform_l1_id": "13",
+    "platform_l2_id": "1032416",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 20,
+    "platform": "1688",
+    "platform_l1_id": "13",
+    "platform_l2_id": "201345303",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 3,
+    "platform": "1688",
+    "platform_l1_id": "130822002",
+    "platform_l2_id": null,
+    "platform_l3_id": null,
+    "platform_category_name": "通讯/电信",
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 22,
+    "platform": "1688",
+    "platform_l1_id": "130822002",
+    "platform_l2_id": "1046204",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 6,
+    "platform": "1688",
+    "platform_l1_id": "15",
+    "platform_l2_id": null,
+    "platform_l3_id": null,
+    "platform_category_name": "玩具/礼品",
+    "confidence": 0.9
+  },
+  {
+    "silver_category_id": 51,
+    "platform": "1688",
+    "platform_l1_id": "15",
+    "platform_l2_id": "1556",
+    "platform_l3_id": "1037330",
+    "platform_category_name": null,
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 50,
+    "platform": "1688",
+    "platform_l1_id": "15",
+    "platform_l2_id": "1556",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 26,
+    "platform": "1688",
+    "platform_l1_id": "18",
+    "platform_l2_id": "1044713",
+    "platform_l3_id": "1044716",
+    "platform_category_name": null,
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 25,
+    "platform": "1688",
+    "platform_l1_id": "18",
+    "platform_l2_id": "1044713",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 25,
+    "platform": "1688",
+    "platform_l1_id": "18",
+    "platform_l2_id": "1044713",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 54,
+    "platform": "1688",
+    "platform_l1_id": "18",
+    "platform_l2_id": "2009",
+    "platform_l3_id": "1033542",
+    "platform_category_name": null,
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 25,
+    "platform": "1688",
+    "platform_l1_id": "18",
+    "platform_l2_id": "2009",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 25,
+    "platform": "1688",
+    "platform_l1_id": "18",
+    "platform_l2_id": "1044713",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 22,
+    "platform": "1688",
+    "platform_l1_id": "18",
+    "platform_l2_id": "2009",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 25,
+    "platform": "1688",
+    "platform_l1_id": "18",
+    "platform_l2_id": "1044713",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 25,
+    "platform": "1688",
+    "platform_l1_id": "18",
+    "platform_l2_id": "1044713",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 25,
+    "platform": "1688",
+    "platform_l1_id": "18",
+    "platform_l2_id": "1044713",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 25,
+    "platform": "1688",
+    "platform_l1_id": "18",
+    "platform_l2_id": "2009",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 37,
+    "platform": "1688",
+    "platform_l1_id": "18",
+    "platform_l2_id": "2009",
+    "platform_l3_id": "1033544",
+    "platform_category_name": null,
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 60,
+    "platform": "1688",
+    "platform_l1_id": "18",
+    "platform_l2_id": "281904",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 33,
+    "platform": "1688",
+    "platform_l1_id": "18",
+    "platform_l2_id": "1044713",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 25,
+    "platform": "1688",
+    "platform_l1_id": "18",
+    "platform_l2_id": "1044713",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 37,
+    "platform": "1688",
+    "platform_l1_id": "18",
+    "platform_l2_id": "1044713",
+    "platform_l3_id": "201914502",
+    "platform_category_name": null,
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 42,
+    "platform": "1688",
+    "platform_l1_id": "18",
+    "platform_l2_id": "2009",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 25,
+    "platform": "1688",
+    "platform_l1_id": "18",
+    "platform_l2_id": "1044713",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 40,
+    "platform": "1688",
+    "platform_l1_id": "18",
+    "platform_l2_id": "1044713",
+    "platform_l3_id": "1044718",
+    "platform_category_name": null,
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 26,
+    "platform": "1688",
+    "platform_l1_id": "18",
+    "platform_l2_id": "1044713",
+    "platform_l3_id": "1044714",
+    "platform_category_name": null,
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 8,
+    "platform": "1688",
+    "platform_l1_id": "18",
+    "platform_l2_id": null,
+    "platform_l3_id": null,
+    "platform_category_name": "运动/户外",
+    "confidence": 0.8
+  },
+  {
+    "silver_category_id": 22,
+    "platform": "1688",
+    "platform_l1_id": "18",
+    "platform_l2_id": "1044713",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 25,
+    "platform": "1688",
+    "platform_l1_id": "18",
+    "platform_l2_id": "2009",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 40,
+    "platform": "1688",
+    "platform_l1_id": "18",
+    "platform_l2_id": "2009",
+    "platform_l3_id": "1033540",
+    "platform_category_name": null,
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 46,
+    "platform": "1688",
+    "platform_l1_id": "18",
+    "platform_l2_id": "2040",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 27,
+    "platform": "1688",
+    "platform_l1_id": "18",
+    "platform_l2_id": "1044713",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 6,
+    "platform": "1688",
+    "platform_l1_id": "1813",
+    "platform_l2_id": null,
+    "platform_l3_id": null,
+    "platform_category_name": "母婴用品",
+    "confidence": 0.9
+  },
+  {
+    "silver_category_id": 44,
+    "platform": "1688",
+    "platform_l1_id": "1813",
+    "platform_l2_id": "181309",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 53,
+    "platform": "1688",
+    "platform_l1_id": "1813",
+    "platform_l2_id": "181309",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 2,
+    "platform": "1688",
+    "platform_l1_id": "2",
+    "platform_l2_id": null,
+    "platform_l3_id": null,
+    "platform_category_name": "服装/服饰",
+    "confidence": 0.9
+  },
+  {
+    "silver_category_id": 27,
+    "platform": "1688",
+    "platform_l1_id": "2",
+    "platform_l2_id": "124734017",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 42,
+    "platform": "1688",
+    "platform_l1_id": "2",
+    "platform_l2_id": "124736016",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 7,
+    "platform": "1688",
+    "platform_l1_id": "201547901",
+    "platform_l2_id": null,
+    "platform_l3_id": null,
+    "platform_category_name": "美容/化妆",
+    "confidence": 0.9
+  },
+  {
+    "silver_category_id": 30,
+    "platform": "1688",
+    "platform_l1_id": "201547901",
+    "platform_l2_id": "1043151",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 31,
+    "platform": "1688",
+    "platform_l1_id": "201547901",
+    "platform_l2_id": "1043151",
+    "platform_l3_id": "10320",
+    "platform_category_name": null,
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 30,
+    "platform": "1688",
+    "platform_l1_id": "201547901",
+    "platform_l2_id": "1043151",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 58,
+    "platform": "1688",
+    "platform_l1_id": "4",
+    "platform_l2_id": "10157",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 44,
+    "platform": "1688",
+    "platform_l1_id": "4",
+    "platform_l2_id": "10157",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 33,
+    "platform": "1688",
+    "platform_l1_id": "4",
+    "platform_l2_id": "10157",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 17,
+    "platform": "1688",
+    "platform_l1_id": "4",
+    "platform_l2_id": null,
+    "platform_l3_id": null,
+    "platform_category_name": "鞋靴",
+    "confidence": 0.9
+  },
+  {
+    "silver_category_id": 46,
+    "platform": "1688",
+    "platform_l1_id": "4",
+    "platform_l2_id": "10157",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 2,
+    "platform": "1688",
+    "platform_l1_id": "5",
+    "platform_l2_id": null,
+    "platform_l3_id": null,
+    "platform_category_name": "箱包",
+    "confidence": 0.8
+  },
+  {
+    "silver_category_id": 7,
+    "platform": "1688",
+    "platform_l1_id": "53",
+    "platform_l2_id": null,
+    "platform_l3_id": null,
+    "platform_category_name": "美容/个护",
+    "confidence": 0.9
+  },
+  {
+    "silver_category_id": 46,
+    "platform": "1688",
+    "platform_l1_id": "54",
+    "platform_l2_id": "1753",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 18,
+    "platform": "1688",
+    "platform_l1_id": "54",
+    "platform_l2_id": null,
+    "platform_l3_id": null,
+    "platform_category_name": "汽车用品",
+    "confidence": 0.9
+  },
+  {
+    "silver_category_id": 2,
+    "platform": "1688",
+    "platform_l1_id": "55",
+    "platform_l2_id": null,
+    "platform_l3_id": null,
+    "platform_category_name": "珠宝/饰品",
+    "confidence": 0.7
+  },
+  {
+    "silver_category_id": 42,
+    "platform": "1688",
+    "platform_l1_id": "55",
+    "platform_l2_id": "1032600",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 53,
+    "platform": "1688",
+    "platform_l1_id": "59",
+    "platform_l2_id": "1032474",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 35,
+    "platform": "1688",
+    "platform_l1_id": "59",
+    "platform_l2_id": "1032474",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 22,
+    "platform": "1688",
+    "platform_l1_id": "59",
+    "platform_l2_id": "1047258",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 43,
+    "platform": "1688",
+    "platform_l1_id": "59",
+    "platform_l2_id": "1032474",
+    "platform_l3_id": "1035497",
+    "platform_category_name": null,
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 57,
+    "platform": "1688",
+    "platform_l1_id": "59",
+    "platform_l2_id": "1032474",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 5,
+    "platform": "1688",
+    "platform_l1_id": "59",
+    "platform_l2_id": null,
+    "platform_l3_id": null,
+    "platform_category_name": "家装/建材",
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 55,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": "1047104",
+    "platform_l3_id": "122708008",
+    "platform_category_name": null,
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 38,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": "1047104",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 30,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": "123610009",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 24,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": "123610009",
+    "platform_l3_id": "1043146",
+    "platform_category_name": null,
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 34,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": "1047104",
+    "platform_l3_id": "122710004",
+    "platform_category_name": null,
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 33,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": "1047104",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 33,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": "1047104",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 38,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": "1047104",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 39,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": "1047104",
+    "platform_l3_id": "122704009",
+    "platform_category_name": null,
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 31,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": "123610009",
+    "platform_l3_id": "1043147",
+    "platform_category_name": null,
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 30,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": "123610009",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 38,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": "1047104",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 23,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": "123610009",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 23,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": "123610009",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 58,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": "123610009",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 33,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": "123610009",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 24,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": "123610009",
+    "platform_l3_id": "617",
+    "platform_category_name": null,
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 23,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": "123610009",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 27,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": "123610009",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 38,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": "1047104",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 23,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": "123610009",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 61,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": "1047104",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 62,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": "1047104",
+    "platform_l3_id": "201275550",
+    "platform_category_name": null,
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 30,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": "123610009",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 31,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": "123610009",
+    "platform_l3_id": "1047903",
+    "platform_category_name": null,
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 23,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": "123610009",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 3,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": null,
+    "platform_l3_id": null,
+    "platform_category_name": "数码/消费电子",
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 27,
+    "platform": "1688",
+    "platform_l1_id": "6",
+    "platform_l2_id": "123610009",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 33,
+    "platform": "1688",
+    "platform_l1_id": "65",
+    "platform_l2_id": "1031668",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 3,
+    "platform": "1688",
+    "platform_l1_id": "65",
+    "platform_l2_id": null,
+    "platform_l3_id": null,
+    "platform_category_name": "仪器/仪表",
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 41,
+    "platform": "1688",
+    "platform_l1_id": "65",
+    "platform_l2_id": "1031668",
+    "platform_l3_id": "1034692",
+    "platform_category_name": null,
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 48,
+    "platform": "1688",
+    "platform_l1_id": "66",
+    "platform_l2_id": "1612",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 10,
+    "platform": "1688",
+    "platform_l1_id": "66",
+    "platform_l2_id": null,
+    "platform_l3_id": null,
+    "platform_category_name": "工具/五金",
+    "confidence": 0.9
+  },
+  {
+    "silver_category_id": 52,
+    "platform": "1688",
+    "platform_l1_id": "67",
+    "platform_l2_id": "2127",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 20,
+    "platform": "1688",
+    "platform_l1_id": "67",
+    "platform_l2_id": "2127",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 29,
+    "platform": "1688",
+    "platform_l1_id": "67",
+    "platform_l2_id": "122192001",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 4,
+    "platform": "1688",
+    "platform_l1_id": "67",
+    "platform_l2_id": null,
+    "platform_l3_id": null,
+    "platform_category_name": "照明/LED",
+    "confidence": 0.9
+  },
+  {
+    "silver_category_id": 48,
+    "platform": "1688",
+    "platform_l1_id": "67",
+    "platform_l2_id": "81",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 23,
+    "platform": "1688",
+    "platform_l1_id": "67",
+    "platform_l2_id": "2127",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 29,
+    "platform": "1688",
+    "platform_l1_id": "67",
+    "platform_l2_id": "201162103",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 21,
+    "platform": "1688",
+    "platform_l1_id": "67",
+    "platform_l2_id": "2127",
+    "platform_l3_id": "1033103",
+    "platform_category_name": null,
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 53,
+    "platform": "1688",
+    "platform_l1_id": "67",
+    "platform_l2_id": "2127",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 13,
+    "platform": "1688",
+    "platform_l1_id": "68",
+    "platform_l2_id": null,
+    "platform_l3_id": null,
+    "platform_category_name": "办公/文具",
+    "confidence": 0.9
+  },
+  {
+    "silver_category_id": 3,
+    "platform": "1688",
+    "platform_l1_id": "7",
+    "platform_l2_id": null,
+    "platform_l3_id": null,
+    "platform_category_name": "手机/手机配件",
+    "confidence": 0.7
+  },
+  {
+    "silver_category_id": 33,
+    "platform": "1688",
+    "platform_l1_id": "7",
+    "platform_l2_id": "10262",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 66,
+    "platform": "1688",
+    "platform_l1_id": "7",
+    "platform_l2_id": "729",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 46,
+    "platform": "1688",
+    "platform_l1_id": "7",
+    "platform_l2_id": "123754001",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 27,
+    "platform": "1688",
+    "platform_l1_id": "7",
+    "platform_l2_id": "1046688",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 11,
+    "platform": "1688",
+    "platform_l1_id": "70",
+    "platform_l2_id": null,
+    "platform_l3_id": null,
+    "platform_category_name": "宠物用品",
+    "confidence": 0.9
+  },
+  {
+    "silver_category_id": 13,
+    "platform": "1688",
+    "platform_l1_id": "8",
+    "platform_l2_id": null,
+    "platform_l3_id": null,
+    "platform_category_name": "电脑/办公",
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 33,
+    "platform": "1688",
+    "platform_l1_id": "8",
+    "platform_l2_id": "832",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 20,
+    "platform": "1688",
+    "platform_l1_id": "97",
+    "platform_l2_id": "1043171",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 49,
+    "platform": "1688",
+    "platform_l1_id": "97",
+    "platform_l2_id": "1043171",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 5,
+    "platform": "1688",
+    "platform_l1_id": "97",
+    "platform_l2_id": null,
+    "platform_l3_id": null,
+    "platform_category_name": "家居/家饰",
+    "confidence": 0.7
+  },
+  {
+    "silver_category_id": 20,
+    "platform": "1688",
+    "platform_l1_id": "97",
+    "platform_l2_id": "1042634",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 58,
+    "platform": "1688",
+    "platform_l1_id": "97",
+    "platform_l2_id": "1043171",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 20,
+    "platform": "1688",
+    "platform_l1_id": "97",
+    "platform_l2_id": "82101",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 23,
+    "platform": "1688",
+    "platform_l1_id": "97",
+    "platform_l2_id": "82101",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 49,
+    "platform": "1688",
+    "platform_l1_id": "97",
+    "platform_l2_id": "1043171",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 20,
+    "platform": "1688",
+    "platform_l1_id": "97",
+    "platform_l2_id": "1042634",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 56,
+    "platform": "1688",
+    "platform_l1_id": "97",
+    "platform_l2_id": "1042634",
+    "platform_l3_id": "1041750",
+    "platform_category_name": null,
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 56,
+    "platform": "1688",
+    "platform_l1_id": "97",
+    "platform_l2_id": "1043171",
+    "platform_l3_id": "1043184",
+    "platform_category_name": null,
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 33,
+    "platform": "1688",
+    "platform_l1_id": "97",
+    "platform_l2_id": "1042634",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 20,
+    "platform": "1688",
+    "platform_l1_id": "97",
+    "platform_l2_id": "1043171",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 21,
+    "platform": "1688",
+    "platform_l1_id": "97",
+    "platform_l2_id": "1043171",
+    "platform_l3_id": "1043189",
+    "platform_category_name": null,
+    "confidence": 0.5
+  },
+  {
+    "silver_category_id": 33,
+    "platform": "1688",
+    "platform_l1_id": "97",
+    "platform_l2_id": "1043171",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 23,
+    "platform": "1688",
+    "platform_l1_id": "97",
+    "platform_l2_id": "1043171",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  },
+  {
+    "silver_category_id": 20,
+    "platform": "1688",
+    "platform_l1_id": "97",
+    "platform_l2_id": "1043171",
+    "platform_l3_id": null,
+    "platform_category_name": null,
+    "confidence": 0.6
+  }
+]

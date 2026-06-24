@@ -1,0 +1,530 @@
+[
+  {
+    "id": 1,
+    "l1": "Audio",
+    "l2": null,
+    "l3": null,
+    "l4": null,
+    "icon": "🔊"
+  },
+  {
+    "id": 2,
+    "l1": "Moda",
+    "l2": null,
+    "l3": null,
+    "l4": null,
+    "icon": "👗"
+  },
+  {
+    "id": 3,
+    "l1": "Eletrônicos",
+    "l2": null,
+    "l3": null,
+    "l4": null,
+    "icon": "📱"
+  },
+  {
+    "id": 4,
+    "l1": "Iluminação",
+    "l2": null,
+    "l3": null,
+    "l4": null,
+    "icon": "💡"
+  },
+  {
+    "id": 5,
+    "l1": "Casa",
+    "l2": null,
+    "l3": null,
+    "l4": null,
+    "icon": "🏠"
+  },
+  {
+    "id": 6,
+    "l1": "Infantis",
+    "l2": null,
+    "l3": null,
+    "l4": null,
+    "icon": "👶"
+  },
+  {
+    "id": 7,
+    "l1": "Beleza",
+    "l2": null,
+    "l3": null,
+    "l4": null,
+    "icon": "💄"
+  },
+  {
+    "id": 8,
+    "l1": "Esportes",
+    "l2": null,
+    "l3": null,
+    "l4": null,
+    "icon": "⚽"
+  },
+  {
+    "id": 9,
+    "l1": "Cozinha",
+    "l2": null,
+    "l3": null,
+    "l4": null,
+    "icon": "🍳"
+  },
+  {
+    "id": 10,
+    "l1": "Ferramentas",
+    "l2": null,
+    "l3": null,
+    "l4": null,
+    "icon": "🔧"
+  },
+  {
+    "id": 11,
+    "l1": "Pets",
+    "l2": null,
+    "l3": null,
+    "l4": null,
+    "icon": "🐾"
+  },
+  {
+    "id": 12,
+    "l1": "Móveis",
+    "l2": null,
+    "l3": null,
+    "l4": null,
+    "icon": "🪑"
+  },
+  {
+    "id": 13,
+    "l1": "Papelaria",
+    "l2": null,
+    "l3": null,
+    "l4": null,
+    "icon": "📝"
+  },
+  {
+    "id": 14,
+    "l1": "Jardim",
+    "l2": null,
+    "l3": null,
+    "l4": null,
+    "icon": "🌿"
+  },
+  {
+    "id": 15,
+    "l1": "Segurança",
+    "l2": null,
+    "l3": null,
+    "l4": null,
+    "icon": "📷"
+  },
+  {
+    "id": 16,
+    "l1": "Saúde",
+    "l2": null,
+    "l3": null,
+    "l4": null,
+    "icon": "💊"
+  },
+  {
+    "id": 17,
+    "l1": "Calçados",
+    "l2": null,
+    "l3": null,
+    "l4": null,
+    "icon": "👟"
+  },
+  {
+    "id": 18,
+    "l1": "Automotivo",
+    "l2": null,
+    "l3": null,
+    "l4": null,
+    "icon": "🚗"
+  },
+  {
+    "id": 19,
+    "l1": "Wearables",
+    "l2": null,
+    "l3": null,
+    "l4": null,
+    "icon": "⌚"
+  },
+  {
+    "id": 20,
+    "l1": "beleza",
+    "l2": "Maquiagem",
+    "l3": null,
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 21,
+    "l1": "beleza",
+    "l2": "Maquiagem",
+    "l3": "Kit",
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 22,
+    "l1": "jardim",
+    "l2": "Plantas",
+    "l3": null,
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 23,
+    "l1": "beleza",
+    "l2": "Cabelo",
+    "l3": null,
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 24,
+    "l1": "beleza",
+    "l2": "Cabelo",
+    "l3": "Secador",
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 25,
+    "l1": "esportes",
+    "l2": "Academia",
+    "l3": null,
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 26,
+    "l1": "esportes",
+    "l2": "Academia",
+    "l3": "Yoga",
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 27,
+    "l1": "cozinha",
+    "l2": "Panelas",
+    "l3": null,
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 28,
+    "l1": "beleza",
+    "l2": "Cabelo",
+    "l3": "Alisador",
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 29,
+    "l1": "casa",
+    "l2": "Decoracao",
+    "l3": null,
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 30,
+    "l1": "beleza",
+    "l2": "Barba",
+    "l3": null,
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 31,
+    "l1": "beleza",
+    "l2": "Barba",
+    "l3": "Maquina Barba",
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 32,
+    "l1": "jardim",
+    "l2": "Vasos",
+    "l3": null,
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 33,
+    "l1": "audio",
+    "l2": "Microfones",
+    "l3": null,
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 34,
+    "l1": "audio",
+    "l2": "Microfones",
+    "l3": "Lapela Sem Fio",
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 35,
+    "l1": "jardim",
+    "l2": "Ferramentas",
+    "l3": null,
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 36,
+    "l1": "jardim",
+    "l2": "Ferramentas",
+    "l3": "Pa",
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 37,
+    "l1": "esportes",
+    "l2": "Academia",
+    "l3": "Yoga Mat",
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 38,
+    "l1": "audio",
+    "l2": "Caixas Som",
+    "l3": null,
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 39,
+    "l1": "audio",
+    "l2": "Caixas Som",
+    "l3": "Portatil",
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 40,
+    "l1": "esportes",
+    "l2": "Academia",
+    "l3": "Corda",
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 41,
+    "l1": "audio",
+    "l2": "Microfones",
+    "l3": "Condensador",
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 42,
+    "l1": "pets",
+    "l2": "Caes",
+    "l3": null,
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 43,
+    "l1": "jardim",
+    "l2": "Ferramentas",
+    "l3": "Ensemada",
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 44,
+    "l1": "moda",
+    "l2": "Chapeus",
+    "l3": null,
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 45,
+    "l1": "casa",
+    "l2": "Jardim",
+    "l3": null,
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 46,
+    "l1": "wearables",
+    "l2": "Pulseiras",
+    "l3": null,
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 47,
+    "l1": "jardim",
+    "l2": "Vasos",
+    "l3": "Flor",
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 48,
+    "l1": "infantis",
+    "l2": "Carrinho Controle",
+    "l3": null,
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 49,
+    "l1": "beleza",
+    "l2": "Unha",
+    "l3": null,
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 50,
+    "l1": "papelaria",
+    "l2": "Canetas",
+    "l3": null,
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 51,
+    "l1": "papelaria",
+    "l2": "Canetas",
+    "l3": "Gel",
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 52,
+    "l1": "pets",
+    "l2": "Gatos",
+    "l3": null,
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 53,
+    "l1": "infantis",
+    "l2": "Bonecos",
+    "l3": null,
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 54,
+    "l1": "esportes",
+    "l2": "Academia",
+    "l3": "Halteres",
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 55,
+    "l1": "audio",
+    "l2": "Caixas Som",
+    "l3": "Bt Portatil",
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 56,
+    "l1": "beleza",
+    "l2": "Maquiagem",
+    "l3": "Base",
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 57,
+    "l1": "ferramentas",
+    "l2": "Kits Ferramentas",
+    "l3": null,
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 58,
+    "l1": "moda",
+    "l2": "Bolsas",
+    "l3": null,
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 59,
+    "l1": "jardim",
+    "l2": "Regador",
+    "l3": null,
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 60,
+    "l1": "moda",
+    "l2": "Cintos",
+    "l3": null,
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 61,
+    "l1": "audio",
+    "l2": "Fones",
+    "l3": null,
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 62,
+    "l1": "audio",
+    "l2": "Fones",
+    "l3": "Tws",
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 63,
+    "l1": "ferramentas",
+    "l2": "Manuais",
+    "l3": null,
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 64,
+    "l1": "ferramentas",
+    "l2": "Manuais",
+    "l3": "Alicate",
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 65,
+    "l1": "jardim",
+    "l2": "Vasos",
+    "l3": "Jardim",
+    "l4": null,
+    "icon": null
+  },
+  {
+    "id": 66,
+    "l1": "papelaria",
+    "l2": "Cadernos",
+    "l3": null,
+    "l4": null,
+    "icon": null
+  }
+]
