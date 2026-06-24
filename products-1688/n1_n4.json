@@ -1,0 +1,666 @@
+{
+  "服装鞋帽": {
+    "name_pt": "Vestuário e Calçados",
+    "n2": {
+      "内衣": {
+        "name_pt": "Roupa íntima",
+        "n3": {
+          "塑身衣": {
+            "name_pt": "Modeladores",
+            "n4": {
+              "提臀塑身": {
+                "name_pt": "Modelador levanta bumbum",
+                "current_cat": "underwear"
+              },
+              "收腹塑身": {
+                "name_pt": "Modelador abdominal",
+                "current_cat": "underwear"
+              },
+              "连体塑身": {
+                "name_pt": "Modelador corpo inteiro",
+                "current_cat": "underwear"
+              }
+            }
+          },
+          "内裤": {
+            "name_pt": "Calcínhas e cuecas",
+            "n4": {
+              "无痕内裤": {
+                "name_pt": "Calcinha sem costura",
+                "current_cat": "underwear"
+              },
+              "女士内裤": {
+                "name_pt": "Calcinha feminina",
+                "current_cat": "underwear"
+              },
+              "男士内裤": {
+                "name_pt": "Cueca masculina",
+                "current_cat": "underwear"
+              }
+            }
+          },
+          "塑身裤": {
+            "name_pt": "Calças modeladoras",
+            "n4": {
+              "提臀塑裤": {
+                "name_pt": "Calça modeladora levanta-bumbum",
+                "current_cat": "underwear"
+              },
+              "收腹塑裤": {
+                "name_pt": "Calça modeladora controle abdominal",
+                "current_cat": "underwear"
+              },
+              "打底塑裤": {
+                "name_pt": "Calça legging modeladora",
+                "current_cat": "underwear"
+              },
+              "安全塑裤": {
+                "name_pt": "Short anti-luz modelador",
+                "current_cat": "underwear"
+              }
+            }
+          }
+        }
+      },
+      "袜子": {
+        "name_pt": "Meias",
+        "n3": {
+          "通用袜子": {
+            "name_pt": "Meias gerais",
+            "n4": {
+              "船袜": {
+                "name_pt": "Meia invisível",
+                "current_cat": "socks"
+              },
+              "运动袜": {
+                "name_pt": "Meia esportiva",
+                "current_cat": "socks"
+              },
+              "童袜": {
+                "name_pt": "Meia infantil",
+                "current_cat": "socks"
+              },
+              "棉袜": {
+                "name_pt": "Meia de algodão",
+                "current_cat": "socks"
+              }
+            }
+          }
+        }
+      }
+    },
+    "official_1688_names": [
+      "女装",
+      "男装",
+      "内衣",
+      "配饰",
+      "鞋",
+      "箱包"
+    ]
+  },
+  "家居日用": {
+    "name_pt": "Casa e Dia a Dia",
+    "n2": {
+      "收纳整理": {
+        "name_pt": "Organização",
+        "n3": {
+          "通用收纳": {
+            "name_pt": "Organização geral",
+            "n4": {
+              "通用收纳": {
+                "name_pt": "Organizador universal",
+                "current_cat": "organization"
+              }
+            }
+          }
+        }
+      },
+      "厨房用品": {
+        "name_pt": "Cozinha",
+        "n3": {
+          "通用厨房": {
+            "name_pt": "Cozinha geral",
+            "n4": {
+              "厨房收纳": {
+                "name_pt": "Organizador de cozinha",
+                "current_cat": null
+              },
+              "厨具": {
+                "name_pt": "Utensílios",
+                "current_cat": null
+              }
+            }
+          }
+        }
+      },
+      "浴室用品": {
+        "name_pt": "Banheiro",
+        "n3": {
+          "浴室收纳": {
+            "name_pt": "Organização de banheiro",
+            "n4": {
+              "毛巾架": {
+                "name_pt": "Porta-toalha"
+              },
+              "浴室收纳": {
+                "name_pt": "Organizador"
+              },
+              "牙刷架": {
+                "name_pt": "Porta-escova"
+              }
+            }
+          }
+        }
+      },
+      "卧室用品": {
+        "name_pt": "Quarto",
+        "n3": {
+          "床上用品": {
+            "name_pt": "Cama",
+            "n4": {
+              "枕头": {
+                "name_pt": "Travesseiro"
+              },
+              "被子": {
+                "name_pt": "Cobertor"
+              },
+              "床单": {
+                "name_pt": "Lençol"
+              }
+            }
+          }
+        }
+      },
+      "客厅用品": {
+        "name_pt": "Sala",
+        "n3": {
+          "装饰品": {
+            "name_pt": "Decoração",
+            "n4": {
+              "花瓶": {
+                "name_pt": "Vaso"
+              },
+              "相框": {
+                "name_pt": "Moldura"
+              },
+              "装饰品": {
+                "name_pt": "Decoração"
+              }
+            }
+          }
+        }
+      }
+    },
+    "official_1688_names": [
+      "收纳清洁",
+      "日用餐厨",
+      "居家日用",
+      "家纺家饰"
+    ]
+  },
+  "户外运动": {
+    "name_pt": "Outdoor e Esportes",
+    "n2": {
+      "沙滩装备": {
+        "name_pt": "Praia",
+        "n3": {
+          "沙滩用品": {
+            "name_pt": "Acessórios de praia",
+            "n4": {
+              "沙滩夹": {
+                "name_pt": "Presilha de praia"
+              }
+            }
+          },
+          "健身器材": {
+            "name_pt": "Equipamentos de academia",
+            "n4": {
+              "哑铃": {
+                "name_pt": "Halteres"
+              },
+              "拉力器": {
+                "name_pt": "Elástico"
+              },
+              "俯卧撑架": {
+                "name_pt": "Suporte para flexão"
+              }
+            }
+          },
+          "户外装备": {
+            "name_pt": "Equipamentos outdoor",
+            "n4": {
+              "登山杖": {
+                "name_pt": "Bastão de trekking"
+              },
+              "帐篷": {
+                "name_pt": "Barraca"
+              },
+              "睡袋": {
+                "name_pt": "Saco de dormir"
+              }
+            }
+          },
+          "球类运动": {
+            "name_pt": "Bolas e esportes",
+            "n4": {
+              "篮球": {
+                "name_pt": "Basquete"
+              },
+              "足球": {
+                "name_pt": "Futebol"
+              },
+              "羽毛球拍": {
+                "name_pt": "Raquete de badminton"
+              }
+            }
+          }
+        }
+      }
+    },
+    "official_1688_names": [
+      "运动户外"
+    ]
+  },
+  "五金工具": {
+    "name_pt": "Ferramentas",
+    "n2": {
+      "电动工具": {
+        "name_pt": "Ferramentas elétricas",
+        "n3": {
+          "钻孔工具": {
+            "name_pt": "Furadeiras",
+            "n4": {
+              "电钻": {
+                "name_pt": "Furadeira elétrica"
+              }
+            }
+          },
+          "切割工具": {
+            "name_pt": "Cortadoras",
+            "n4": {
+              "角磨机": {
+                "name_pt": "Esmerilhadeira"
+              },
+              "电锯": {
+                "name_pt": "Serra elétrica"
+              }
+            }
+          },
+          "手动工具": {
+            "name_pt": "Ferramentas manuais",
+            "n4": {
+              "扳手": {
+                "name_pt": "Chave inglesa"
+              },
+              "螺丝刀": {
+                "name_pt": "Chave de fenda"
+              },
+              "钳子": {
+                "name_pt": "Alicate"
+              }
+            }
+          },
+          "测量工具": {
+            "name_pt": "Medição",
+            "n4": {
+              "卷尺": {
+                "name_pt": "Trena"
+              },
+              "水平仪": {
+                "name_pt": "Nível"
+              },
+              "激光测距": {
+                "name_pt": "Medidor laser"
+              }
+            }
+          }
+        }
+      }
+    },
+    "official_1688_names": [
+      "工业用品"
+    ]
+  },
+  "电子数码": {
+    "name_pt": "Eletrônicos",
+    "n2": {
+      "照明": {
+        "name_pt": "Iluminação",
+        "n3": {
+          "手电筒": {
+            "name_pt": "Lanternas",
+            "n4": {
+              "LED手电筒": {
+                "name_pt": "Lanterna LED",
+                "current_cat": "flashlight"
+              },
+              "充电手电筒": {
+                "name_pt": "Lanterna recarregável",
+                "current_cat": "flashlight"
+              }
+            }
+          }
+        }
+      },
+      "安防监控": {
+        "name_pt": "Segurança e vigilância",
+        "n3": {
+          "摄像头": {
+            "name_pt": "Câmeras",
+            "n4": {
+              "监控摄像头": {
+                "name_pt": "Câmera de vigilância",
+                "current_cat": "webcam"
+              },
+              "电脑摄像头": {
+                "name_pt": "Webcam",
+                "current_cat": "webcam"
+              },
+              "车载摄像头": {
+                "name_pt": "Câmera veicular",
+                "current_cat": "webcam"
+              }
+            }
+          }
+        }
+      },
+      "电脑配件": {
+        "name_pt": "Acessórios PC",
+        "n3": {
+          "输入设备": {
+            "name_pt": "Periféricos",
+            "n4": {
+              "键盘": {
+                "name_pt": "Teclado"
+              },
+              "鼠标": {
+                "name_pt": "Mouse"
+              },
+              "显示器支架": {
+                "name_pt": "Suporte de monitor"
+              }
+            }
+          }
+        }
+      },
+      "手机配件": {
+        "name_pt": "Acessórios celular",
+        "n3": {
+          "手机壳": {
+            "name_pt": "Capas",
+            "n4": {
+              "手机壳": {
+                "name_pt": "Capa de celular"
+              },
+              "充电线": {
+                "name_pt": "Cabo de carregamento"
+              },
+              "手机支架": {
+                "name_pt": "Suporte de celular"
+              }
+            }
+          }
+        }
+      },
+      "智能家居": {
+        "name_pt": "Casa inteligente",
+        "n3": {
+          "智能设备": {
+            "name_pt": "Dispositivos smart",
+            "n4": {
+              "智能插座": {
+                "name_pt": "Tomada inteligente"
+              },
+              "智能灯泡": {
+                "name_pt": "Lâmpada inteligente"
+              },
+              "摄像头": {
+                "name_pt": "Câmera"
+              }
+            }
+          }
+        }
+      }
+    },
+    "official_1688_names": [
+      "家用电器",
+      "数码电脑",
+      "家装灯饰"
+    ]
+  },
+  "美妆护肤": {
+    "name_pt": "Beleza e cuidados",
+    "n2": {
+      "美妆工具": {
+        "name_pt": "Ferramentas de beleza",
+        "n3": {
+          "化妆工具": {
+            "name_pt": "Maquiagem",
+            "n4": {
+              "化妆刷": {
+                "name_pt": "Pincéis de maquiagem"
+              },
+              "美妆蛋": {
+                "name_pt": "Beauty blender"
+              },
+              "眼影盘": {
+                "name_pt": "Paleta de sombras"
+              },
+              "粉扑": {
+                "name_pt": "Powder puff"
+              }
+            }
+          },
+          "眼部工具": {
+            "name_pt": "Ferramentas para olhos",
+            "n4": {
+              "睫毛刷": {
+                "name_pt": "Escova de cílios"
+              },
+              "眉刷": {
+                "name_pt": "Escova de sobrancelha"
+              }
+            }
+          },
+          "美甲工具": {
+            "name_pt": "Manicure",
+            "n4": {
+              "美甲刷": {
+                "name_pt": "Escova de unha"
+              }
+            }
+          }
+        }
+      },
+      "护肤": {
+        "name_pt": "Cuidados com a pele",
+        "n3": {
+          "护肤工具": {
+            "name_pt": "Acessórios skincare",
+            "n4": {
+              "面膜工具": {
+                "name_pt": "Acessórios para máscara",
+                "current_cat": null
+              },
+              "化妆棉": {
+                "name_pt": "Algodão",
+                "current_cat": null
+              }
+            }
+          }
+        }
+      }
+    },
+    "official_1688_names": [
+      "美妆个护"
+    ]
+  },
+  "母婴用品": {
+    "name_pt": "Bebê e crianças",
+    "n2": {
+      "童装童鞋": {
+        "name_pt": "Roupas infantis",
+        "n3": {
+          "儿童袜子": {
+            "name_pt": "Meias infantis",
+            "n4": {
+              "婴儿袜": {
+                "name_pt": "Meias de bebê"
+              }
+            }
+          },
+          "婴儿服装": {
+            "name_pt": "Roupas de bebê",
+            "n4": {
+              "婴儿服": {
+                "name_pt": "Roupas de bebê"
+              }
+            }
+          },
+          "儿童用品": {
+            "name_pt": "Produtos infantis",
+            "n4": {
+              "儿童用品": {
+                "name_pt": "Produtos infantis"
+              }
+            }
+          }
+        }
+      },
+      "玩具": {
+        "name_pt": "Brinquedos",
+        "n3": {
+          "通用玩具": {
+            "name_pt": "Brinquedos gerais",
+            "n4": {
+              "毛绒玩具": {
+                "name_pt": "Pelúcia",
+                "current_cat": null
+              },
+              "益智玩具": {
+                "name_pt": "Brinquedo educativo",
+                "current_cat": null
+              }
+            }
+          }
+        }
+      },
+      "喂养用品": {
+        "name_pt": "Produtos de amamentação",
+        "n3": {
+          "奶瓶": {
+            "name_pt": "Mamadeiras",
+            "n4": {
+              "奶瓶": {
+                "name_pt": "Mamadeira"
+              }
+            }
+          }
+        }
+      }
+    },
+    "official_1688_names": [
+      "玩具童装"
+    ]
+  },
+  "宠物用品": {
+    "name_pt": "Pet shop",
+    "n2": {
+      "宠物配饰": {
+        "name_pt": "Acessórios pet",
+        "n3": {
+          "牵引绳": {
+            "name_pt": "Guia e coleira",
+            "n4": {
+              "狗绳": {
+                "name_pt": "Guia para cães"
+              }
+            }
+          }
+        }
+      },
+      "宠物日用": {
+        "name_pt": "Dia a dia pet",
+        "n3": {
+          "宠物玩具": {
+            "name_pt": "Brinquedos pet",
+            "n4": {
+              "宠物玩具": {
+                "name_pt": "Brinquedo pet"
+              }
+            }
+          },
+          "宠物用品": {
+            "name_pt": "Produtos pet",
+            "n4": {
+              "宠物用品": {
+                "name_pt": "Produtos pet"
+              }
+            }
+          }
+        }
+      },
+      "宠物食品": {
+        "name_pt": "Ração e petiscos",
+        "n3": {
+          "猫粮": {
+            "name_pt": "Ração para gatos",
+            "n4": {
+              "猫粮": {
+                "name_pt": "Ração de gato"
+              }
+            }
+          }
+        }
+      }
+    },
+    "official_1688_names": [
+      "宠物园艺"
+    ]
+  },
+  "文具办公": {
+    "name_pt": "Papelaria e escritório",
+    "n2": {
+      "书写工具": {
+        "name_pt": "Escrita",
+        "n3": {
+          "笔记本": {
+            "name_pt": "Cadernos",
+            "n4": {
+              "笔记本": {
+                "name_pt": "Caderno"
+              }
+            }
+          },
+          "笔类": {
+            "name_pt": "Canetas",
+            "n4": {
+              "中性笔": {
+                "name_pt": "Caneta gel"
+              },
+              "笔类": {
+                "name_pt": "Canetas"
+              }
+            }
+          }
+        }
+      },
+      "收纳整理": {
+        "name_pt": "Organização",
+        "n3": {
+          "文件夹": {
+            "name_pt": "Pastas",
+            "n4": {
+              "文件夹": {
+                "name_pt": "Pasta"
+              }
+            }
+          }
+        }
+      }
+    },
+    "official_1688_names": [
+      "办公文化"
+    ]
+  }
+}

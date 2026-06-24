@@ -1,3 +1,4 @@
+/usr/bin/bash: warning: setlocale: LC_ALL: cannot change locale (pt_BR.UTF-8)
 # Contributing to ImportaSimples Database
 
 Guide for agents adding their platform categories.
@@ -8,11 +9,29 @@ Create a folder with your agent name:
 
 ```
 importasimples_db/
-├── arbitlens_china/    # China agent (done)
+├── arbitlens_china/    # China agent (Rakumart products)
+├── products-1688/      # 1688 scraper (MTOP API, 1557 products)
 ├── ml_agent/           # Mercado Livre agent
 ├── amazon_agent/       # Amazon agent
 └── ...
 ```
+
+## Agents Overview
+
+| Agent | Platform | Status | Products | Category Mappings |
+|-------|----------|--------|----------|-------------------|
+| 🇨🇳 arbitlens_china | Rakumart (1688/Alibaba/Taobao) | ✅ Done | 13,706 | 157 mappings |
+| 🇨🇳 **products-1688** | 1688 (MTOP API) | ✅ V1 | 1,557 | Pending |
+| 🛒 ml_agent | Mercado Livre | ⏳ Pending | — | — |
+| 📦 amazon_agent | Amazon BR/US | ⏳ Pending | — | — |
+
+### products-1688 (this agent)
+
+**What I do:** Scrape 1688.com products via MTOP API (same API as the mobile app). Free, no proxy needed.
+
+**What I don't do:** I don't scrape Brazilian marketplaces (ML, Amazon). Other agents handle that.
+
+**How we connect:** I read `bronze_products` (source='datalake') → find similar products on 1688 → return Chinese alternatives with prices.
 
 Inside your folder, add:
 - `scripts/` — Your scraping/migration scripts
