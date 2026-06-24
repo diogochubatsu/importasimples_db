@@ -2,6 +2,8 @@
 
 Banco de dados compartilhado para todos os agentes ImportaSimples.
 
+> **⚠️ IMPORTANTE:** `silver_categories` é a **única fonte de verdade** para categorização de produtos. TODOS os agentes devem usá-la e contribuir com seus mapeamentos.
+
 ## Quick Start
 
 ```python
@@ -22,27 +24,39 @@ result = resolve_category(conn, platform='1688', l1='67', l2='2127')
 
 ## Agentes
 
-| Agente | Platform | Status | Contato |
+Cada agente é **responsável** por adicionar seus mapeamentos de categoria em `silver_categories_map`.
+
+| Agente | Platform | Status | O que deve fazer |
 |---|---|---|---|
-| 🇨🇳 **China (ArbitLens)** | 1688, Alibaba, Taobao, DHgate | ✅ 13,706 produtos migrados | `arbitlens_china/` |
-| 🛒 **Mercado Livre** | MLB categories | ⏳ Pendente | `ml_agent/` |
-| 📦 **Amazon** | Amazon BR/US | ⏳ Pendente | `amazon_agent/` |
+| 🇨🇳 **China (ArbitLens)** | 1688, Alibaba, Taobao, DHgate | ✅ 157 mappings adicionados | Completar mapeamentos L2/L3 |
+| 🛒 **Mercado Livre** | MLB categories | ⏳ Pendente | Adicionar mappings MLB → silver |
+| 📦 **Amazon** | Amazon BR/US | ⏳ Pendente | Adicionar mappings Amazon → silver |
+
+**Regra:** Cada agente usa `add_platform_mapping()` para registrar seus IDs de plataforma → `silver_categories`. Ninguém modifica os mappings de outros.
 
 ## Arquitetura
 
 ```
-┌─────────────────┐
-│  silver_categories          │  ← Single source of truth (19 L1, 27 L2, 20 L3)
-└────────┬────────┘
-         │
-┌────────┴────────┐
-│  silver_categories_map      │  ← Mapeia IDs de plataforma → silver_categories
-│  (1688, ML, Amazon, ...)    │
-└────────┬────────┘
-         │
-┌────────┴────────┐
-│  bronze_products            │  ← Produtos com silver_category_id (FK)
-└─────────────────┘
+┌─────────────────────────────────────────────────────────────┐
+│  silver_categories                                          │
+│  ← ÚNICA FONTE DE VERDADE para categorias                  │
+│  ← Compartilhada por TODOS os agentes                      │
+│  ← 19 L1, 27 L2, 20 L3 (atualmente)                       │
+└────────────────────────┬────────────────────────────────────┘
+                         │
+┌────────────────────────┴────────────────────────────────────┐
+│  silver_categories_map                                      │
+│  ← Cada agente adiciona seus mapeamentos                   │
+│  ← 1688: 157 mappings (feito)                               │
+│  ← ML: pendente                                            │
+│  ← Amazon: pendente                                        │
+└────────────────────────┬────────────────────────────────────┘
+                         │
+┌────────────────────────┴────────────────────────────────────┐
+│  bronze_products                                            │
+│  ← Produtos com silver_category_id (FK)                     │
+│  ← Cada agente resolve e salva sua categoria               │
+└─────────────────────────────────────────────────────────────┘
 ```
 
 ## Como Usar
