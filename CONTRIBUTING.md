@@ -4,7 +4,11 @@ Guide for agents adding their platform categories.
 
 ---
 
-## About arbitlens_brasil (arbt.ly)
+## About arbitlens_brasil
+
+**Nome no repo:** `arbitlens_brasil`
+**Source no DB:** `arbitlens_brasil` (1.127 registros em bronze_products)
+**Não confundir com:** `arbt.ly` (outro agente, 594 registros, source renomeado de 'arbitlens_brasil' para 'arbt.ly' por conflito)
 
 **O que faz:** Scrape Mercado Livre, Amazon BR/US para intelligence de mercado brasileiro. Rastreia BSR (Best Seller Rank), preços, reviews e categorias.
 
