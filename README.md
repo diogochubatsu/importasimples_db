@@ -2,9 +2,51 @@
 
 Shared database schema and category architecture for all ImportaSimples agents.
 
+---
+
+## About Me
+
+I'm the **China Agent** (ArbitLens / arbitlens_china). I scrape Chinese marketplaces via Rakumart proxy:
+
+- **1688** (rakumart-1688) — 2,714 products
+- **Alibaba** (rakumart-alibaba) — 2,714 products
+- **Taobao** (rakumart-taobao) — 2,428 products
+- **DHgate** — 4,829 products
+
+**What I've done:**
+1. Scraped 13,706 products from Chinese marketplaces
+2. Classified products into 20 L1 categories using keywords + CLIP fallback
+3. Migrated all products to ImportaSimples bronze_products
+4. Uploaded 13,653 images to GCS (100% coverage)
+5. Built the category resolver utility for all agents
+6. Mapped 1688 platform category IDs to silver_categories (157 mappings)
+7. Added `silver_category_id` FK to bronze_products
+
+**My suggestion for silver_categories:**
+- `silver_categories` should be the **single source of truth** — one canonical tree shared by all agents
+- `silver_categories_map` maps each marketplace's native IDs to silver_categories
+- Each agent adds their own rows to `silver_categories_map` — no conflicts
+- L2/L3 categories are added on-demand when agents process products
+- Confidence scores indicate mapping reliability (0.5 = low, 0.9 = high)
+
+**Coverage so far:**
+- L1: 81.7% (11,192 / 13,706 products)
+- L2: 67.1% (9,190 products)
+- L3: 30.4% (4,163 products)
+
+**What other agents need to do:**
+1. Add their platform L1 mappings to `silver_categories_map`
+2. Use `resolve_category()` to map platform IDs → silver IDs
+3. Store `silver_category_id` in bronze_products
+4. Add L2/L3 to `silver_categories` as needed
+
+— *China Agent (ArbitLens), June 2026*
+
+---
+
 ## Overview
 
-ImportaSimples uses a **Medallion architecture**: Bronze → Silver → Gold → UI. All agents (China, ML, Amazon) write to the same database and share the same category system.
+ImportaSimples uses a **Medallion architecture**: Bronze → Silver → Gold → UI. All agents write to the same database and share the same category system.
 
 ## Database Connection
 
@@ -141,8 +183,8 @@ category_raw        VARCHAR  -- Raw category path (e.g., "audio.fones.bluetooth"
 from category_resolver import resolve_category
 
 result = resolve_category(
-    conn, 
-    platform='1688', 
+    conn,
+    platform='1688',
     l1='67',     # Platform's L1 ID
     l2='2127',   # Platform's L2 ID (optional)
     l3='1033103' # Platform's L3 ID (optional)
@@ -163,7 +205,7 @@ result = resolve_category(
 
 ```python
 cur.execute("""
-    UPDATE bronze_products 
+    UPDATE bronze_products
     SET silver_category_id = %s,
         category_l1 = %s,
         category_l2 = %s,
@@ -255,43 +297,38 @@ cat_id = ensure_category(conn, l1='Audio', l2='Fones', l3='Bluetooth')
 └─────────────────┘
 ```
 
-## Current Coverage (arbitlens_china)
-
-| Level | Products | Percentage |
-|---|---|---|
-| L1 | 11,192 | 81.7% |
-| L2 | 9,190 | 67.1% |
-| L3 | 4,163 | 30.4% |
-
-**Unmapped:** 2,514 products (all "uncategorized" — need platform IDs from rescraping)
-
-## Files
-
-| File | Description |
-|---|---|
-| `category_resolver.py` | Shared utility for all agents |
-| `schema.sql` | Database schema (to be created) |
-| `migrations/` | Schema migrations |
-
 ## Agent Responsibilities
 
-### China Agent (ArbitLens)
+### China Agent (ArbitLens) — `arbitlens_china/`
 - Scrapes: 1688, Alibaba, Taobao, DHgate via Rakumart proxy
 - Platform IDs: `top_category_id`, `second_category_id`, `third_category_id`
 - Adds mappings to `silver_categories_map` for 1688/Alibaba/Taobao
+- **Status:** 13,706 products migrated, 13,653 images uploaded, 157 category mappings
 
-### ML Agent (Mercado Livre)
+### ML Agent — `ml_agent/`
 - Scrapes: Mercado Livre (MLB categories)
 - Platform IDs: MLB category IDs (e.g., MLB3835)
 - Adds mappings to `silver_categories_map` for ML
+- **Status:** Pending
 
-### Amazon Agent
+### Amazon Agent — `amazon_agent/`
 - Scrapes: Amazon BR, Amazon US
 - Platform IDs: Amazon browse node IDs
 - Adds mappings to `silver_categories_map` for Amazon
+- **Status:** Pending
 
-### All Agents
-1. Look up `silver_categories_map` to resolve platform IDs
-2. Store `silver_category_id` in `bronze_products`
-3. Denormalize `category_l1/l2/l3` for fast queries
-4. Add new L2/L3 to `silver_categories` as needed
+## Files
+
+```
+importasimples_db/
+├── README.md                    # This file
+├── category_resolver.py         # Shared utility for all agents
+├── schema.sql                   # Database schema
+└── arbitlens_china/             # China agent scripts & docs
+    ├── scripts/
+    │   ├── migrate_to_importasimples.py
+    │   ├── migrate_images_to_gcs.py
+    │   └── category_resolver.py
+    └── docs/
+        └── HANDOFF.md
+```
