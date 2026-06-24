@@ -1,4 +1,3 @@
-/usr/bin/bash: warning: setlocale: LC_ALL: cannot change locale (pt_BR.UTF-8)
 # ImportaSimples Database
 
 Banco de dados compartilhado para todos os agentes ImportaSimples.
@@ -37,12 +36,12 @@ Cada agente é **responsável** por adicionar seus mapeamentos de categoria em `
 > **⚠️ Importante:** `arbt.ly` e `arbitlens_brasil` são agentes diferentes com sources diferentes no banco.
 
 **Status por source:**
-| Source | Produtos | L1 | L2 | L3 |
-|---|---|---|---|---|
-| `arbitlens_china` | 13,706 | 11,192 (81%) | 9,190 (67%) | 4,163 (30%) |
-| `datalake` | 1,557 | 1,557 (100%) | 1,557 (100%) | 530 (34%) |
-| `arbitlens_brasil` | 1,127 | 0 (0%) | 1,127 (100%) | 1,127 (100%) |
-| `arbt.ly` | 1,079 | 1,079 (100%) | 1,079 (100%) | 1,079 (100%) |
+| Source | Produtos | L1 | L2 | L3 | Mapped |
+|---|---|---|---|---|---|
+| `arbitlens_china` | 13,706 | 13,706 (100%) | 13,706 (100%) | 13,706 (100%) | 11,192 (81%) |
+| `datalake` | 1,557 | 1,557 (100%) | 1,557 (100%) | 530 (34%) | 1,557 (100%) |
+| `arbitlens_brasil` | 1,127 | 1,127 (100%) | 1,127 (100%) | 1,127 (100%) | 0 (0%) |
+| `arbt.ly` | 1,079 | 1,079 (100%) | 1,079 (100%) | 1,079 (100%) | 1,079 (100%) |
 
 **Regra:** Cada agente usa `add_platform_mapping()` para registrar seus IDs de plataforma → `silver_categories`. Ninguém modifica os mappings de outros.
 
@@ -53,17 +52,15 @@ Cada agente é **responsável** por adicionar seus mapeamentos de categoria em `
 │  silver_categories                                          │
 │  ← ÚNICA FONTE DE VERDADE para categorias                  │
 │  ← Compartilhada por TODOS os agentes                      │
-│  ← 19 L1, 27 L2, 20 L3 (atualmente)                       │
+│  ← 26 L1, 117 L2, 238 L3 (atualmente)                     │
 └────────────────────────┬────────────────────────────────────┘
                          │
 ┌────────────────────────┴────────────────────────────────────┐
 │  silver_categories_map                                      │
 │  ← Cada agente adiciona seus mapeamentos                   │
-│  ← 1688: 157 mappings (feito)                               │
-│  ← ML: 38 mappings (feito via arbt.ly)                       │
-│  ← Amazon: 38 mappings (feito via arbt.ly)                   │
-
-
+│  ← 1688: 264 mappings (L1+L2+L3)                           │
+│  ← ML: 38 mappings (feito via arbt.ly)                     │
+│  ← Amazon: 38 mappings (feito via arbt.ly)                 │
 └────────────────────────┬────────────────────────────────────┘
                          │
 ┌────────────────────────┴────────────────────────────────────┐
@@ -114,7 +111,7 @@ from category_resolver import ensure_category
 cat_id = ensure_category(conn, l1='Audio', l2='Fones', l3='Bluetooth')
 ```
 
-## Categorias L1 (19)
+## Categorias L1 (26)
 
 | ID | Nome | Ícone |
 |---|---|---|
@@ -137,6 +134,13 @@ cat_id = ensure_category(conn, l1='Audio', l2='Fones', l3='Bluetooth')
 | 17 | Calçados | 👟 |
 | 18 | Automotivo | 🚗 |
 | 19 | Wearables | ⌚ |
+| 382 | Bolsas | 👜 |
+| 383 | Acessórios | 💍 |
+| 384 | Eletrodomésticos | 🔌 |
+| 385 | Computadores | 💻 |
+| 386 | Têxteis | 🛋️ |
+| 387 | Industrial | 🏭 |
+| 388 | Organização | 🧹 |
 
 ## Mapeamentos 1688 → Silver
 
@@ -152,15 +156,16 @@ cat_id = ensure_category(conn, l1='Audio', l2='Fones', l3='Bluetooth')
 | 67 | 照明/LED | Iluminação | 0.90 |
 | 70 | 宠物用品 | Pets | 0.90 |
 
-*Ver `silver_categories_map` para lista completa (157 mappings)*
+*Ver `silver_categories_map` para lista completa (264 mappings)*
 
 ## Cobertura (arbitlens_china)
 
 | Nível | Produtos | % |
 |---|---|---|
-| L1 | 11,192 | 81.7% |
-| L2 | 9,190 | 67.1% |
-| L3 | 4,163 | 30.4% |
+| L1 | 13,706 | 100% |
+| L2 | 13,706 | 100% |
+| L3 | 13,706 | 100% |
+| Mapped | 11,192 | 81.7% |
 
 ## Arquivos
 
@@ -175,9 +180,14 @@ importasimples_db/
 ├── platform_categories/         # Dados exportados (JSON)
 │   ├── silver_categories.json
 │   └── silver_categories_map.json
-└── arbitlens_china/             # Scripts do agente China
+├── arbitlens_china/             # Scripts do agente China
+│   ├── scripts/
+│   └── docs/
+└── products-1688/               # Scripts do agente 1688
+    ├── README.md
     ├── scripts/
-    └── docs/
+    ├── n1_n4.json
+    └── best_sellers.json
 ```
 
 ## Contribuindo
