@@ -36,12 +36,12 @@ Cada agente é **responsável** por adicionar seus mapeamentos de categoria em `
 > **⚠️ Importante:** `arbt.ly` e `arbitlens_brasil` são agentes diferentes com sources diferentes no banco.
 
 **Status por source:**
-| Source | Produtos | L1 | L2 | L3 | Mapped |
-|---|---|---|---|---|---|
-| `arbitlens_china` | 13,706 | 13,706 (100%) | 13,706 (100%) | 13,706 (100%) | 11,192 (81%) |
-| `datalake` | 1,557 | 1,557 (100%) | 1,557 (100%) | 530 (34%) | 1,557 (100%) |
-| `arbitlens_brasil` | 1,127 | 1,127 (100%) | 1,127 (100%) | 1,127 (100%) | 0 (0%) |
-| `arbt.ly` | 1,079 | 1,079 (100%) | 1,079 (100%) | 1,079 (100%) | 1,079 (100%) |
+| Source | Produtos | Mapped (L1) | Has L2 | Has L3 |
+|---|---|---|---|---|
+| `arbitlens_china` | 13,706 | 11,192 (82%) | 9,190 (67%) | 4,163 (30%) |
+| `datalake` | 1,557 | 1,557 (100%) | 1,557 (100%) | 530 (34%) |
+| `arbitlens_brasil` | 1,127 | 0 (0%) | 1,127 (100%) | 1,127 (100%) |
+| `arbt.ly` | 1,079 | 1,079 (100%) | 1,079 (100%) | 1,079 (100%) |
 
 **Regra:** Cada agente usa `add_platform_mapping()` para registrar seus IDs de plataforma → `silver_categories`. Ninguém modifica os mappings de outros.
 
