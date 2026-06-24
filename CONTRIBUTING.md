@@ -8,7 +8,15 @@ Guide for agents adding their platform categories.
 
 **Nome no repo:** `arbitlens_brasil`
 **Source no DB:** `arbitlens_brasil` (1.127 registros em bronze_products)
-**Não confundir com:** `arbt.ly` (outro agente, 594 registros, source renomeado de 'arbitlens_brasil' para 'arbt.ly' por conflito)
+**Não confundir com:** `arbt.ly` (OUTRO agente — ver `arbt.ly/docs/HANDOFF.md` para distinção completa)
+
+**Diferenças:**
+| | arbitlens_brasil (eu) | arbt.ly (outro) |
+|---|---|---|
+| Source no DB | `arbitlens_brasil` | `arbt.ly` |
+| Produtos | 1.127 | 1.079 |
+| Script | `migrate_to_importasimples.py` | `migrate_to_importasimples.py` |
+| Status | Precisa mapear categorias | 100% silver_category_id |
 
 **O que faz:** Scrape Mercado Livre, Amazon BR/US para intelligence de mercado brasileiro. Rastreia BSR (Best Seller Rank), preços, reviews e categorias.
 
