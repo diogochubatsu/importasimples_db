@@ -33,6 +33,56 @@ importasimples_db/
 
 **How we connect:** I read `bronze_products` (source='datalake') → find similar products on 1688 → return Chinese alternatives with prices.
 
+## How Category Resolution Works
+
+The magic of `silver_categories` is that **all agents converge to the same category IDs**, regardless of their source language or platform.
+
+### The Flow
+
+```
+USER selects "Bolsas" in frontend
+  → Query: SELECT * FROM bronze_products WHERE silver_category_id = X
+  → Returns ALL products from ALL sources:
+     - ML: 150 products (source='arbitlens_brasil')
+     - Amazon: 80 products (source='arbitlens_brasil')
+     - 1688: 45 products (source='datalake')
+     - Total: 275 products
+```
+
+### How Chinese Agents Connect
+
+When a new agent scrapes 1688 with Chinese categories:
+
+```python
+from category_resolver import resolve_category
+
+# Agent has Chinese category: 箱包 (bags)
+result = resolve_category(conn, platform='1688', l1='箱包')
+# Returns: silver_category_id = X (same as "Bolsas")
+
+# Now the product is in the same category as ML/Amazon products
+```
+
+### The Bridge: silver_categories_map
+
+```
+PLATFORM     CHINESE NAME    →    SILVER CATEGORY
+─────────────────────────────────────────────────────
+1688         箱包            →    Bolsas (id=X)
+ML           MLB1234         →    Bolsas (id=X)
+Amazon       2407760         →    Bolsas (id=X)
+1688 (new)   箱包/pacote     →    Bolsas (id=X)  ← SAME ID!
+```
+
+**All agents converge to the same `silver_category_id`** — that's why it's the "single source of truth".
+
+### Why This Matters
+
+1. **No duplication** — Chinese agents don't create separate "箱包" category
+2. **Cross-platform search** — Frontend shows all products regardless of source
+3. **Consistent taxonomy** — One category tree, multiple language representations
+4. **Future-proof** — New agents automatically integrate via silver_categories_map
+
 Inside your folder, add:
 - `scripts/` — Your scraping/migration scripts
 - `docs/` — Documentation, handoff notes
