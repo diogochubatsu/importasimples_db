@@ -1,3 +1,4 @@
+/usr/bin/bash: warning: setlocale: LC_ALL: cannot change locale (pt_BR.UTF-8)
 # ImportaSimples Database
 
 Banco de dados compartilhado para todos os agentes ImportaSimples.
@@ -29,8 +30,9 @@ Cada agente é **responsável** por adicionar seus mapeamentos de categoria em `
 | Agente | Platform | Status | O que deve fazer |
 |---|---|---|---|
 | 🇨🇳 **China (ArbitLens)** | 1688, Alibaba, Taobao, DHgate | ✅ 157 mappings adicionados | Completar mapeamentos L2/L3 |
-| 🛒 **Mercado Livre** | MLB categories | ⏳ Pendente | Adicionar mappings MLB → silver |
-| 📦 **Amazon** | Amazon BR/US | ⏳ Pendente | Adicionar mappings Amazon → silver |
+| 🛒 **ArbitLens (arbt.ly)** | ML, Amazon BR/US | ✅ 38 mappings adicionados (19 ML + 19 Amazon) | Completar mapeamentos L2/L3 |
+| 🛒 **Mercado Livre** | MLB categories | ✅ 38 mappings (via arbt.ly) | — |
+| 📦 **Amazon** | Amazon BR/US | ✅ 38 mappings (via arbt.ly) | — |
 
 **Regra:** Cada agente usa `add_platform_mapping()` para registrar seus IDs de plataforma → `silver_categories`. Ninguém modifica os mappings de outros.
 
@@ -48,8 +50,10 @@ Cada agente é **responsável** por adicionar seus mapeamentos de categoria em `
 │  silver_categories_map                                      │
 │  ← Cada agente adiciona seus mapeamentos                   │
 │  ← 1688: 157 mappings (feito)                               │
-│  ← ML: pendente                                            │
-│  ← Amazon: pendente                                        │
+│  ← ML: 38 mappings (feito via arbt.ly)                       │
+│  ← Amazon: 38 mappings (feito via arbt.ly)                   │
+
+
 └────────────────────────┬────────────────────────────────────┘
                          │
 ┌────────────────────────┴────────────────────────────────────┐
