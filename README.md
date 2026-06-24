@@ -27,12 +27,13 @@ result = resolve_category(conn, platform='1688', l1='67', l2='2127')
 
 Cada agente é **responsável** por adicionar seus mapeamentos de categoria em `silver_categories_map`.
 
-| Agente | Platform | Status | O que deve fazer |
-|---|---|---|---|
-| 🇨🇳 **China (ArbitLens)** | 1688, Alibaba, Taobao, DHgate | ✅ 157 mappings adicionados | Completar mapeamentos L2/L3 |
-| 🛒 **ArbitLens (arbt.ly)** | ML, Amazon BR/US | ✅ 38 mappings adicionados (19 ML + 19 Amazon) | Completar mapeamentos L2/L3 |
-| 🛒 **Mercado Livre** | MLB categories | ✅ 38 mappings (via arbt.ly) | — |
-| 📦 **Amazon** | Amazon BR/US | ✅ 38 mappings (via arbt.ly) | — |
+| Agente | Source no DB | Platform | Status | O que deve fazer |
+|---|---|---|---|---|
+| 🇨🇳 **China (ArbitLens)** | `datalake` | 1688, Alibaba, Taobao, DHgate | ✅ 157 mappings | Completar L2/L3 |
+| 🛒 **arbt.ly** | `arbt.ly` | ML, Amazon BR/US | ✅ 38 mappings (19 ML + 19 Amazon) | Completar L2/L3 |
+| 🛒 **arbitlens_brasil** | `arbitlens_brasil` | ML, Amazon BR/US | ⏳ Precisa mapear | Adicionar mapeamentos ML/Amazon |
+
+> **⚠️ Importante:** `arbt.ly` e `arbitlens_brasil` são agentes diferentes com sources diferentes no banco. Ver `arbt.ly/docs/HANDOFF.md` para distinção completa.
 
 **Regra:** Cada agente usa `add_platform_mapping()` para registrar seus IDs de plataforma → `silver_categories`. Ninguém modifica os mappings de outros.
 
