@@ -148,64 +148,6 @@ cat_id = ensure_category(conn, l1='Audio', l2='Fones', l3='Bluetooth')
 | L2 | 9,190 | 67.1% |
 | L3 | 4,163 | 30.4% |
 
-## Medallion Architecture
-
-### Bronze → Silver (Transformação)
-
-`bronze_products` → `silver_products` acontece automaticamente. O que muda:
-
-| Campo | Bronze | Silver |
-|---|---|---|
-| ID | `source_id` (ex: `rakumart-1688:12345`) | `unified_id` (hash UUID) |
-| Categoria | `category_l1/l2/l3` (strings) | `category_id` (FK → silver_categories) |
-| Preço | `price`, `price_brl`, `price_cny` | `silver_prices` (histórico por plataforma) |
-| Imagem | `image_url` | `image_url` (GCS URL) |
-| Embedding | `raw_data->>'image_embedding'` (768 dims) | Extraído para busca visual |
-
-### Vetores (Embeddings)
-
-- **CLIP ViT-B-32**: 768 dimensões
-- **Onde está**: `bronze_products.raw_data->>'image_embedding'` (JSON array)
-- **Como usar**:
-```python
-import json
-emb = json.loads(product['raw_data']['image_embedding'])
-# emb = [0.012, -0.034, 0.056, ...] (768 floats)
-```
-- **Busca visual**: ImportaSimples extrai para `silver_products` no Silver layer
-- **Não migrar para bronze como coluna** — fica no raw_data (decisão do ImportaSimples)
-
-### Preços
-
-| Tabela | Uso |
-|---|---|
-| `bronze_products.price` | Preço original da plataforma |
-| `bronze_products.price_brl` | Preço em BRL (se disponível) |
-| `bronze_products.price_cny` | Preço em CNY (se disponível) |
-| `silver_prices` | Histórico de preços por plataforma |
-
-**Conversão de moeda**: O agente China salva `price` em BRL (Rakumart já converte). `price_cny` fica NULL para fontes BR.
-
-### Matches (Correspondências)
-
-`silver_matches` conecta produtos entre plataformas:
-
-| Campo | Descrição |
-|---|---|
-| `product_a_id` | ID do produto A (silver_products) |
-| `product_b_id` | ID do produto B (silver_products) |
-| `confidence` | 0-1 (quão similar) |
-| `match_method` | 'visual' (CLIP), 'text' (título), 'manual' |
-
-**O agente China faz**: matches visuais entre 1688/Alibaba/Taobao via CLIP
-**Outros agentes fazem**: matches entre ML/Amazon e China
-
-### Busca (Search)
-
-- **Texto**: `search_vector` (tsvector) — **não usado no bronze** (decisão do ImportaSimples)
-- **Visual**: CLIP embeddings — extraídos no Silver layer
-- **Categorias**: `silver_category_id` FK — busca por hierarquia
-
 ## Arquivos
 
 ```
