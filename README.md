@@ -1,4 +1,3 @@
-/usr/bin/bash: warning: setlocale: LC_ALL: cannot change locale (pt_BR.UTF-8)
 # ImportaSimples Database
 
 Banco de dados compartilhado para todos os agentes ImportaSimples.
@@ -27,12 +26,22 @@ result = resolve_category(conn, platform='1688', l1='67', l2='2127')
 
 Cada agente é **responsável** por adicionar seus mapeamentos de categoria em `silver_categories_map`.
 
-| Agente | Platform | Status | O que deve fazer |
-|---|---|---|---|
-| 🇨🇳 **China (ArbitLens)** | 1688, Alibaba, Taobao, DHgate | ✅ 157 mappings adicionados | Completar mapeamentos L2/L3 |
-| 🛒 **ArbitLens (arbt.ly)** | ML, Amazon BR/US | ✅ 38 mappings adicionados (19 ML + 19 Amazon) | Completar mapeamentos L2/L3 |
-| 🛒 **Mercado Livre** | MLB categories | ✅ 38 mappings (via arbt.ly) | — |
-| 📦 **Amazon** | Amazon BR/US | ✅ 38 mappings (via arbt.ly) | — |
+| Agente | Source no DB | Platform | Mappings | Status |
+|---|---|---|---|---|
+| 🇨🇳 **China (ArbitLens)** | `arbitlens_china` | 1688, Alibaba, Taobao, DHgate | 157 (L1+L2+L3) | ✅ Pronto |
+| 🇨🇳 **DataLake (products-1688)** | `datalake` | 1688 (MTOP API) | 264 (L1+L2+L3) | ✅ V1 Production |
+| 🇧🇷 **ArbitLens Brasil** | `arbitlens_brasil` | ML, Amazon | 22 (L1) | ✅ Pronto |
+| 🛒 **arbt.ly** | `arbt.ly` | ML, Amazon BR/US | 76 (L1) | ✅ Pronto |
+
+> **⚠️ Importante:** `arbt.ly` e `arbitlens_brasil` são agentes diferentes com sources diferentes no banco.
+
+**Status por source:**
+| Source | Produtos | Mapped (L1) | Has L2 | Has L3 |
+|---|---|---|---|---|
+| `arbitlens_china` | 13,706 | 11,192 (82%) | 9,190 (67%) | 4,163 (30%) |
+| `datalake` | 1,557 | 1,557 (100%) | 1,557 (100%) | 530 (34%) |
+| `arbitlens_brasil` | 1,127 | 0 (0%) | 1,127 (100%) | 1,127 (100%) |
+| `arbt.ly` | 1,079 | 1,079 (100%) | 1,079 (100%) | 1,079 (100%) |
 
 **Regra:** Cada agente usa `add_platform_mapping()` para registrar seus IDs de plataforma → `silver_categories`. Ninguém modifica os mappings de outros.
 
@@ -43,17 +52,16 @@ Cada agente é **responsável** por adicionar seus mapeamentos de categoria em `
 │  silver_categories                                          │
 │  ← ÚNICA FONTE DE VERDADE para categorias                  │
 │  ← Compartilhada por TODOS os agentes                      │
-│  ← 19 L1, 27 L2, 20 L3 (atualmente)                       │
+│  ← 26 L1, 117 L2, 238 L3 (atualmente)                     │
 └────────────────────────┬────────────────────────────────────┘
                          │
 ┌────────────────────────┴────────────────────────────────────┐
 │  silver_categories_map                                      │
 │  ← Cada agente adiciona seus mapeamentos                   │
-│  ← 1688: 157 mappings (feito)                               │
-│  ← ML: 38 mappings (feito via arbt.ly)                       │
-│  ← Amazon: 38 mappings (feito via arbt.ly)                   │
-
-
+│  ← 1688: 264 mappings (L1+L2+L3)                           │
+│  ← created_by: products-1688, arbitlens_brasil, arbt.ly     │
+│  ← ML: 38 mappings (feito via arbt.ly)                     │
+│  ← Amazon: 38 mappings (feito via arbt.ly)                 │
 └────────────────────────┬────────────────────────────────────┘
                          │
 ┌────────────────────────┴────────────────────────────────────┐
@@ -104,7 +112,60 @@ from category_resolver import ensure_category
 cat_id = ensure_category(conn, l1='Audio', l2='Fones', l3='Bluetooth')
 ```
 
-## Categorias L1 (19)
+## Como Consultar (Frontend)
+
+### Buscar categorias para filtros
+
+```sql
+SELECT id, l1, l2, l3 
+FROM silver_categories 
+ORDER BY l1, l2, l3
+```
+
+### Buscar produtos com filtro de categoria
+
+```sql
+SELECT bp.*, sc.l1, sc.l2, sc.l3
+FROM bronze_products bp
+LEFT JOIN silver_categories sc ON bp.silver_category_id = sc.id
+WHERE bp.source IN ('arbitlens_china', 'datalake', 'arbitlens_brasil', 'arbt.ly')
+AND sc.l1 = 'Audio'  -- filtro selecionado
+ORDER BY bp.sales_30d DESC
+```
+
+### Contar produtos por categoria (badge)
+
+```sql
+SELECT sc.l1, COUNT(*) as cnt
+FROM bronze_products bp
+JOIN silver_categories sc ON bp.silver_category_id = sc.id
+WHERE bp.source IN (...)
+GROUP BY sc.l1
+ORDER BY cnt DESC
+```
+
+### Filtros em cascata (L1 → L2 → L3)
+
+```sql
+-- Usuário seleciona L1="Audio", L2="Fones"
+SELECT bp.*, sc.l1, sc.l2, sc.l3
+FROM bronze_products bp
+JOIN silver_categories sc ON bp.silver_category_id = sc.id
+WHERE sc.l1 = 'Audio' AND sc.l2 = 'Fones'
+```
+
+### Filtrar por source (agente)
+
+```sql
+SELECT bp.*, sc.l1, sc.l2, sc.l3
+FROM bronze_products bp
+JOIN silver_categories sc ON bp.silver_category_id = sc.id
+WHERE bp.source = 'arbitlens_china'
+```
+
+**Coluna-chave:** `bronze_products.silver_category_id` — FK para `silver_categories.id`. É isso que conecta tudo.
+
+## Categorias L1 (26)
 
 | ID | Nome | Ícone |
 |---|---|---|
@@ -127,6 +188,13 @@ cat_id = ensure_category(conn, l1='Audio', l2='Fones', l3='Bluetooth')
 | 17 | Calçados | 👟 |
 | 18 | Automotivo | 🚗 |
 | 19 | Wearables | ⌚ |
+| 382 | Bolsas | 👜 |
+| 383 | Acessórios | 💍 |
+| 384 | Eletrodomésticos | 🔌 |
+| 385 | Computadores | 💻 |
+| 386 | Têxteis | 🛋️ |
+| 387 | Industrial | 🏭 |
+| 388 | Organização | 🧹 |
 
 ## Mapeamentos 1688 → Silver
 
@@ -142,15 +210,16 @@ cat_id = ensure_category(conn, l1='Audio', l2='Fones', l3='Bluetooth')
 | 67 | 照明/LED | Iluminação | 0.90 |
 | 70 | 宠物用品 | Pets | 0.90 |
 
-*Ver `silver_categories_map` para lista completa (157 mappings)*
+*Ver `silver_categories_map` para lista completa (264 mappings)*
 
 ## Cobertura (arbitlens_china)
 
 | Nível | Produtos | % |
 |---|---|---|
-| L1 | 11,192 | 81.7% |
-| L2 | 9,190 | 67.1% |
-| L3 | 4,163 | 30.4% |
+| L1 | 13,706 | 100% |
+| L2 | 13,706 | 100% |
+| L3 | 13,706 | 100% |
+| Mapped | 11,192 | 81.7% |
 
 ## Arquivos
 
@@ -168,6 +237,11 @@ importasimples_db/
 ├── arbitlens_china/             # Scripts do agente China
 │   ├── scripts/
 │   └── docs/
+├── products-1688/               # Scripts do agente 1688
+│   ├── README.md
+│   ├── scripts/
+│   ├── n1_n4.json
+│   └── best_sellers.json
 └── importasimples_frontend/     # Documentação do frontend
     └── README.md
 ```
@@ -232,3 +306,29 @@ Veja [CONTRIBUTING.md](CONTRIBUTING.md) para guia completo.
 2. Não modificar mapeamentos de outros agentes
 3. Adicionar sua pasta com scripts e docs
 4. Documentar seus mapeamentos
+
+
+## Últimas Atualizações (2026-06-25)
+
+### created_by Column
+- Adicionada em `silver_categories_map`
+- Backfilled: products-1688 (264), arbitlens_brasil (22), arbt.ly (76)
+- Permite rastrear quem adicionou cada mapeamento
+
+### export_categories.py
+- Script para exportar categorias e mapeamentos pra JSON
+- Uso: `python3 export_categories.py --stats`
+- Snapshots com timestamp pra backup/auditoria
+
+### Cross-Agent Test
+- 22/22 categorias arbitlens_brasil resolvem corretamente
+- resolve_category() funciona com platform='arbitlens_brasil'
+- 100% de cobertura
+
+### Status dos Agentes
+| Agente | Mapeamentos | Status |
+|---|---|---|
+| products-1688 | 264 | ✅ V1 Production |
+| arbitlens_brasil | 22 | ✅ Pronto |
+| arbt.ly | 76 | ✅ Pronto |
+| arbitlens_china | 157 | ✅ Pronto |
