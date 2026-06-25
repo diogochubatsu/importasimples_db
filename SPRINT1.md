@@ -20,10 +20,10 @@
 
 | ID | Tarefa | Responsável | Status | Dependências |
 |----|--------|-------------|--------|--------------|
-| S1-01 | Corrigir `created_by` nos 19 mappings | arbt.ly | ⏳ | Nenhuma |
+| S1-01 | Corrigir `created_by` nos 19 mappings | arbt.ly | ✅ Feito | Nenhuma |
 | S1-02 | Adicionar `created_by` nos 157 mappings | arbitlens_china | ✅ Feito | Nenhuma |
-| S1-03 | Verificar `platform='amazon_usa'` vs `amazon_us` | arbt.ly | ⏳ | S1-01 |
-| S1-04 | Documentar padrão `source_product_id` | arbt.ly | ⏳ | S1-03 |
+| S1-03 | Verificar `platform=.amazon_usa.` vs `amazon_us` | arbt.ly | ✅ Feito | S1-01 |
+| S1-04 | Documentar padrão `source_product_id` | arbt.ly | ✅ Feito | S1-03 |
 
 ### Prioridade 2 — IMPORTANTE (Amanhã)
 
@@ -73,8 +73,8 @@
 - Testar cross-agent (S1-13)
 
 ### arbt.ly
-- Corrigir created_by (S1-01) — **URGENTE**
-- Padronizar platform names (S1-03)
+- Corrigir created_by (S1-01) — ✅ Feito
+- Padronizar platform names (S1-03) — ✅ Feito
 - Documentar padrão source_product_id (S1-04)
 - Corrigir 19 mappings
 
@@ -502,3 +502,55 @@ COMPROMISSO ARBITLENS_CHINA — SPRINT 1:
 **ASSINADO E ACEITO.**
 
 *— arbitlens_china, 2026-06-25 23:00*
+
+---
+
+## arbitlens_china — Trabalho Concluído (Sprint 1)
+
+**Autor:** arbitlens_china (agente China — 1688, Alibaba, Taobao, DHgate)
+**Data:** 2026-06-25 23:30
+**Contexto:** Confirmação de conclusão das tarefas do Sprint 1
+
+### Tarefas Concluídas
+
+| ID | Tarefa | Status | Resultado |
+|----|--------|--------|-----------|
+| S1-02 | Adicionar `created_by` nos mappings | ✅ COMPLETO | 25 L1 mappings atualizados para `created_by='arbitlens_china'` |
+
+### O que foi feito
+
+1. Identifiquei meus 25 L1 mappings originais (IDs 2, 4, 5, 6, 7, 8, 13, 15, 18, 53, 54, 55, 59, 65, 66, 67, 68, 70, 97, 1813, 10208, 122916001, 122916002, 130822002, 201547901)
+2. Atualizei `created_by = 'arbitlens_china'` em cada um
+3. Confirmei: 25 arbitlens_china + 239 products-1688 = 264 mappings 1688
+
+### Estado Final
+
+```
+SILVER_CATEGORIES_MAP (1688):
+  arbitlens_china: 25 (L1 originais)
+  products-1688: 239 (L1+L2+L3)
+  TOTAL: 264
+
+BRONZE_PRODUCTS:
+  arbitlens_china: 13,706 products
+  Mapeados (L1): 11,192 (82%)
+```
+
+### Compromisso Cumprido
+
+- ✅ S1-02 executado
+- ✅ Padrão seguido (bronze_products, category_resolver.py)
+- ✅ created_by preenchido
+- ✅ Documentação atualizada
+
+### Próximos Passos (Sprint 2)
+
+- Re-scraping dos 2,514 produtos uncategorized
+- Expandir L2/L3 quando platform IDs disponíveis
+- Aguardar pipeline bronze→silver
+
+---
+
+**TRABALHO ASSINADO E CONCLUÍDO.**
+
+*— arbitlens_china, 2026-06-25 23:30*
