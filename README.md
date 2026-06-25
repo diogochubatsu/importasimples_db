@@ -26,12 +26,12 @@ result = resolve_category(conn, platform='1688', l1='67', l2='2127')
 
 Cada agente é **responsável** por adicionar seus mapeamentos de categoria em `silver_categories_map`.
 
-| Agente | Source no DB | Platform | Mappings | Categorias |
+| Agente | Source no DB | Platform | Mappings | Status |
 |---|---|---|---|---|
-| 🇨🇳 **China (ArbitLens)** | `arbitlens_china` | 1688, Alibaba, Taobao, DHgate | 157 (L1+L2+L3) | 26 L1, 117 L2, 238 L3 |
-| 🇨🇳 **DataLake (products-1688)** | `datalake` | 1688 (MTOP API) | 107 (L1+L2+L3) | mesmas do China |
-| 🇧🇷 **ArbitLens Brasil** | `arbitlens_brasil` | ML, Amazon | 38 (L1) | pendente L2/L3 |
-| 🛒 **arbt.ly** | `arbt.ly` | ML, Amazon BR/US | 38 (L1) | pendente L2/L3 |
+| 🇨🇳 **China (ArbitLens)** | `arbitlens_china` | 1688, Alibaba, Taobao, DHgate | 157 (L1+L2+L3) | ✅ Pronto |
+| 🇨🇳 **DataLake (products-1688)** | `datalake` | 1688 (MTOP API) | 264 (L1+L2+L3) | ✅ V1 Production |
+| 🇧🇷 **ArbitLens Brasil** | `arbitlens_brasil` | ML, Amazon | 22 (L1) | ✅ Pronto |
+| 🛒 **arbt.ly** | `arbt.ly` | ML, Amazon BR/US | 76 (L1) | ✅ Pronto |
 
 > **⚠️ Importante:** `arbt.ly` e `arbitlens_brasil` são agentes diferentes com sources diferentes no banco.
 
@@ -59,6 +59,7 @@ Cada agente é **responsável** por adicionar seus mapeamentos de categoria em `
 │  silver_categories_map                                      │
 │  ← Cada agente adiciona seus mapeamentos                   │
 │  ← 1688: 264 mappings (L1+L2+L3)                           │
+│  ← created_by: products-1688, arbitlens_brasil, arbt.ly     │
 │  ← ML: 38 mappings (feito via arbt.ly)                     │
 │  ← Amazon: 38 mappings (feito via arbt.ly)                 │
 └────────────────────────┬────────────────────────────────────┘
@@ -199,3 +200,29 @@ Veja [CONTRIBUTING.md](CONTRIBUTING.md) para guia completo.
 2. Não modificar mapeamentos de outros agentes
 3. Adicionar sua pasta com scripts e docs
 4. Documentar seus mapeamentos
+
+
+## Últimas Atualizações (2026-06-25)
+
+### created_by Column
+- Adicionada em `silver_categories_map`
+- Backfilled: products-1688 (264), arbitlens_brasil (22), arbt.ly (76)
+- Permite rastrear quem adicionou cada mapeamento
+
+### export_categories.py
+- Script para exportar categorias e mapeamentos pra JSON
+- Uso: `python3 export_categories.py --stats`
+- Snapshots com timestamp pra backup/auditoria
+
+### Cross-Agent Test
+- 22/22 categorias arbitlens_brasil resolvem corretamente
+- resolve_category() funciona com platform='arbitlens_brasil'
+- 100% de cobertura
+
+### Status dos Agentes
+| Agente | Mapeamentos | Status |
+|---|---|---|
+| products-1688 | 264 | ✅ V1 Production |
+| arbitlens_brasil | 22 | ✅ Pronto |
+| arbt.ly | 76 | ✅ Pronto |
+| arbitlens_china | 157 | ✅ Pronto |
