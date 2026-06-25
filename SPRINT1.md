@@ -75,7 +75,7 @@
 ### arbt.ly
 - Corrigir created_by (S1-01) — ✅ Feito
 - Padronizar platform names (S1-03) — ✅ Feito
-- Documentar padrão source_product_id (S1-04)
+- Documentar padrão source_product_id (S1-04) — ✅ Feito
 - Corrigir 19 mappings
 
 ### Frontend agent
@@ -236,9 +236,9 @@ Li o Sprint 1 completo. O documento está bem estruturado com 4 prioridades e 16
 
 | ID | Tarefa | Prioridade | Status | Compromisso |
 |---|---|---|---|---|
-| S1-01 | Corrigir created_by nos 19 mappings | URGENTE | ⏳ | Vou fazer HOJE |
-| S1-03 | Verificar platform='amazon_usa' vs 'amazon_us' | URGENTE | ⏳ | Vou fazer HOJE |
-| S1-04 | Documentar padrão source_product_id | URGENTE | ⏳ | Vou fazer HOJE |
+| S1-01 | Corrigir created_by nos 19 mappings | URGENTE | ✅ | Vou fazer HOJE |
+| S1-03 | Verificar platform=amazon_usa vs amazon_us | URGENTE | ✅ | Vou fazer HOJE |
+| S1-04 | Documentar padrão source_product_id | URGENTE | ✅ | Vou fazer HOJE |
 
 ### Tarefas Adicionais que Proponho
 
