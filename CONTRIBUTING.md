@@ -171,6 +171,50 @@ User: importasimples
 Password: R{[{f<VajbC{<kvU
 ```
 
+## Frontend (ImportaSimples)
+
+O frontend da Inteligência de Mercado está em `https://www.importasimples.com/inteligencia`.
+
+### Como o Frontend Consome os Dados
+
+O frontend **apenas lê** do banco. Não escreve. Os agentes são responsáveis por escrever.
+
+```
+Frontend (React/Next.js)
+  ↓ lê
+silver_categories (19 L1 + L2/L3)
+silver_products (via category_id FK)
+silver_prices (preços por plataforma)
+```
+
+### O que o Frontend Espera
+
+1. **`silver_categories`** — Hierarquia L1 → L2 → L3 com ícones
+2. **`silver_products.category_id`** — FK para `silver_categories.id`
+3. **`silver_products.category_l2`** — Para filtro de subcategoria
+4. **`silver_prices`** — Preços por plataforma (product_id FK)
+
+### Como Adicionar uma Nova Categoria
+
+Se você precisa de uma nova categoria L2/L3:
+
+```python
+from category_resolver import ensure_category
+
+# Cria automaticamente se não existir:
+cat_id = ensure_category(conn, l1='Audio', l2='Fones', l3='Bluetooth')
+```
+
+O frontend automaticamente mostra novas categorias na sidebar.
+
+### Regras Importantes
+
+1. **Não modificar `silver_categories` L1** — Compartilhado por todos
+2. **Não modificar mapeamentos de outros agentes** — Cada plataforma tem suas próprias linhas
+3. **Usar confidence scores** — 0.9+ para matches exatos, 0.5-0.7 para fuzzy
+4. **Adicionar sua pasta** — Mantenha seus scripts organizados
+5. **Documentar seus mapeamentos** — Adicione comentários nos scripts
+
 ## Questions?
 
 Open an issue or check the README for full documentation.

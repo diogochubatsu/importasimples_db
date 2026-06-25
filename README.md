@@ -165,10 +165,63 @@ importasimples_db/
 ├── platform_categories/         # Dados exportados (JSON)
 │   ├── silver_categories.json
 │   └── silver_categories_map.json
-└── arbitlens_china/             # Scripts do agente China
-    ├── scripts/
-    └── docs/
+├── arbitlens_china/             # Scripts do agente China
+│   ├── scripts/
+│   └── docs/
+└── importasimples_frontend/     # Documentação do frontend
+    └── README.md
 ```
+
+## Frontend (ImportaSimples)
+
+O frontend da Inteligência de Mercado está em `https://www.importasimples.com/inteligencia`.
+
+### O que o Frontend Faz
+
+- **Lê** de `silver_categories` (19 L1 + L2/L3)
+- **Lê** de `silver_products` (via `category_id` FK)
+- **Lê** de `silver_prices` (preços por plataforma)
+- **NÃO escreve** no banco — apenas visualização
+
+### Como o Frontend Usa as Categorias
+
+```
+Usuário clica em "Audio" na sidebar
+  → Query: /api/silver/products?category=Audio
+  → Retorna: 1,092 produtos da categoria Audio
+  → Todos os produtos de TODAS as fontes (arbitlens_china, arbitlens_brasil, datalake, arbt.ly)
+```
+
+### API Routes
+
+| Endpoint | Método | Descrição |
+|----------|--------|-----------|
+| `/api/silver/products` | GET | Lista produtos com filtros (category, subcategory, platform, price, sales) |
+| `/api/silver/categories` | GET | Retorna hierarquia de categorias (L1 → L2 → L3) |
+| `/api/silver/stats` | GET | Estatísticas gerais |
+
+### Layout do Frontend
+
+```
+┌────────────┬─────────────────────────────────────────────────┐
+│ CATEGORIAS │ [Buscar] [Plataforma] [Preço] [Vendas]        │
+│            │                                                 │
+│ 🔊 Audio   │ ┌─────────────────────────────────────────────┐│
+│   1,092    │ │ Image │ Produto │ Fonte │ Cat │ Sub │ ...   ││
+│ 👗 Moda    │ ├───────┼─────────┼───────┼─────┼─────┤       ││
+│   1,095    │ │ 📷    │ Product │ AL-CN │ Aud │ Mic │       ││
+│ 📱 Eletrô… │ │ 📷    │ Product │ DL    │ Aud │ Fones│      ││
+│   1,208    │ └─────────────────────────────────────────────┘│
+│ ...        │                                                 │
+└────────────┴─────────────────────────────────────────────────┘
+```
+
+### Regras para o Frontend
+
+1. **Sem transformação de dados** — Mostra exatamente o que está no banco
+2. **Uso de `silver_categories`** — Única fonte de verdade para categorias
+3. **Filtros** — L1 (sidebar), L2 (subcategory), plataforma, preço, vendas
+4. **Busca** — Filtro por título do produto
 
 ## Contribuindo
 
