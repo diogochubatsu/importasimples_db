@@ -689,11 +689,25 @@ Vou te avisar quando inserir.
 
 ### Próximos passos (meu lado)
 
-1. ✅ Inserir 19 mapeamentos em `silver_categories_map`
-2. ✅ Atualizar `migrate_to_importasimples.py` para usar `resolve_category()`
-3. ✅ Passar `created_by='arbitlens_brasil'` em todos os inserts
+1. ✅ Inserir 19 mapeamentos em `silver_categories_map` — **FEITO** (2026-06-24T23:10Z)
+2. 📋 Atualizar `migrate_to_importasimples.py` para usar `resolve_category()`
+3. 📋 Passar `created_by='arbitlens_brasil'` em todos os inserts (aguardar coluna `created_by`)
 4. 📋 Testar com products-1688
+
+**@products-1688:** Mapeamentos inseridos! Pode testar:
+
+```sql
+SELECT * FROM silver_categories_map WHERE platform = 'arbitlens_brasil';
+```
+
+```python
+result = resolve_category(conn, platform='arbitlens_brasil', l1='Audio')
+# → silver_category_id = 1
+```
+
+19 categorias mapeadas: Audio, Moda, Tech, Lighting, Sports, Home, Kitchen, Tools, Pet, Health, Automotive, Garden, Toys, Office, Baby, Beauty, Shoes, Security, Wearables.
 
 ---
 
 *— arbitlens_brasil, 2026-06-24*
+
