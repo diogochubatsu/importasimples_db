@@ -807,4 +807,124 @@ ORDER BY cnt DESC;
 
 *— arbitlens_brasil, 2026-06-25*
 
+---
+
+## Update: BSR Export + Codebase Cleanup + Shared Resolver
+
+**Data:** 2026-06-25
+**Contexto:** Migração bronze completa, agora exportando dados BSR e limpando o codebase.
+
+### 1. Tabela `silver_bsr_history` criada
+
+Nova tabela no production DB para rastrear BSR (Best Seller Rank) ao longo do tempo:
+
+```sql
+CREATE TABLE silver_bsr_history (
+    id SERIAL PRIMARY KEY,
+    source VARCHAR(50) NOT NULL,
+    source_id VARCHAR(100) NOT NULL,
+    platform VARCHAR(20) NOT NULL,
+    silver_category_id INTEGER REFERENCES silver_categories(id),
+    bsr_rank INTEGER,
+    sales_count INTEGER,
+    price NUMERIC(12,2),
+    currency VARCHAR(10) DEFAULT 'BRL',
+    review_count INTEGER,
+    review_avg NUMERIC(3,2),
+    recorded_at TIMESTAMP DEFAULT NOW(),
+    UNIQUE(source, source_id, platform, recorded_at)
+);
+```
+
+**236 registros exportados** de `bsr_history` (local) → `silver_bsr_history` (production).
+
+**Distribuição:**
+
+| Silver Category | Registros | Com BSR Rank | Com Sales Count |
+|---|---|---|---|
+| Ferramentas | 24 | 21 | 22 |
+| Áudio | 24 | 19 | 19 |
+| Beleza | 22 | 19 | 19 |
+| Pets | 20 | 20 | 20 |
+| Moda | 19 | 19 | 19 |
+| Automotivo | 18 | 18 | 18 |
+| Eletrônicos | 17 | 12 | 12 |
+| Infantis | 17 | 17 | 17 |
+| Jardim | 16 | 16 | 16 |
+| Cozinha | 16 | 16 | 16 |
+| Esportes | 16 | 16 | 16 |
+| Casa | 13 | 12 | 12 |
+| Saúde | 11 | 11 | 11 |
+| Papelaria | 3 | 3 | 3 |
+
+**Plataformas:** amazon_br (330), amazon_us (480), ml (327)
+
+---
+
+### 2. Codebase cleanup
+
+Arquivos removidos do `scripts/`:
+- `amazon_shapewear.json` — dados scrapeados temporários
+- `amazon_shapewear_detail.json` — dados scrapeados temporários
+- `ml_bestsellers_brand.json` — dados scrapeados temporários
+- `category_ids.json` — referência antiga não utilizada
+- `daily_pipeline.sh` — substituído por `run_pipeline.py`
+- `setup_env.sh` — setup manual não mais necessário
+- `start_server.sh` — servidor gerenciado por outro meio
+
+**Scripts mantidos (7):**
+| Script | Função |
+|---|---|
+| `db.py` | Conexão DB local |
+| `migrate_to_importasimples.py` | Migração → production DB |
+| `scrape_bestsellers.py` | Extração Amazon BR/US |
+| `scrape_ml_bestsellers.py` | Extração ML |
+| `run_pipeline.py` | Pipeline principal |
+| `generate_embeddings.py` | CLIP embeddings |
+| `upload_images_to_bucket.py` | Upload GCP bucket |
+
+---
+
+### 3. Integração com `category_resolver.py` compartilhado
+
+**Antes:** Função inline `resolve_silver_category()` com query direta.
+
+**Depois:** Importa `resolve_category()` do `category_resolver.py` compartilhado no repo `importasimples_db`.
+
+```python
+# Antes (inline)
+def resolve_silver_category(conn, category_l1):
+    cur = conn.cursor()
+    cur.execute("SELECT ... FROM silver_categories_map WHERE ...")
+    ...
+
+# Depois (shared)
+from scripts.category_resolver import resolve_category
+result = resolve_category(conn, platform='arbitlens_brasil', l1='Audio')
+# → {'silver_category_id': 1, 'confidence': 1.0, 'match_level': 'L1'}
+```
+
+**Vantagem:** Se o resolver for atualizado no repo, todos os agentes ganham a melhoria automaticamente.
+
+**Cache:** Mapeamentos ainda são cached em memória para performance (22 mappings).
+
+---
+
+### Status completo
+
+| Item | Status |
+|---|---|
+| Mapeamentos em `silver_categories_map` | ✅ 22 inseridos |
+| `bronze_products.silver_category_id` | ✅ 1.127 produtos (1.012 com silver_id) |
+| `silver_bsr_history` | ✅ 236 registros exportados |
+| `category_resolver.py` compartilhado | ✅ Integrado |
+| Codebase cleanup | ✅ 7 arquivos removidos |
+| `created_by` column | ⏳ Aguardando products-1688 |
+| Teste cross-agent | ⏳ Aguardando products-1688 |
+
+---
+
+*— arbitlens_brasil, 2026-06-25*
+
+
 
