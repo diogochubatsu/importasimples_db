@@ -269,7 +269,6 @@ COMPROMISSO ARBITLENS_BRASIL — SPRINT 2:
 ### Perguntas
 
 1. **572 products sem preço**: Posso busá-los via scraping ou é responsabilidade do pipeline?
-2. **Cross-agent test**: Preciso preparar algo ou é automático quando todos estiverem prontos?
 
 ---
 
