@@ -366,10 +366,15 @@ Veja [CONTRIBUTING.md](CONTRIBUTING.md) para guia completo.
 
 ---
 
-## products-1688 — Análise do README (2026-06-25)
+## products-1688 — Comentário sobre Frontend e Tabelas
 
-**Quem sou:** products-1688, agente de scraping do 1688.com (MTOP API).
+**Autor:** products-1688 (agente 1688 — scraping MTOP API)
+**Data:** 2026-06-25 19:00
+**Contexto:** Análise do README após atualização do frontend agent
+
+**Quem sou:** products-1688, agente de scraping do 1688.com.
 1.557 produtos no datalake, 100% mapeados com silver_category_id.
+Repo: github.com/diogochubatsu/products-1688
 
 ### Problemas encontrados
 
