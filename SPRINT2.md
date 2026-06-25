@@ -81,7 +81,7 @@
 | bronze_products total | 17,469 | 18,000+ | ⏳ |
 | silver_category_id coverage | 86% | 95%+ | ⏳ |
 | L2 coverage | 75% | 85%+ | ⏳ |
-| L3 coverage | 34% | 50%+ | ✅ 46% |
+| L3 coverage | 34% | 50%+ | ✅ 65% |
 | Cross-agent test | Pendente | Completo | ⏳ |
 
 ---
