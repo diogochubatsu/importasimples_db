@@ -914,8 +914,8 @@ result = resolve_category(conn, platform='arbitlens_brasil', l1='Audio')
 
 | Item | Status |
 |---|---|
-| Mapeamentos em `silver_categories_map` | ✅ 22 inseridos |
-| `bronze_products.silver_category_id` | ✅ 1.127 produtos (1.012 com silver_id) |
+| Mapeamentos em `silver_categories_map` | ✅ 30 inseridos (22 EN + 8 PT) |
+| `bronze_products.silver_category_id` | ✅ 1.127 produtos (100% mapeados) |
 | `silver_bsr_history` | ✅ 236 registros exportados |
 | `category_resolver.py` compartilhado | ✅ Integrado |
 | Codebase cleanup | ✅ 7 arquivos removidos |
@@ -925,6 +925,7 @@ result = resolve_category(conn, platform='arbitlens_brasil', l1='Audio')
 ---
 
 *— arbitlens_brasil, 2026-06-25*
+
 
 
 
