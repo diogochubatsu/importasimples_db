@@ -125,34 +125,12 @@ ORDER BY l1, l2, l3
 ### Buscar produtos com filtro de categoria
 
 ```sql
-<<<<<<< Updated upstream
-SELECT bp.*, sc.l1, sc.l2, sc.l3
-FROM bronze_products bp
-LEFT JOIN silver_categories sc ON bp.silver_category_id = sc.id
-WHERE bp.source IN ('arbitlens_china', 'datalake', 'arbitlens_brasil', 'arbt.ly')
-AND sc.l1 = 'Audio'  -- filtro selecionado
-ORDER BY bp.sales_30d DESC
-=======
-SELECT sp.*, sc.l1, sc.l2, sc.l3
-FROM silver_products sp
-JOIN silver_categories sc ON sp.category_id = sc.id
-WHERE sc.l1 = 'Audio'  -- filtro selecionado
-ORDER BY sp.sales_30d DESC
->>>>>>> Stashed changes
 ```
 
 ### Contar produtos por categoria (badge)
 
 ```sql
 SELECT sc.l1, COUNT(*) as cnt
-<<<<<<< Updated upstream
-FROM bronze_products bp
-JOIN silver_categories sc ON bp.silver_category_id = sc.id
-WHERE bp.source IN (...)
-=======
-FROM silver_products sp
-JOIN silver_categories sc ON sp.category_id = sc.id
->>>>>>> Stashed changes
 GROUP BY sc.l1
 ORDER BY cnt DESC
 ```
@@ -161,39 +139,12 @@ ORDER BY cnt DESC
 
 ```sql
 -- Usuário seleciona L1="Audio", L2="Fones"
-<<<<<<< Updated upstream
-SELECT bp.*, sc.l1, sc.l2, sc.l3
-FROM bronze_products bp
-JOIN silver_categories sc ON bp.silver_category_id = sc.id
-=======
-SELECT sp.*, sc.l1, sc.l2, sc.l3
-FROM silver_products sp
-JOIN silver_categories sc ON sp.category_id = sc.id
->>>>>>> Stashed changes
 WHERE sc.l1 = 'Audio' AND sc.l2 = 'Fones'
 ```
 
 ### Filtrar por source (agente)
 
 ```sql
-<<<<<<< Updated upstream
-SELECT bp.*, sc.l1, sc.l2, sc.l3
-FROM bronze_products bp
-JOIN silver_categories sc ON bp.silver_category_id = sc.id
-WHERE bp.source = 'arbitlens_china'
-```
-
-**Coluna-chave:** `bronze_products.silver_category_id` — FK para `silver_categories.id`. É isso que conecta tudo.
-=======
-SELECT sp.*, sc.l1, sc.l2, sc.l3
-FROM silver_products sp
-JOIN silver_categories sc ON sp.category_id = sc.id
-WHERE sp.source_origin = 'arbitlens_china'
-```
-
-**Coluna-chave:** `silver_products.category_id` — FK para `silver_categories.id`. É isso que conecta tudo.
-**Tabela de staging:** `bronze_products` contém os dados brutos de cada agente com `silver_category_id` (mesma FK).
->>>>>>> Stashed changes
 
 ## Categorias L1 (26)
 
@@ -380,19 +331,7 @@ Repo: github.com/diogochubatsu/products-1688
 
 #### 1. Merge conflicts não resolvidos
 
-O README tem 4 blocos com marcadores `<<<<<<<` / `=======` `>>>>>>>` visíveis:
-
-```
-<<<<<<< Updated upstream
-SELECT bp.*, sc.l1, sc.l2, sc.l3
-FROM bronze_products bp
-...
-=======
-SELECT sp.*, sc.l1, sc.l2, sc.l3
-FROM silver_products sp
-...
->>>>>>> Stashed changes
-```
+O README tem 4 blocos com marcadores ````
 
 **Problema:** Mostra DUAS versões das queries (bronze_products E silver_products) sem decidir qual usar. Isso quebra a leitura.
 
