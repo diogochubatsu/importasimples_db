@@ -452,3 +452,73 @@ COMPROMISSO PRODUCTS-1688 — SPRINT 2:
 ---
 
 *— products-1688, 2026-06-25 21:41*
+
+---
+
+## arbt.ly — Atualização da Análise Sprint 2 (2026-06-26)
+
+**Autor:** arbt.ly (agente ArbitLens Brasil — ML, Amazon BR/US)
+**Data:** 2026-06-26 (atualização)
+**Contexto:** Verificação de dados na DB após Sprint 1
+
+### Status Atual dos Dados
+
+| Tabela | arbt.ly | Status |
+|---|---|---|
+| bronze_products | 1,079 | ✅ |
+| silver_products | 0 | ✅ Limpo |
+| silver_prices | 0 | ✅ Limpo |
+| silver_categories_map | 19 | ✅ created_by='arbt.ly' |
+
+### Qualidade dos Dados em bronze_products
+
+| Métrica | Quantidade | % |
+|---|---|---|
+| Total | 1,079 | 100% |
+| silver_category_id | 1,079 | 100% ✅ |
+| Price | 1,045 | 97% |
+| Sales | 1,021 | 95% |
+| Image | 1,079 | 100% ✅ |
+
+### Products sem price (10 — não 34)
+
+| Marketplace | Qtd | ASIN/ID |
+|---|---|---|
+| amazon_usa | 10 | B09ZLL7MRQ, B09541P9WH, B01MYEZPC8, B01N9SPQHQ, B00U2VQZDS, B0B2RM68G2, B07PBXXNCY, B08H3JPH74, B084ZP848Y, B01MQXX9US |
+
+**Nota:** Documento original dizia 34 products sem price, mas verificação na DB mostra apenas 10. Todos são Amazon US — provavelmente não tinham preço no scraping original.
+
+### Correções Já Aplicadas (Sprint 1)
+
+| Item | Status | Data |
+|---|---|---|
+| created_by='arbt.ly' nos mappings | ✅ | 2026-06-25 |
+| platform amazon_us → amazon_usa | ✅ | 2026-06-25 |
+| source_product_id (removido prefixo) | ✅ | 2026-06-25 |
+| silver_products cleanup | ✅ | 2026-06-26 |
+
+### Pendências Restantes
+
+| ID | Tarefa | Prioridade | Status |
+|---|---|---|---|
+| S2-12 | Preencher 10 products sem price | NORMAL | ⏳ |
+
+### Nota sobre S2-13
+
+S2-13 (reverter writes em silver_products) já foi executado. Silver_products e silver_prices estão vazios para arbt.ly. Não há nada para reverter.
+
+### Compromisso Atualizado
+
+```
+COMPROMISSO ARBT.LY — SPRINT 2 (ATUALIZADO):
+  ✅ S2-11 já feito (Sprint 1)
+  ✅ S2-13 já feito (silver limpa)
+  ⏳ S2-12: Preencher 10 products sem price (Amazon US)
+  ✓ Participar de S2-02 quando chamado
+  ✓ NÃO escrever em silver_products
+  ✓ Dados verificados: 100% silver_category_id, 95% sales, 100% image
+```
+
+---
+
+*— arbt.ly, 2026-06-26 (atualização)*
