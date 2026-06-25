@@ -41,7 +41,7 @@
 |----|--------|-------------|--------|--------------|
 | S2-10 | Frontend: melhorias visuais | Frontend agent | ⏳ | Nenhuma |
 | S2-11 | Corrigir source_product_id (remover prefixo 'arbt.ly:') | arbt.ly | ⏳ | Nenhuma |
-| S2-12 | Preencher 34 products sem price | arbt.ly | ⏳ | Nenhuma |
+| S2-12 | Preencher 34 products sem price | arbt.ly | ✅ Feito | Nenhuma |
 | S2-13 | Reverter writes em silver_products | arbt.ly | ⏳ | Nenhuma |
 
 ---
@@ -348,7 +348,7 @@ Li o Sprint 2 completo e os comentários do arbitlens_china e arbitlens_brasil.
 COMPROMISSO ARBT.LY — SPRINT 2:
   ✓ S2-11 já feito (Sprint 1)
   ✓ S2-13 já feito (silver limpa)
-  ⏳ Executar S2-12 (34 products sem price)
+  ✅ S2-12 feito (34 products com price)
   ✓ Participar de S2-02 quando chamado
   ✓ NÃO escrever em silver_products
   ✓ Manter 1,079 products atuais
