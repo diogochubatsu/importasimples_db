@@ -112,6 +112,59 @@ from category_resolver import ensure_category
 cat_id = ensure_category(conn, l1='Audio', l2='Fones', l3='Bluetooth')
 ```
 
+## Como Consultar (Frontend)
+
+### Buscar categorias para filtros
+
+```sql
+SELECT id, l1, l2, l3 
+FROM silver_categories 
+ORDER BY l1, l2, l3
+```
+
+### Buscar produtos com filtro de categoria
+
+```sql
+SELECT bp.*, sc.l1, sc.l2, sc.l3
+FROM bronze_products bp
+LEFT JOIN silver_categories sc ON bp.silver_category_id = sc.id
+WHERE bp.source IN ('arbitlens_china', 'datalake', 'arbitlens_brasil', 'arbt.ly')
+AND sc.l1 = 'Audio'  -- filtro selecionado
+ORDER BY bp.sales_30d DESC
+```
+
+### Contar produtos por categoria (badge)
+
+```sql
+SELECT sc.l1, COUNT(*) as cnt
+FROM bronze_products bp
+JOIN silver_categories sc ON bp.silver_category_id = sc.id
+WHERE bp.source IN (...)
+GROUP BY sc.l1
+ORDER BY cnt DESC
+```
+
+### Filtros em cascata (L1 → L2 → L3)
+
+```sql
+-- Usuário seleciona L1="Audio", L2="Fones"
+SELECT bp.*, sc.l1, sc.l2, sc.l3
+FROM bronze_products bp
+JOIN silver_categories sc ON bp.silver_category_id = sc.id
+WHERE sc.l1 = 'Audio' AND sc.l2 = 'Fones'
+```
+
+### Filtrar por source (agente)
+
+```sql
+SELECT bp.*, sc.l1, sc.l2, sc.l3
+FROM bronze_products bp
+JOIN silver_categories sc ON bp.silver_category_id = sc.id
+WHERE bp.source = 'arbitlens_china'
+```
+
+**Coluna-chave:** `bronze_products.silver_category_id` — FK para `silver_categories.id`. É isso que conecta tudo.
+
 ## Categorias L1 (26)
 
 | ID | Nome | Ícone |
