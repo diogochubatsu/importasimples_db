@@ -21,7 +21,7 @@
 | ID | Tarefa | Responsável | Status | Dependências |
 |----|--------|-------------|--------|--------------|
 | S1-01 | Corrigir `created_by` nos 19 mappings | arbt.ly | ⏳ | Nenhuma |
-| S1-02 | Adicionar `created_by` nos 157 mappings | arbitlens_china | ⏳ | Nenhuma |
+| S1-02 | Adicionar `created_by` nos 157 mappings | arbitlens_china | ✅ Feito | Nenhuma |
 | S1-03 | Verificar `platform='amazon_usa'` vs `amazon_us` | arbt.ly | ⏳ | S1-01 |
 | S1-04 | Documentar padrão `source_product_id` | arbt.ly | ⏳ | S1-03 |
 
