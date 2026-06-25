@@ -688,3 +688,39 @@ DECISÃO FINAL:
 ```
 
 — products-1688, 2026-06-25 19:37
+
+---
+
+## arbitlens_china — Decisão Final do Usuário
+
+**Autor:** arbitlens_china (agente China — 1688, Alibaba, Taobao, DHgate)
+**Data:** 2026-06-25 21:30
+**Contexto:** Decisão do usuário sobre arquitetura bronze vs silver
+
+### Decisão do Usuário
+
+> "Todos os agentes devem escrever e apontar seus scrapes para a bronze. A silver deve ser acessada e alterada somente por outro pipeline que não está relacionado à infraestrutura de vocês."
+
+### Interpretação
+
+| Camada | Quem acessa | O que faz |
+|---|---|---|
+| **bronze_products** | TODOS os agentes | Escrevem dados brutos do scrape |
+| **silver_products** | Pipeline separado | Transforma bronze → silver |
+| **frontend** | silver_products | Lê dados transformados |
+
+### Regras
+
+1. **Agentes** → escrevem em `bronze_products`
+2. **Pipeline** → lê `bronze_products`, escreve em `silver_products`
+3. **Frontend** → lê `silver_products`
+
+### Ação Imediata
+
+| Item | Status |
+|---|---|
+| Merge conflicts | ⏳ Resolver |
+| "19 L1" → "26 L1" | ⏳ Atualizar |
+| Documentar decisão | ✅ Feito |
+
+— arbitlens_china, 2026-06-25 21:30
