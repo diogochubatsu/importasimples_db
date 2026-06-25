@@ -30,7 +30,7 @@ Cada agente é **responsável** por adicionar seus mapeamentos de categoria em `
 |---|---|---|---|---|
 | 🇨🇳 **China (ArbitLens)** | `arbitlens_china` | 1688, Alibaba, Taobao, DHgate | 157 (L1+L2+L3) | ✅ Pronto |
 | 🇨🇳 **DataLake (products-1688)** | `datalake` | 1688 (MTOP API) | 264 (L1+L2+L3) | ✅ V1 Production |
-| 🇧🇷 **ArbitLens Brasil** | `arbitlens_brasil` | ML, Amazon | 22 (L1) | ✅ Pronto |
+| 🇧🇷 **ArbitLens Brasil** | `arbitlens_brasil` | ML, Amazon | 30 (L1) | ✅ Pronto |
 | 🛒 **arbt.ly** | `arbt.ly` | ML, Amazon BR/US | 76 (L1) | ✅ Pronto |
 
 > **⚠️ Importante:** `arbt.ly` e `arbitlens_brasil` são agentes diferentes com sources diferentes no banco.
@@ -40,7 +40,7 @@ Cada agente é **responsável** por adicionar seus mapeamentos de categoria em `
 |---|---|---|---|---|
 | `arbitlens_china` | 13,706 | 11,192 (82%) | 9,190 (67%) | 4,163 (30%) |
 | `datalake` | 1,557 | 1,557 (100%) | 1,557 (100%) | 530 (34%) |
-| `arbitlens_brasil` | 1,127 | 0 (0%) | 1,127 (100%) | 1,127 (100%) |
+| `arbitlens_brasil` | 1,127 | 1,127 (100%) | 1,127 (100%) | 1,127 (100%) |
 | `arbt.ly` | 1,079 | 1,079 (100%) | 1,079 (100%) | 1,079 (100%) |
 
 **Regra:** Cada agente usa `add_platform_mapping()` para registrar seus IDs de plataforma → `silver_categories`. Ninguém modifica os mappings de outros.
@@ -125,21 +125,34 @@ ORDER BY l1, l2, l3
 ### Buscar produtos com filtro de categoria
 
 ```sql
+<<<<<<< Updated upstream
 SELECT bp.*, sc.l1, sc.l2, sc.l3
 FROM bronze_products bp
 LEFT JOIN silver_categories sc ON bp.silver_category_id = sc.id
 WHERE bp.source IN ('arbitlens_china', 'datalake', 'arbitlens_brasil', 'arbt.ly')
 AND sc.l1 = 'Audio'  -- filtro selecionado
 ORDER BY bp.sales_30d DESC
+=======
+SELECT sp.*, sc.l1, sc.l2, sc.l3
+FROM silver_products sp
+JOIN silver_categories sc ON sp.category_id = sc.id
+WHERE sc.l1 = 'Audio'  -- filtro selecionado
+ORDER BY sp.sales_30d DESC
+>>>>>>> Stashed changes
 ```
 
 ### Contar produtos por categoria (badge)
 
 ```sql
 SELECT sc.l1, COUNT(*) as cnt
+<<<<<<< Updated upstream
 FROM bronze_products bp
 JOIN silver_categories sc ON bp.silver_category_id = sc.id
 WHERE bp.source IN (...)
+=======
+FROM silver_products sp
+JOIN silver_categories sc ON sp.category_id = sc.id
+>>>>>>> Stashed changes
 GROUP BY sc.l1
 ORDER BY cnt DESC
 ```
@@ -148,15 +161,22 @@ ORDER BY cnt DESC
 
 ```sql
 -- Usuário seleciona L1="Audio", L2="Fones"
+<<<<<<< Updated upstream
 SELECT bp.*, sc.l1, sc.l2, sc.l3
 FROM bronze_products bp
 JOIN silver_categories sc ON bp.silver_category_id = sc.id
+=======
+SELECT sp.*, sc.l1, sc.l2, sc.l3
+FROM silver_products sp
+JOIN silver_categories sc ON sp.category_id = sc.id
+>>>>>>> Stashed changes
 WHERE sc.l1 = 'Audio' AND sc.l2 = 'Fones'
 ```
 
 ### Filtrar por source (agente)
 
 ```sql
+<<<<<<< Updated upstream
 SELECT bp.*, sc.l1, sc.l2, sc.l3
 FROM bronze_products bp
 JOIN silver_categories sc ON bp.silver_category_id = sc.id
@@ -164,6 +184,16 @@ WHERE bp.source = 'arbitlens_china'
 ```
 
 **Coluna-chave:** `bronze_products.silver_category_id` — FK para `silver_categories.id`. É isso que conecta tudo.
+=======
+SELECT sp.*, sc.l1, sc.l2, sc.l3
+FROM silver_products sp
+JOIN silver_categories sc ON sp.category_id = sc.id
+WHERE sp.source_origin = 'arbitlens_china'
+```
+
+**Coluna-chave:** `silver_products.category_id` — FK para `silver_categories.id`. É isso que conecta tudo.
+**Tabela de staging:** `bronze_products` contém os dados brutos de cada agente com `silver_category_id` (mesma FK).
+>>>>>>> Stashed changes
 
 ## Categorias L1 (26)
 
@@ -312,7 +342,7 @@ Veja [CONTRIBUTING.md](CONTRIBUTING.md) para guia completo.
 
 ### created_by Column
 - Adicionada em `silver_categories_map`
-- Backfilled: products-1688 (264), arbitlens_brasil (22), arbt.ly (76)
+- Backfilled: products-1688 (264), arbitlens_brasil (30), arbt.ly (76)
 - Permite rastrear quem adicionou cada mapeamento
 
 ### export_categories.py
@@ -321,7 +351,7 @@ Veja [CONTRIBUTING.md](CONTRIBUTING.md) para guia completo.
 - Snapshots com timestamp pra backup/auditoria
 
 ### Cross-Agent Test
-- 22/22 categorias arbitlens_brasil resolvem corretamente
+- 30/30 categorias arbitlens_brasil resolvem corretamente
 - resolve_category() funciona com platform='arbitlens_brasil'
 - 100% de cobertura
 
@@ -329,6 +359,6 @@ Veja [CONTRIBUTING.md](CONTRIBUTING.md) para guia completo.
 | Agente | Mapeamentos | Status |
 |---|---|---|
 | products-1688 | 264 | ✅ V1 Production |
-| arbitlens_brasil | 22 | ✅ Pronto |
+| arbitlens_brasil | 30 | ✅ Pronto |
 | arbt.ly | 76 | ✅ Pronto |
 | arbitlens_china | 157 | ✅ Pronto |
