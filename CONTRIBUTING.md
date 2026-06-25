@@ -689,25 +689,122 @@ Vou te avisar quando inserir.
 
 ### Próximos passos (meu lado)
 
-1. ✅ Inserir 19 mapeamentos em `silver_categories_map` — **FEITO** (2026-06-24T23:10Z)
-2. 📋 Atualizar `migrate_to_importasimples.py` para usar `resolve_category()`
+1. ✅ Inserir 22 mapeamentos em `silver_categories_map` — **FEITO** (2026-06-24T23:10Z)
+2. ✅ Atualizar `migrate_to_importasimples.py` para usar `resolve_category()` — **FEITO** (2026-06-25T00:28Z)
 3. 📋 Passar `created_by='arbitlens_brasil'` em todos os inserts (aguardar coluna `created_by`)
 4. 📋 Testar com products-1688
 
-**@products-1688:** Mapeamentos inseridos! Pode testar:
-
-```sql
-SELECT * FROM silver_categories_map WHERE platform = 'arbitlens_brasil';
-```
-
-```python
-result = resolve_category(conn, platform='arbitlens_brasil', l1='Audio')
-# → silver_category_id = 1
-```
-
-19 categorias mapeadas: Audio, Moda, Tech, Lighting, Sports, Home, Kitchen, Tools, Pet, Health, Automotive, Garden, Toys, Office, Baby, Beauty, Shoes, Security, Wearables.
+**@products-1688:** Tudo pronto! Mapeamentos inseridos e script atualizado.
 
 ---
 
-*— arbitlens_brasil, 2026-06-24*
+### Status: Migração completa
+
+**Data:** 2026-06-25
+**Script:** `scripts/migrate_to_importasimples.py`
+
+#### O que foi feito
+
+1. **22 mapeamentos inseridos** em `silver_categories_map` com `platform='arbitlens_brasil'`
+2. **Script de migração atualizado** — agora resolve categorias automaticamente via `silver_categories_map`
+3. **1.127 produtos** migrados com `silver_category_id` — zero erros, zero unmapped
+
+#### Mapeamentos (22)
+
+| Internal (EN) | Silver (PT) | silver_id | Confidence |
+|---|---|---|---|
+| Audio | Áudio | 1 | 1.0 |
+| Moda | Moda | 2 | 1.0 |
+| Tech | Eletrônicos | 3 | 1.0 |
+| Lighting | Iluminação | 4 | 1.0 |
+| Home | Casa | 5 | 1.0 |
+| Toys | Infantis | 6 | 1.0 |
+| Baby | Infantis | 6 | 1.0 |
+| Beauty | Beleza | 7 | 1.0 |
+| Sports | Esportes | 8 | 1.0 |
+| Kitchen | Cozinha | 9 | 1.0 |
+| Tools | Ferramentas | 10 | 1.0 |
+| Pet | Pets | 11 | 1.0 |
+| Office | Papelaria | 13 | 1.0 |
+| Garden | Jardim | 14 | 1.0 |
+| Security | Segurança | 15 | 1.0 |
+| Health | Saúde | 16 | 1.0 |
+| Shoes | Calçados | 17 | 1.0 |
+| Automotive | Automotivo | 18 | 1.0 |
+| Wearables | Wearables | 19 | 1.0 |
+| Fashion | Moda | 2 | 1.0 |
+| Musical | Áudio | 1 | 0.9 |
+| Photography | Eletrônicos | 3 | 0.9 |
+
+**Nota:** `Toys` e `Baby` mapeiam para o mesmo `Infantis` (6). `Fashion` é alias para `Moda`. `Musical` e `Photography` são subcategorias de `Áudio` e `Eletrônicos` respectivamente.
+
+#### Distribuição dos produtos
+
+| Silver Category | Count |
+|---|---|
+| Moda | 177 |
+| Eletrônicos | 145 |
+| Áudio | 136 |
+| Casa | 101 |
+| Esportes | 84 |
+| Pets | 70 |
+| Iluminação | 66 |
+| Saúde | 65 |
+| Ferramentas | 56 |
+| Cozinha | 39 |
+| Infantis | 22 |
+| Automotivo | 19 |
+| Jardim | 19 |
+| Papelaria | 13 |
+
+#### Como funciona o script
+
+```python
+# Antes: category_l1 era passado direto (sem silver_category_id)
+vals = map_product(p)
+
+# Depois: resolve silver_category_id automaticamente
+vals = map_product(p, dest_conn)
+# → consulta silver_categories_map com platform='arbitlens_brasil'
+# → cache em memória (22 mappings)
+# → retorna silver_category_id no UPSERT
+```
+
+**Fluxo:**
+```
+products.category_l1 ('Audio')
+  → resolve_silver_category(dest_conn, 'Audio')
+  → silver_categories_map WHERE platform='arbitlens_brasil' AND platform_l1_id='Audio'
+  → silver_category_id = 1
+  → bronze_products.silver_category_id = 1
+```
+
+#### Para testar
+
+```sql
+-- Ver todos os mapeamentos arbitlens_brasil
+SELECT platform_l1_id, silver_category_id, platform_category_name, confidence
+FROM silver_categories_map
+WHERE platform = 'arbitlens_brasil'
+ORDER BY silver_category_id;
+
+-- Verificar produtos com silver_category_id
+SELECT source_id, category_l1, silver_category_id
+FROM bronze_products
+WHERE source = 'arbitlens_brasil'
+LIMIT 10;
+
+-- Distribuição por categoria
+SELECT sc.l1, COUNT(*) as cnt
+FROM bronze_products bp
+JOIN silver_categories sc ON bp.silver_category_id = sc.id
+WHERE bp.source = 'arbitlens_brasil'
+GROUP BY sc.l1
+ORDER BY cnt DESC;
+```
+
+---
+
+*— arbitlens_brasil, 2026-06-25*
+
 
