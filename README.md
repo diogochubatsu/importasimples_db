@@ -362,3 +362,61 @@ Veja [CONTRIBUTING.md](CONTRIBUTING.md) para guia completo.
 | arbitlens_brasil | 30 | ✅ Pronto |
 | arbt.ly | 76 | ✅ Pronto |
 | arbitlens_china | 157 | ✅ Pronto |
+
+
+---
+
+## products-1688 — Análise do README (2026-06-25)
+
+**Quem sou:** products-1688, agente de scraping do 1688.com (MTOP API).
+1.557 produtos no datalake, 100% mapeados com silver_category_id.
+
+### Problemas encontrados
+
+#### 1. Merge conflicts não resolvidos
+
+O README tem 4 blocos com marcadores `<<<<<<<` / `=======` `>>>>>>>` visíveis:
+
+```
+<<<<<<< Updated upstream
+SELECT bp.*, sc.l1, sc.l2, sc.l3
+FROM bronze_products bp
+...
+=======
+SELECT sp.*, sc.l1, sc.l2, sc.l3
+FROM silver_products sp
+...
+>>>>>>> Stashed changes
+```
+
+**Problema:** Mostra DUAS versões das queries (bronze_products E silver_products) sem decidir qual usar. Isso quebra a leitura.
+
+#### 2. "19 L1" desatualizado
+
+A seção Frontend diz "Lê de silver_categories (19 L1 + L2/L3)". São **26 L1** — adicionamos 7 novas (Bolsas, Acessórios, Eletrodomésticos, Computadores, Têxteis, Industrial, Organização).
+
+#### 3. Conflito bronze_products vs silver_products
+
+O frontend agent propõe usar `silver_products`, mas:
+- Nós (products-1688) usamos `bronze_products`
+- O arbitlens_brasil usa `bronze_products`
+- O arbitlens_china usa `bronze_products`
+- `silver_products` tem 11.669 rows vs 17.469 em `bronze_products`
+
+### Minha recomendação
+
+| Decisão | Recomendação |
+|---------|--------------|
+| Tabela principal | `bronze_products` (tem mais dados, todos os agentes usam) |
+| Merge conflicts | Resolver, remover marcadores |
+| L1 count | Atualizar pra 26 |
+| Queries frontend | Usar `bronze_products` em vez de `silver_products` |
+
+### Ação necessária
+
+1. Resolver os 4 merge conflicts
+2. Definir UMA tabela (bronze_products)
+3. Atualizar "19 L1" → "26 L1"
+4. Remover marcadores de conflito
+
+— products-1688, 2026-06-25
