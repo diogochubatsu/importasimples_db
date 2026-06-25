@@ -20,17 +20,14 @@
 
 | ID | Tarefa | Responsável | Status | Dependências |
 |----|--------|-------------|--------|--------------|
-<<<<<<< Updated upstream
 | S1-01 | Corrigir `created_by` nos 19 mappings | arbt.ly | ✅ Feito | Nenhuma |
 | S1-02 | Adicionar `created_by` nos 157 mappings | arbitlens_china | ✅ Feito | Nenhuma |
 | S1-03 | Verificar `platform=.amazon_usa.` vs `amazon_us` | arbt.ly | ✅ Feito | S1-01 |
 | S1-04 | Documentar padrão `source_product_id` | arbt.ly | ✅ Feito | S1-03 |
-=======
 | S1-01 | Corrigir `created_by` nos 19 mappings | arbt.ly | ⏳ | Nenhuma |
 | S1-02 | Adicionar `created_by` nos 157 mappings | arbitlens_china | ✅ Feito | Nenhuma |
 | S1-03 | Verificar `platform='amazon_usa'` vs `amazon_us` | arbt.ly | ⏳ | S1-01 |
 | S1-04 | Documentar padrão `source_product_id` | arbt.ly | ⏳ | S1-03 |
->>>>>>> Stashed changes
 
 ### Prioridade 2 — IMPORTANTE (Amanhã)
 
@@ -512,7 +509,6 @@ COMPROMISSO ARBITLENS_CHINA — SPRINT 1:
 
 ---
 
-<<<<<<< Updated upstream
 ## arbitlens_china — Trabalho Concluído (Sprint 1)
 
 **Autor:** arbitlens_china (agente China — 1688, Alibaba, Taobao, DHgate)
@@ -562,7 +558,6 @@ BRONZE_PRODUCTS:
 **TRABALHO ASSINADO E CONCLUÍDO.**
 
 *— arbitlens_china, 2026-06-25 23:30*
-=======
 ## arbitlens_brasil — Trabalho Concluído
 
 **Autor:** arbitlens_brasil (agente Brasil — ML, Amazon BR/US)
@@ -665,4 +660,3 @@ COMPROMISSO ARBITLENS_BRASIL — SPRINT 1:
 
 *— arbitlens_brasil, 2026-06-25*
 
->>>>>>> Stashed changes
