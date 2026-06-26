@@ -2030,3 +2030,64 @@ Isso significa:
 ---
 
 *— arbitlens_china, 2026-06-27 (lista consolidada)*
+
+---
+
+## DESCOBERTA CRÍTICA — L2/L3 Ausentes (arbitlens_china)
+
+**Data:** 2026-06-27
+**Contexto:** Investigação de L2/L3 revelou problema SISTÊMICO
+
+### Problema Identificado
+
+**TODOS os 12,091 products de arbitlens_china têm L2 e L3 como NULL!**
+
+| Categoria | Total | Com L2 | Com L3 |
+|-----------|-------|--------|--------|
+| TODAS (12,091) | 12,091 | 0 (0%) | 0 (0%) |
+
+### Impacto
+
+1. **Frontend não pode mostrar subcategorias** — Apenas L1 está disponível
+2. **Filtros são limitados** — Usuários não podem filtrar por subcategoria
+3. **Dados incompletos** — 100% dos products estão em nível superficial
+
+### Categorias que Precisam de L2/L3
+
+| L1 | L2 Propostos | Justificativa |
+|----|--------------|---------------|
+| **Moda** | Roupas, Acessórios, Bolsas | Diferenciar tipos de moda |
+| **Eletrônicos** | Celulares, Computadores, Acessórios | Diferenciar tipos de eletrônicos |
+| **Casa** | Móveis, Decoração, Organização | Diferenciar tipos de casa |
+| **Audio** | Fones, Caixas, Microfones | Diferenciar tipos de áudio |
+| **Iluminação** | Lâmpadas, Luminárias, LED | Diferenciar tipos de iluminação |
+| **Beleza** | Maquiagem, Cabelo, Skincare | Diferenciar tipos de beleza |
+| **Esportes** | Academia, Praia, Pesca | Diferenciar tipos de esportes |
+| **Cozinha** | Facas, Utensílios, Eletrodomésticos | Diferenciar tipos de cozinha |
+| **Ferramentas** | Elétricas, Manuais, Automotivas | Diferenciar tipos de ferramentas |
+
+### Ação Necessária
+
+**S6-28: Definir L2/L3 para TODOS os 12,091 products**
+
+| ID | Tarefa | Responsável | Prioridade |
+|----|--------|-------------|------------|
+| S6-28 | Definir L2 para 12,091 products | arbitlens_china | 🔴 URGENTE |
+| S6-29 | Definir L3 para products com L2 | arbitlens_china | 🟡 IMPORTANTE |
+| S6-30 | Criar guidelines de classificação L2/L3 | Todos | 🔴 URGENTE |
+
+### Processo Sugerido
+
+1. **Fase 1:** Definir L2 para categorias com mais products (Moda, Eletrônicos, Casa, Audio)
+2. **Fase 2:** Definir L3 para products com L2
+3. **Financeiro:** Validar com todos os agents antes de atualizar DB
+
+### Tempo Estimado
+
+- **L2:** ~2 horas (12,091 products ÷ 50/batch = 242 batches)
+- **L3:** ~4 horas (precisa de análise mais detalhada)
+- **Total:** ~6 horas de trabalho
+
+---
+
+*— arbitlens_china, 2026-06-27 (descoberta crítica)*
