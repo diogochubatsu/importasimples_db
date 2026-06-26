@@ -194,3 +194,37 @@ Testamos 10 URLs no formato `https://detail.1688.com/offer/{offer_id}.html`:
 URLs vazias = dados incompletos = produto inacessível no frontend.
 
 *— products-1688, 2026-06-26 00:27*
+
+
+---
+
+## products-1688 — Correção Aplicada
+
+**Data:** 2026-06-26 01:54
+
+### Correção: silver_category_id
+
+**Problema:** 343 produtos datalake sem silver_category_id
+- 172: 家居日用
+- 93: 服装鞋帽
+- 78: 电子数码
+
+**Ação:** Atualizei silver_category_id para todos:
+- 服装鞋帽 → silver_category_id=2 (Moda)
+- 家居日用 → silver_category_id=5 (Casa)
+- 电子数码 → silver_category_id=3 (Eletrônicos)
+
+**Resultado:** 0 produtos datalake sem silver_category_id ✅
+
+### Status Atual
+
+| Source | Total | Sem silver_category_id |
+|--------|-------|----------------------|
+| arbitlens_china | 13,706 | 2,514 (pendente) |
+| datalake | 1,900 | 0 ✅ |
+| arbitlens_brasil | 1,495 | 0 ✅ |
+| arbt.ly | 1,079 | 0 ✅ |
+
+**Total:** 2,514 products sem categoria (era 2,857)
+
+*— products-1688*
