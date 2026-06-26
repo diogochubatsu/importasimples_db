@@ -83,7 +83,7 @@ O projeto ImportaSimples tem 4 agentes de scraping que entregam dados para `bron
 
 - **ArbitLens frontend** (Next.js) — Dashboard, Table, Categories, Matches, Clusters
 - **15 API endpoints** — explore, search, taxonomy, stats, matches, clusters
-- **18,384 produtos** em bronze_products (4 sources)
+- **18,180 produtos** em bronze_products (4 sources)
 - **26 L1, 117 L2, 238 L3** categorias em silver_categories
 
 ### O que falta?
@@ -119,7 +119,7 @@ Plataforma de inteligência de produtos para importadores brasileiros. Rastreamo
           ▼                ▼                ▼              ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │                    bronze_products (staging)                     │
-│              18,384 produtos · UNIQUE(source, source_id)        │
+│              18,180 produtos · UNIQUE(source, source_id)        │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
@@ -147,14 +147,14 @@ Plataforma de inteligência de produtos para importadores brasileiros. Rastreamo
 |--------|--------|-------------|----------|-----------|
 | **arbitlens_china** | `arbitlens_china` | Rakumart (1688, Alibaba, Taobao, DHgate) | 13,706 | Scraping principal via proxy Rakumart |
 | **products-1688** | `datalake` | 1688 (MTOP API) | 1,900 | Scraping direto 1688 via API mobile |
-| **arbitlens_brasil** | `arbitlens_brasil` | ML, Amazon BR/US | 1,699 | Scraping marketplaces brasileiros |
+| **arbitlens_brasil** | `arbitlens_brasil` | ML, Amazon BR/US | 1,495 | Scraping marketplaces brasileiros |
 | **arbt.ly** | `arbt.ly` | ML, Amazon BR/US | 1,079 | Scraping marketplaces brasileiros |
 
 **⚠️ Importante:** `arbt.ly` e `arbitlens_brasil` são agentes DIFERENTES com sources DIFERENTES no banco.
 
 #### Estado Atual (Jun 2026)
 
-- **Produtos:** 18,384 em bronze_products
+- **Produtos:** 18,180 em bronze_products
 - **Categorias:** 26 L1, 117 L2, 238 L3 em silver_categories
 - **Mapeamentos:** 389 em silver_categories_map
 - **Pipeline:** bronze→silver ainda não implementado
@@ -389,9 +389,9 @@ ORDER BY bp.sales_30d DESC;
 |--------|----------|----|----|----|---------| ------|
 | arbitlens_china | 13,706 | 82% | 67% | 30% | 100% | 100% |
 | datalake | 1,900 | 100% | 100% | 46% | 100% | 100% |
-| arbitlens_brasil | 1,699 | 100% | 100% | 100% | 100% | 100% |
+| arbitlens_brasil | 1,495 | 100% | 100% | 100% | 100% | 100% |
 | arbt.ly | 1,079 | 100% | 100% | 100% | 100% | 97% |
-| **Total** | **18,384** | **87%** | **76%** | **65%** | **100%** | **100%** |
+| **Total** | **18,180** | **87%** | **76%** | **65%** | **100%** | **100%** |
 
 #### Acesso ao Banco de Dados
 
@@ -533,7 +533,7 @@ GET /api/categories/{l1}/stats
 │  ⚽ Espor 345│  ← 1 2 3 ... 48 →                              │
 │              │                                                  │
 ├──────────────┴──────────────────────────────────────────────────┤
-│  18,384 produtos · 26 categorias · 4 marketplaces              │
+│  18,180 produtos · 26 categorias · 4 marketplaces              │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -619,7 +619,7 @@ GET /api/warehouse/sales-ranking?category=...&limit=...
 │  DATA WAREHOUSE                                        [Export] │
 ├─────────────────────────────────────────────────────────────────┤
 │  ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐  │
-│  │ 18,384  │ │   26    │ │  4      │ │ R$ 89   │ │  1.2k   │  │
+│  │ 18,180  │ │   26    │ │  4      │ │ R$ 89   │ │  1.2k   │  │
 │  │ Produtos│ │ Cats    │ │ Sources │ │ Médio   │ │ Vendas  │  │
 │  └─────────┘ └─────────┘ └─────────┘ └─────────┘ └─────────┘  │
 ├─────────────────────────────────────────────────────────────────┤
@@ -1063,7 +1063,7 @@ Neste momento, NÃO teremos matching de produtos entre plataformas. O matching �
 
 **Nota:** arbt.ly e arbitlens_brasil são agentes DIFERENTES:
 - arbt.ly → source = 'arbt.ly' (1,079 produtos)
-- arbitlens_brasil → source = 'arbitlens_brasil' (1,699 produtos)
+- arbitlens_brasil → source = 'arbitlens_brasil' (1,495 produtos)
 
 #### 3. Sales Semantics (CRITICAL)
 
@@ -1124,9 +1124,9 @@ Documentação de scraping em `docs/scraping_brasil.md`.
 
 | Métrica | Documento | Real (verificado hoje) |
 |---|---|---|
-| Total products | 18,384 | **18,180** (-204) |
-| arbitlens_brasil | 1,699 | **1,495** (-204, limpei orfãos) |
-| L1 categories | 26 | **28** |
+| Total products | 18,180 | **18,180** |
+| arbitlens_brasil | 1,495 | **1,495** (limpei 204 orfãos) |
+| L1 categories | 26 | 26 ✅ |
 | L2 categories | 117 | **119** |
 | L3 categories | 238 | **235** |
 
@@ -1143,7 +1143,11 @@ Documentação de scraping em `docs/scraping_brasil.md`.
 | image_url | 53 | 0.3% | ⚠️ Sem imagem = card quebrado |
 | category_l1 | 4 | 0.02% | ⚠️ Sem L1 = invisível |
 
-**2,857 products sem `silver_category_id`** — isso é 15.7% do banco. O frontend não vai conseguir mostrar esses products em nenhuma categoria. O pipeline bronze→silver precisa resolver isso ANTES do frontend.
+**2,857 products sem `silver_category_id`** — isso é 15.7% do banco. Distribuição:
+- **2,514 arbitlens_china** (18.3% do source) — produtos Rakumart sem mapeamento
+- **343 datalake** (18.1% do source) — produtos 1688 sem mapeamento
+
+O frontend não vai conseguir mostrar esses products em nenhuma categoria. O re-scraping de categorias (S2-01 no Sprint 2) precisa resolver isso.
 
 #### 3. `price_brl` vs `price` — confusão de moeda
 
@@ -1158,9 +1162,13 @@ O documento usa `price_brl` nas queries, mas **2,980 products** têm `price` mas
 WHERE bp.price_brl BETWEEN 50 AND 200
 ```
 
-**Problema:** 16.4% dos products não têm `price_brl`. Esses products são invisíveis para filtros de preço.
+**Problema:** 16.4% dos products não têm `price_brl`. Distribuição por moeda:
+- **1,626 CNY** (datalake) — preço em yuans, precisa conversão CNY→BRL
+- **418 USD** (arbitlens_brasil) — preço em dólares
+- **301 USD** (arbt.ly) — preço em dólares
+- **245 BRL** (arbitlens_brasil) — preço em reais mas `price_brl` é NULL (dados antigos)
 
-**Solução:** Frontend precisa de lógica de conversão ou usar `price` + `currency` e converter no backend.
+**Solução:** Frontend precisa de lógica de conversão ou usar `price` + `currency` e converter no backend. Taxa de conversão CNY→BRL ≈ 0.80, USD→BRL ≈ 5.00.
 
 #### 4. Sales semantics — dados incomparáveis
 
