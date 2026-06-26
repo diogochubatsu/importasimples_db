@@ -540,35 +540,41 @@ GET /api/categories/{l1}/stats
 #### Queries SQL para Implementação
 
 ```sql
--- Árvore de categorias com contadores
-SELECT 
-    sc.l1,
-    sc.icon,
-    COUNT(bp.id) as product_count,
-    json_agg(DISTINCT jsonb_build_object(
-        'l2', sc2.l2,
-        'count', sub.count
-    )) as children
-FROM silver_categories sc
-LEFT JOIN bronze_products bp ON bp.silver_category_id = sc.id
-LEFT JOIN silver_categories sc2 ON sc2.l1 = sc.l1 AND sc2.l2 IS NOT NULL
-LEFT JOIN (
+-- Árvore de categorias com contadores (CORRIGIDO - sem cross-join)
+WITH l2_counts AS (
     SELECT sc3.l1, sc3.l2, COUNT(bp2.id) as count
     FROM silver_categories sc3
     JOIN bronze_products bp2 ON bp2.silver_category_id = sc3.id
+    WHERE sc3.l2 IS NOT NULL
     GROUP BY sc3.l1, sc3.l2
-) sub ON sub.l1 = sc.l1 AND sub.l2 = sc2.l2
+)
+SELECT 
+    sc.l1,
+    sc.icon,
+    (SELECT COUNT(*) FROM bronze_products bp WHERE bp.silver_category_id = sc.id) as product_count,
+    COALESCE(
+        (SELECT json_agg(DISTINCT jsonb_build_object(
+            'l2', lc.l2,
+            'count', lc.count
+        )) FROM l2_counts lc WHERE lc.l1 = sc.l1),
+        '[]'::json
+    ) as children
+FROM silver_categories sc
 WHERE sc.l2 IS NULL  -- Apenas L1
-GROUP BY sc.l1, sc.icon;
+ORDER BY product_count DESC;
 
 -- Produtos com filtros
+-- NOTA: sales_30d tem semântica diferente por plataforma:
+--   ML: vendas TOTAIS (lifetime)
+--   Amazon: vendas do ÚLTIMO MÊS
+--   1688: usar monthly_sales (coluna separada)
 SELECT bp.*, sc.l1, sc.l2, sc.l3
 FROM bronze_products bp
 JOIN silver_categories sc ON bp.silver_category_id = sc.id
 WHERE sc.l1 = 'Audio'
   AND (sc.l2 = 'Fones' OR sc.l2 IS NULL)
   AND bp.marketplace IN ('1688', 'taobao')
-  AND bp.price_brl BETWEEN 20 AND 100
+  AND bp.price_brl BETWEEN 20 AND 100  -- NOTA: 16.4% dos products não têm price_brl
   AND bp.sales_30d > 500
 ORDER BY bp.sales_30d DESC
 LIMIT 20 OFFSET 0;
@@ -640,44 +646,70 @@ GET /api/warehouse/sales-ranking?category=...&limit=...
 #### Queries SQL para Implementação
 
 ```sql
--- Estatísticas gerais
+-- NOTA IMPORTANTE SOBRE MOEDAS:
+-- - arbitlens_china: preço em CNY (price_cny), price_brl pode ser NULL
+-- - datalake: preço em CNY (price_cny), price_brl pode ser NULL
+-- - arbitlens_brasil: preço em BRL (price_brl) ✅
+-- - arbt.ly: preço em BRL (price_brl) ✅
+-- Taxa de conversão: CNY→BRL ≈ 0.80, USD→BRL ≈ 5.00
+-- Para products sem price_brl, usar: COALESCE(price_brl, price_cny * 0.80)
+
+-- NOTA SOBRE SALES:
+-- - ML: vendas TOTAIS (lifetime) → sales_30d
+-- - Amazon: vendas do ÚLTIMO MÊS → sales_30d
+-- - 1688: vendas mensais → monthly_sales (coluna separada)
+-- Frontend DEVE mostrar label "Vendas totais" vs "Vendas/mês"
+
+-- Estatísticas gerais (com conversão de moeda)
 SELECT 
     COUNT(*) as total_products,
     COUNT(DISTINCT source) as total_sources,
     COUNT(DISTINCT marketplace) as total_marketplaces,
-    AVG(price_brl) as avg_price,
-    SUM(sales_30d) as total_sales
+    AVG(COALESCE(price_brl, price_cny * 0.80)) as avg_price,
+    SUM(COALESCE(sales_30d, monthly_sales, 0)) as total_sales
 FROM bronze_products;
 
 -- Estatísticas por source
 SELECT 
     source,
     COUNT(*) as products,
-    AVG(price_brl) as avg_price,
-    SUM(COALESCE(sales_30d, 0)) as total_sales,
+    AVG(COALESCE(price_brl, price_cny * 0.80)) as avg_price,
+    SUM(COALESCE(sales_30d, monthly_sales, 0)) as total_sales,
     COUNT(DISTINCT marketplace) as marketplaces
 FROM bronze_products
 GROUP BY source;
 
--- Distribuição de preços
+-- Distribuição de preços (com conversão)
 SELECT 
     CASE 
-        WHEN price_brl < 50 THEN '0-50'
-        WHEN price_brl < 100 THEN '50-100'
-        WHEN price_brl < 200 THEN '100-200'
-        WHEN price_brl < 500 THEN '200-500'
+        WHEN COALESCE(price_brl, price_cny * 0.80) < 50 THEN '0-50'
+        WHEN COALESCE(price_brl, price_cny * 0.80) < 100 THEN '50-100'
+        WHEN COALESCE(price_brl, price_cny * 0.80) < 200 THEN '100-200'
+        WHEN COALESCE(price_brl, price_cny * 0.80) < 500 THEN '200-500'
         ELSE '500+'
     END as price_range,
     COUNT(*) as count
 FROM bronze_products
-WHERE price_brl IS NOT NULL
+WHERE price_brl IS NOT NULL OR price_cny IS NOT NULL
 GROUP BY price_range
-ORDER BY MIN(price_brl);
+ORDER BY MIN(price_range);
 
--- Exportação CSV
+-- Exportação CSV (com conversão e sales)
 COPY (
-    SELECT bp.title, bp.price_brl, bp.marketplace, bp.source, 
-           sc.l1 as category, bp.sales_30d, bp.url
+    SELECT 
+        bp.title, 
+        COALESCE(bp.price_brl, bp.price_cny * 0.80) as price_brl,
+        bp.marketplace, 
+        bp.source, 
+        sc.l1 as category, 
+        COALESCE(bp.sales_30d, bp.monthly_sales, 0) as sales,
+        CASE 
+            WHEN bp.marketplace = 'mercadolivre' THEN 'lifetime'
+            WHEN bp.marketplace IN ('amazon_br', 'amazon_usa') THEN 'mensal'
+            WHEN bp.marketplace IN ('1688', 'taobao', 'alibaba') THEN 'mensal'
+            ELSE 'desconhecido'
+        END as sales_period,
+        bp.url
     FROM bronze_products bp
     LEFT JOIN silver_categories sc ON bp.silver_category_id = sc.id
     WHERE bp.source = 'arbitlens_china'
