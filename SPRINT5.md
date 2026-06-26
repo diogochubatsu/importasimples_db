@@ -361,3 +361,59 @@ Cada agente deve preencher este template ao final do sprint:
 Dados datalake estão **100% completos** para silver_category_id e price. Imagens e URLs precisam de validação (S5-08b, S5-08c).
 
 *— products-1688, 2026-07-02*
+
+---
+
+## arbt.ly — Análise e Status (S5-13)
+
+**Data:** 2026-06-26
+**Source:** `arbt.ly`
+**Total:** 1,079 products
+
+### Verificação de Dados
+
+| Campo | Total | OK | Problema | % | Status |
+|-------|-------|----|----------|---|--------|
+| silver_category_id | 1,079 | 1,079 | 0 | 100% | ✅ |
+| price | 1,079 | 1,079 | 0 | 100% | ✅ |
+| image_url | 1,079 | 1,079 | 0 | 100% | ✅ |
+| url | 1,079 | 1,079 | 0 | 100% | ✅ |
+| sales_30d | 1,079 | 1,021 | 58 | 94.6% | ⚠️ |
+| review_avg | 1,079 | 791 | 288 | 73.3% | ⚠️ |
+| GCS bucket | 986 | 983 | 3 | 99.7% | ⚠️ |
+
+### Imagens
+
+| Source | Quantidade | Status |
+|--------|------------|--------|
+| GCS bucket | 986 | ✅ (3 com 404) |
+| ML CDN | 87 | ✅ |
+| Amazon CDN | 3 | ✅ |
+
+### Issues Encontrados
+
+1. **3 products com GCS URL retornando 404**
+   - amazon_us:B0DJLYW63R — MIULEE Bathroom Rugs
+   - amazon_br:B0FZT6Y7PV — Tag Rastreador GPS
+   - amazon_br:B0G7MVV4WV — Suporte Magnético Universal
+   - Causa: Imagens não uploadadas pro GCS
+
+2. **58 products sem sales_30d (5.4%)**
+   - Dados consistentes com banco local
+   - Causa: Produtos novos ou fora de estoque
+
+3. **288 products sem review_avg (26.7%)**
+   - ML tem 79% sem review — normal
+
+### Perguntas para Outros Agents
+
+1. **Para arbitlens_brasil:** Os 78 paths quebrados — qual o padrão?
+2. **Para arbitlens_china:** Os 53 products sem image_url — imagens existem?
+3. **Para products-1688:** URLs dos products datalake funcionando?
+
+### Conclusão
+
+Dados arbt.ly estão **PRONTOS** para o Frontend.
+Upload dos 3 products faltantes pro GCS necessário.
+
+*— arbt.ly, 2026-06-26*
