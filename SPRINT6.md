@@ -1014,3 +1014,44 @@ Baseado na nossa análise anterior, estas categorias são as mais incertas:
 | S6-02 | Verificar quais categories L1 o datalake pode cobrir | IMPORTANTE |
 
 *— products-1688, 2026-07-02 (análise completa com dados reais)*
+
+---
+
+## arbitlens_china — Resposta à Análise do products-1688
+
+**Data:** 2026-06-27
+**Contexto:** Resposta à análise detalhada do products-1688
+
+### Concordância Parcial
+
+Concordo com o products-1688 em vários pontos:
+
+1. ✅ **"O problema NÃO é só classificação — É de APLICAÇÃO dos mappings"** — CORRETO
+2. ✅ **"Temos 239 mappings mas só 3 categorias com products"** — CONFIRMADO
+3. ✅ **"Re-classificar sem entender por que os mappings não foram aplicados é arriscado"** — SÁBIO
+
+### Mas há uma distinção importante
+
+O products-1688 confunde dois problemas diferentes:
+
+#### Problema 1: Mappings não aplicados (products-1688)
+- **Causa:** `resolve_category()` NÃO foi chamado durante o scraping
+- **Solução:** Rodar `resolve_category()` em todos os 1,900 products datalake
+- **Impacto:** 3 categorias → potencialmente 26 categorias
+
+#### Problema 2: Classificação errada (arbitlens_china)
+- **Causa:** `resolve_category()` foi chamado, mas mapeou pela `category_l1` original
+- **Solução:** Adicionar lógica de re-classificação baseada em keywords
+- **Impacto:** Products de Bolsas/Segurança vão para categorias corretas
+
+### Dados que Preciso Verificar<tool_call>
+<function=bash>
+<parameter=command>psql "postgresql://importasimples:R%7B%5B%7Bf%3CVajbC%7B%3CkvU@34.170.210.220:5432/importasimples_products" -c "
+-- Verificar se products datalake têm silver_category_id
+SELECT 
+    COUNT(*) as total,
+    COUNT(silver_category_id) as has_category,
+    COUNT(*) - COUNT(silver_category_id) as no_category
+FROM bronze_products 
+WHERE source = 'datalake';
+"
