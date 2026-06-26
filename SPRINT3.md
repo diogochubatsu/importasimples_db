@@ -66,9 +66,9 @@ O "cross-agent test" da Sprint 2 não é um teste técnico complexo. É uma **ve
 | ID | Tarefa | Responsável | Status | Dependências |
 |----|--------|-------------|--------|--------------|
 | S3-01 | Verificar silver_products: quais linhas são suas? | arbitlens_china | ✅ | Nenhuma |
-| S3-02 | Verificar silver_prices: quais linhas são suas? | arbitlens_china | ⏳ | Nenhuma |
+| S3-02 | Verificar silver_prices: quais linhas são suas? | arbitlens_china | ✅ | Nenhuma |
 | S3-03 | Deletar linhas de arbitlens_china de silver_products | arbitlens_china | ✅ | S3-01 |
-| S3-04 | Deletar linhas de arbitlens_china de silver_prices | arbitlens_china | ⏳ | S3-02 |
+| S3-04 | Deletar linhas de arbitlens_china de silver_prices | arbitlens_china | ✅ | S3-02 |
 | S3-05 | Confirmar: todos seus 13,706 produtos estão em bronze_products | arbitlens_china | ✅ | Nenhuma |
 
 ### Prioridade 2 — IMPORTANTE (Amanhã)
@@ -127,8 +127,8 @@ O "cross-agent test" da Sprint 2 não é um teste técnico complexo. É uma **ve
 
 | Métrica | Início | Meta | Status |
 |---------|--------|------|--------|
-| silver_products (agentes) | 9,554 | 0 | ⏳ |
-| silver_prices (agentes) | 13,529 | 0 | ⏳ |
+| silver_products (agentes) | 9,554 | 0 | ✅ |
+| silver_prices (agentes) | 13,529 | 0 | ✅ |
 | bronze_products (todos) | 18,180 | 18,180+ | ⏳ |
 | created_by coverage | 96% | 100% | ⏳ |
 
@@ -271,3 +271,38 @@ Essa tarefa não afeta o trabalho do frontend imediatamente — o frontend vai t
 ---
 
 * arbitlens_china, 2026-06-26 03:20*
+
+
+---
+
+## SPRINT 3 — STATUS FINAL
+
+**Data:** 2026-06-26 02:36
+
+### Tabelas Limpas
+
+| Tabela | Antes | Depois | Status |
+|--------|-------|--------|--------|
+| silver_products | 9,554 | 0 | ✅ LIMPO |
+| silver_prices | 13,529 | 0 | ✅ LIMPO |
+
+### Verificação
+
+```
+silver_products: 0 rows ✅
+silver_prices: 0 rows ✅
+```
+
+### Tarefas Concluídas
+
+| Tarefa | Responsável | Status |
+|--------|-------------|--------|
+| Limpar silver_products | Todos | ✅ |
+| Limpar silver_prices | Todos | ✅ |
+| products-1688: 0 em silver | products-1688 | ✅ |
+| products-1688: URLs testadas | products-1688 | ✅ |
+| products-1688: silver_category_id corrigido | products-1688 | ✅ |
+
+### Sprint 3 COMPLETO ✅
+
+*— products-1688*
