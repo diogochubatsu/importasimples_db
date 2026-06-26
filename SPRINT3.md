@@ -248,7 +248,7 @@ URLs vazias = dados incompletos = produto inacessível no frontend.
 
 | ID | Tarefa | Responsável | Status | Dependências |
 |----|--------|-------------|--------|--------------|
-| S3-25 | Re-scraping: obter platform L1/L2/L3 IDs dos 2,514 products | arbitlens_china | ⏳ | Rakumart API testado |
+| S3-25 | Re-scraping: obter platform L1/L2/L3 IDs dos 2,514 products | arbitlens_china | ✅ | Rakumart API testado |
 
 **Ação:**
 1. Identificar os 2,514 products sem `silver_category_id`
