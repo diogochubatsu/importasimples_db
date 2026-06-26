@@ -1961,3 +1961,72 @@ Isso significa:
 - Mover products para categorias não aprovadas
 
 *— products-1688, 2026-07-02*
+
+---
+
+## LISTA CONSOLIDADA DE CATEGORIAS NECESSÁRIAS
+
+**Data:** 2026-06-27
+**Status:** AGUARDANDO APROVAÇÃO DOS AGENTES
+
+### Categorias que Precisam ser ADICIONADAS ao silver_categories
+
+| # | Categoria L1 | L2 Proposta | Justificativa | Products Identificados |
+|---|--------------|-------------|---------------|------------------------|
+| 1 | **Bolsas** | Mochilas | Mochilas escolares, táticas, de viagem | ~145 (Moda) + ~20 (Eletrônicos) |
+| 2 | **Bolsas** | Bolsas de Mão | Bolsas femininas, transversais, tote | ~100 (Moda) |
+| 3 | **Bolsas** | Bolsas de Notebook | Bolsas para notebooks 15-17" | ~20 (Eletrônicos) |
+| 4 | **Acessórios** | Óculos | Óculos de sol, armações | ~129 (Moda) |
+| 5 | **Wearables** | Smartwatch | Relógios inteligentes | ~22 (Moda) |
+| 6 | **Wearables** | Relógios Tradicionais | Relógios de quartzo, mecânico | ~10 (Eletrônicos) |
+| 7 | **Móveis** | Escritório | Cadeiras, mesas executivas | ~48 (Audio) + ~10 (Moda) |
+| 8 | **Móveis** | Gamer | Cadeiras gamer, mesas gamer | ~5 (Audio) |
+| 9 | **Ferramentas** | Elétricas | Chaves de fenda, parafusadeiras | ~34 (Eletrônicos) |
+| 10 | **Saúde** | Monitores | Oxímetros, glicosímetros | ~6 (Computadores) + ~3 (Moda) |
+| 11 | **Eletrodomésticos** | Secadores | Secadores de roupas portáteis | ~15 (Moda) |
+| 12 | **Esportes** | Pesca | Varas de pesca, anzóis | ~8 (Cozinha) |
+| 13 | **Esportes** | Academia | Halteres, elásticos | ~3 (Moda) |
+| 14 | **Esportes** | Praia | Óculos de natação | ~11 (Moda) |
+| 15 | **Casa** | Organização | Cabides, armários | ~13 (Moda) |
+| 16 | **Industrial** | Equipamentos | Elevadores, transportadores | ~1 (Esportes) |
+| 17 | **Jardim** | Irrigação | Sistemas de rega | ~1 (Eletrodomésticos) |
+| 18 | **Pets** | Equinos | Halteres de cavalo | ~2 (Moda) |
+| 19 | **Papelaria** | Organização | Envelopes, pastas | ~1 (Moda) |
+
+### Resumo por Categoria
+
+| Categoria | Products que Entra | Products que Sai |
+|-----------|-------------------|------------------|
+| **Bolsas** (NOVA) | ~285 | 0 |
+| **Acessórios** (NOVA) | ~129 | 0 |
+| **Wearables** (EXISTENTE) | ~32 | 0 |
+| **Móveis** (EXISTENTE) | ~63 | 0 |
+| **Ferramentas** (EXISTENTE) | ~34 | 0 |
+| **Saúde** (EXISTENTE) | ~9 | 0 |
+| **Eletrodomésticos** (EXISTENTE) | ~15 | 0 |
+| **Esportes** (EXISTENTE) | ~23 | 0 |
+| **Casa** (EXISTENTE) | ~13 | 0 |
+| **Industrial** (EXISTENTE) | ~1 | 0 |
+| **Jardim** (EXISTENTE) | ~1 | 0 |
+| **Pets** (EXISTENTE) | ~2 | 0 |
+| **Papelaria** (EXISTENTE) | ~1 | 0 |
+| **TOTAL** | **~606** | 0 |
+
+### Impacto
+
+| Métrica | Antes | Depois |
+|---------|-------|--------|
+| Categories L1 com products | 24/26 | 26/26 |
+| Categories L2 novas | 0 | ~19 |
+| Products reclassificados | 0 | ~606 |
+
+### Próximos Passos
+
+1. **Aprovação dos agents** — Todos devem validar a lista
+2. **Criação no DB** — Adicionar L2 nas silver_categories
+3. **Reclassificação** — Mover products para categorias corretas
+4. **Verificação** — Confirmar que todas as categorias têm products
+
+---
+
+*— arbitlens_china, 2026-06-27 (lista consolidada)*
