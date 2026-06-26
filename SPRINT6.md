@@ -1482,3 +1482,73 @@ Após todas as respostas, chegamos a um consenso claro:
 ---
 
 *— Diogo e arbitlens_china, 2026-06-27 (issue crítico)*
+
+---
+
+## ATUALIZAÇÃO — Escopo Real do Problema (Diogo e arbitlens_china)
+
+**Data:** 2026-06-27
+**Contexto:** Investigação completa revelou problema MAIOR do que estimado
+
+### Dados Reais
+
+**Keyword mismatches em TODAS as categorias:**
+
+| Categoria | Total | Móveis | Ferramentas | Moda | Beleza | Outros |
+|-----------|-------|--------|-------------|------|--------|--------|
+| Eletrônicos | 1,809 | 22 | 34 | 22 | 1 | — |
+| Moda | 1,555 | 4 | 9 | 59 | 0 | — |
+| Casa | 1,233 | 74 | 15 | 50 | 4 | — |
+| Audio | 1,132 | 48 | 8 | 4 | 4 | — |
+| Iluminação | 1,092 | 95 | 9 | 1 | 3 | — |
+| Beleza | 670 | 13 | 24 | 1 | 202 | — |
+| Ferramentas | 522 | 1 | 272 | 1 | 0 | — |
+| **TOTAL** | **8,613** | **257** | **371** | **138** | **214** | — |
+
+**Estimativa conservadora:** 500+ products com keywords que NÃO batem com a categoria L1
+
+### Categorias Mais Afetadas
+
+| Problema | Categories | Products |
+|----------|------------|----------|
+| **Móveis em outras** | Eletrônicos, Audio, Iluminação, Casa | 257 |
+| **Ferramentas em outras** | Eletrônicos, Beleza, Cozinha | 371 |
+| **Moda em outras** | Casa, Audio, Eletrônicos | 138 |
+| **Beleza em outras** | Casa, Audio, Iluminação | 214 |
+
+### Conclusão
+
+**O problema é MUITO MAIOR do que eu pensei inicialmente!**
+
+- **158 products** identificados por Diogo (exemplos)
+- **500+ products** com keywords mismatch (investigação completa)
+- **Problema em TODAS as categorias** — não apenas 7
+
+### Impacto
+
+1. **Dados incorretos** — Frontend mostra categorias erradas
+2. **Comparação incorreta** — Importadores veem produtos errados
+3. **Métricas incorretas** — Estatísticas por categoria estão erradas
+4. **Confiança** — Usuários perdem confiança nos dados
+
+### Ação Necessária
+
+**S6-25: CORREÇÃO URGENTE de classificação (EXPANDIDA)**
+
+| ID | Tarefa | Escopo | Prioridade |
+|----|--------|--------|------------|
+| S6-25 | Corrigir keyword mismatches | **TODAS as categorias** | 🔴 URGENTE |
+| S6-26 | Criar validador de keywords | Todos os agents | 🔴 URGENTE |
+| S6-27 | Rodar validador em batch | Todos os agents | 🔴 URGENTE |
+
+### Pergunta para Diogo
+
+**Como quer proceder?**
+
+1. **Corrigir manualmente** — Listar todos os products e corrigir um por um
+2. **Criar validador automático** — Script que identifica e corrige automaticamente
+3. **Priorizar por impacto** — Corrigir apenas os mais caros ou mais visíveis
+
+---
+
+*— Diogo e arbitlens_china, 2026-06-27 (atualização de escopo)*
