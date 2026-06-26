@@ -1412,3 +1412,73 @@ Após todas as respostas, chegamos a um consenso claro:
 - products-1688: precisa de aplicar mappings existentes
 
 *— products-1688, 2026-07-02*
+
+---
+
+## ISSUE CRÍTICO — Classificação Incorreta (Diogo e arbitlens_china)
+
+**Data:** 2026-06-27
+**Contexto:** Diogo identificou products mal classificados em múltiplas categorias
+
+### Problema Identificado
+
+**Products de arbitlens_china estão classificados em categorias ERRADAS!**
+
+| Categoria | Products | Exemplos Mal Classificados | Categoria Correta |
+|-----------|----------|---------------------------|-------------------|
+| **Calçados** | 150 | "máquina de servir bolas de tênis" | Esportes |
+| **Audio** | 1,132 | "mesa executiva em L" | Móveis |
+| **Beleza** | 670 | "chave de fenda automática" | Ferramentas |
+| **Computadores** | 23 | "oxímetro", "glicosímetro", "esfigmomanômetro" | Saúde |
+| **Cozinha** | 553 | "vara de pescar" (R$ 9.770) | Esportes |
+| **Eletrodomésticos** | 24 | "gramado rega spray" | Jardim |
+| **Esportes** | 627 | "elevador" (R$ 25.000) | Móveis/Ferramentas |
+
+### Dados Verificados no DB
+
+| Categoria | Total | Mal Classificados | % Impacto |
+|-----------|-------|-------------------|-----------|
+| Calçados | 150 | 36 (tênis, bolas) | 24% |
+| Audio | 1,132 | 48 (mesas, cadeiras) | 4% |
+| Beleza | 670 | 24 (chaves de fenda) | 4% |
+| Computadores | 23 | 3 (equipamento médico) | 13% |
+| Cozinha | 553 | 8 (varas de pescar) | 1% |
+| Esportes | 627 | 39 (tênis) | 6% |
+| **TOTAL** | **3,529** | **~158** | **~4.5%** |
+
+### Produtos Mais Caros Mal Classificados
+
+| ID | Título | Preço | Categoria Atual | Categoria Correta |
+|----|--------|-------|-----------------|-------------------|
+| 3291 | Vara de Pesca Hearty Rise | R$ 9.770 | Cozinha | Esportes |
+| 14793 | Campus Universitário Gramado Rega Spray | R$ 45.854 | Eletrodomésticos | Jardim |
+| 11459 | Fabricante de elevador espiral | R$ 25.000 | Esportes | Industrial/Móveis |
+| 2840 | Esfigmomanômetro De Mercúrio | R$ 1.130 | Computadores | Saúde |
+
+### Ação Necessária
+
+**S6-25: CORREÇÃO URGENTE de classificação**
+
+| ID | Tarefa | Responsável | Descrição |
+|----|--------|-------------|-----------|
+| S6-25a | Corrigir Calçados → Esportes | arbitlens_china | Mover 36 products de tênis/bolas |
+| S6-25b | Corrigir Audio → Móveis | arbitlens_china | Mover 48 products de mesas/cadeiras |
+| S6-25c | Corrigir Beleza → Ferramentas | arbitlens_china | Mover 24 products de chaves de fenda |
+| S6-25d | Corrigir Computadores → Saúde | arbitlens_china | Mover 3 products de equipamento médico |
+| S6-25e | Corrigir Cozinha → Esportes | arbitlens_china | Mover 8 products de varas de pescar |
+| S6-25f | Corrigir Esportes → Calçados | arbitlens_china | Mover 39 products de tênis |
+
+### Impacto
+
+**~158 products** estão em categorias erradas. Isso afeta:
+1. **Dados incorretos** — Frontend mostra categorias erradas
+2. **Comparação incorreta** — Importadores veem produtos errados
+3. **Métricas incorretas** — Estatísticas por categoria estão erradas
+
+### Prioridade
+
+🔴 **URGENTE** — Corrigir antes de qualquer deploy do frontend
+
+---
+
+*— Diogo e arbitlens_china, 2026-06-27 (issue crítico)*
