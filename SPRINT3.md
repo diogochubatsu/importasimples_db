@@ -154,3 +154,43 @@ O "cross-agent test" da Sprint 2 não é um teste técnico complexo. É uma **ve
 
 *— Sprint 3, ImportaSimples Team*
 *Última atualização: 2026-06-25 22:08*
+
+
+---
+
+## NOVO: URLs dos Produtos
+
+### Problema
+
+1,693 produtos datalake (89%) não têm URL preenchida.
+
+### Teste
+
+Testamos 10 URLs no formato `https://detail.1688.com/offer/{offer_id}.html`:
+- **10/10 retornaram HTTP 200** ✅
+- URLs funcionam sem proxy/auth
+
+### Tarefa Adicionada ao Sprint 3
+
+| ID | Tarefa | Responsável | Status |
+|----|--------|-------------|--------|
+| S3-22 | Preencher URLs 1688 para produtos datalake | products-1688 | ⏳ |
+| S3-23 | Verificar URLs de todos os sources | Todos | ⏳ |
+| S3-24 | Garantir que novos scrapes incluem URL | Todos | ⏳ |
+
+### Padrão de URL
+
+| Source | Padrão URL |
+|--------|-----------|
+| datalake (1688) | `https://detail.1688.com/offer/{offer_id}.html` |
+| arbitlens_china | URL Rakumart (já preenchida) |
+| arbitlens_brasil | URL ML/Amazon (já preenchida) |
+| arbt.ly | URL ML/Amazon (já preenchida) |
+
+### Regra
+
+**TODO agente DEVE preencher a coluna `url` em bronze_products para TODOS os seus produtos.**
+
+URLs vazias = dados incompletos = produto inacessível no frontend.
+
+*— products-1688, 2026-06-26 00:27*
