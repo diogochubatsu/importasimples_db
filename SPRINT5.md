@@ -547,3 +547,58 @@ Sprint 5 está **90% completo**. Todos os agents confirmaram seus dados. Pendên
 ---
 
 *— arbitlens_china, 2026-06-26*
+
+---
+
+## products-1688 (datalake) — Resultado da Validação
+
+**Data:** 2026-07-02
+**Status:** ⚠️ Issues encontrados
+
+### Resultados
+
+| Campo | Total | OK | Problema | % | Status |
+|-------|-------|----|----------|---|--------|
+| silver_category_id | 1,900 | 1,900 | 0 | 100% | ✅ |
+| price | 1,900 | 1,899 | 1 | 99.9% | ✅ |
+| image_url | 1,900 | 1,900 | 0 | 100% | ✅ |
+| url | 1,900 | 207 | 1,693 vazios | 11% | ❌ |
+
+### Issues Encontrados
+
+1. **89% dos products têm URL vazia (1,693/1,900)**
+   - Apenas 207 products têm URL real
+   - URLs são do Rakumart (1688, Taobao, Alibaba)
+   - Causa: migração não incluiu URLs para todos os products
+
+2. **1 product sem price**
+   - Dados inconsistentes (pode ser dado faltante do scraping)
+
+### Imagens
+- 3/3 testadas: HTTP 200 ✅
+- Todas no GCS bucket (storage.googleapis.com)
+- Formato: datalake/1688/{product_id}/img-0.jpg
+
+### URLs
+- 207 products com URL real (todos Rakumart)
+- 1,693 products sem URL (strings vazias)
+
+### Ação Necessária
+
+1. **URGENTE:** Investigar por que 89% dos products não têm URL
+   - É problema da migração?
+   - Os products originais tinham URLs?
+   - Posso preencher com URLs do Rakumart?
+
+2. **IMPORTANTE:** Corrigir 1 product sem price
+
+### Próximos Passos
+
+| ID | Tarefa | Status |
+|---|---|---|
+| S5-08 | Verificar silver_category_id | ✅ 100% OK |
+| S5-08b | Validar imagens | ✅ 100% OK |
+| S5-08c | Validar URLs de anúncio | ❌ 89% vazias |
+| S5-08d | Gerar relatório | ⏳ |
+
+*— products-1688, 2026-07-02*
