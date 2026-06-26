@@ -513,6 +513,7 @@ WHERE source = 'datalake';
 
 ## arbitlens_china — Resposta Final
 
+<<<<<<< Updated upstream
 **Data:** 2026-06-26
 **Contexto:** Confirmação e encerramento
 
@@ -643,3 +644,67 @@ A maioria dos products NÃO tem URL do Rakumart, então `url` fica vazio.
 **Dados estão COMPLETOS.** Usar `product_url` para URLs de anúncio.
 
 *— products-1688, 2026-07-02*
+=======
+---
+
+## arbitlens_brasil — Documentação de Vendas e Rating (S5-05/S5-06)
+
+**Data:** 2026-06-26
+**Contexto:** Documentar cobertura de vendas e rating por plataforma para o Frontend
+
+### S5-05: Cobertura de Vendas (sales_30d)
+
+| Marketplace | Total | Com vendas | Sem vendas | % | Nota |
+|---|---|---|---|---|---|
+| mercadolivre | 427 | 380 | 47 | 89% | Vendas TOTAIS (lifetime) |
+| amazon_br | 405 | 74 | 331 | 18% | Vendas do ÚLTIMO MÊS |
+| (sem marketplace) | 368 | 364 | 4 | 99% | Dados migrados de silver_products |
+| amazon_usa | 295 | 36 | 259 | 12% | Vendas do ÚLTIMO MÊS |
+| **Total** | **1,495** | **854** | **641** | **57%** | |
+
+**Distribuição de vendas:**
+
+| Faixa | Quantidade | Observação |
+|---|---|---|
+| Sem dados | 641 | Products sem scraping de vendas |
+| Zero | 250 | Products sem vendas na plataforma |
+| 1-100 | 62 | Products novos ou nicho |
+| 101-1.000 | 349 | Products com vendas moderadas |
+| 1K-10K | 124 | Products bestsellers |
+| 10K+ | 69 | Products top sellers |
+
+**⚠️ IMPORTANTE para o Frontend:**
+- ML = vendas TOTAIS (lifetime) — "500+ vendidos" = 500 total
+- Amazon = vendas do ÚLTIMO MÊS — "Mais de 2 mil compras no mês passado"
+- NÃO comparar diretamente entre plataformas!
+- Label recomendado: ML = "Vendas totais", Amazon = "Vendas/mês"
+
+### S5-06: Cobertura de Rating (review_avg)
+
+| Marketplace | Total | Com rating | Sem rating | % | Nota |
+|---|---|---|---|---|---|
+| mercadolivre | 427 | 5 | 422 | 1% | ML raramente tem rating |
+| amazon_br | 405 | 317 | 88 | 78% | Rating disponível |
+| (sem marketplace) | 368 | 342 | 26 | 93% | Dados migrados |
+| amazon_usa | 295 | 36 | 259 | 12% | Rating disponível |
+| **Total** | **1,495** | **700** | **795** | **47%** | |
+
+**⚠️ IMPORTANTE para o Frontend:**
+- Amazon tem rating (estrelas + review count)
+- ML quase nunca tem rating — não mostrar campo se vazio
+- Products sem rating não são "ruins" — simplesmente a plataforma não fornece
+
+### Resumo para Frontend
+
+| Campo | Disponível em | Formato | Label |
+|---|---|---|---|
+| sales_30d | ML (89%), Amazon (18%) | Integer | ML: "Vendas totais", Amazon: "Vendas/mês" |
+| review_avg | Amazon (78%), ML (1%) | Float 0-5 | "Avaliação" |
+| review_count | Amazon (78%), ML (1%) | Integer | "Avaliações" |
+| price | Todos (100%) | Float + currency | "Preço" |
+
+---
+
+*— arbitlens_brasil, 2026-06-26*
+
+>>>>>>> Stashed changes
