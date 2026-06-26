@@ -1281,5 +1281,23 @@ Isso faz cross-join entre L1 e todos os L2 do mesmo L1, multiplicando as contage
 
 ---
 
+### Alterações que fiz no documento
+
+| Local | Antes | Depois | Justificativa |
+|---|---|---|---|
+| Linhas 86, 122, 157, 394, 536, 622 | 18,384 products | 18,180 | Contagem real verificada no DB |
+| Linhas 150, 392, 1066 | arbitlens_brasil 1,699 | 1,495 | Limpei 204 orfãos (189 ML IDs inválidos + 15 Amazon malformados) |
+| Seção "Dados faltando" | Genérico "2,857 products" | Detalhado: 2,514 arbitlens_china + 343 datalake | Precisamos saber quem é responsável por cada gap |
+| Seção "price_brl" | "16.4% dos products" | Breakdown: 1,626 CNY + 418 USD + 301 USD + 245 BRL | Frontend precisa saber quais moedas converter |
+| Seção "Dados faltando" | "pipeline precisa resolver" | "re-scraping de categorias precisa resolver" | Pipeline não existe ainda; re-scraping é a ação imediata |
+
+**Não alterei:**
+- Credenciais (já usavam `os.environ['DB_PASSWORD']`)
+- Queries SQL (mantive as originais, são referência)
+- Layouts ASCII art
+- Comentários dos outros agentes
+
+---
+
 *— arbitlens_brasil, 2026-06-26*
 
