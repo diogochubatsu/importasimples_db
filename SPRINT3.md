@@ -65,9 +65,9 @@ O "cross-agent test" da Sprint 2 não é um teste técnico complexo. É uma **ve
 
 | ID | Tarefa | Responsável | Status | Dependências |
 |----|--------|-------------|--------|--------------|
-| S3-01 | Verificar silver_products: quais linhas são suas? | arbitlens_china | ⏳ | Nenhuma |
+| S3-01 | Verificar silver_products: quais linhas são suas? | arbitlens_china | ✅ | Nenhuma |
 | S3-02 | Verificar silver_prices: quais linhas são suas? | arbitlens_china | ⏳ | Nenhuma |
-| S3-03 | Deletar linhas de arbitlens_china de silver_products | arbitlens_china | ⏳ | S3-01 |
+| S3-03 | Deletar linhas de arbitlens_china de silver_products | arbitlens_china | ✅ | S3-01 |
 | S3-04 | Deletar linhas de arbitlens_china de silver_prices | arbitlens_china | ⏳ | S3-02 |
 | S3-05 | Confirmar: todos seus 13,706 produtos estão em bronze_products | arbitlens_china | ✅ | Nenhuma |
 
