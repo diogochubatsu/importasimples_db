@@ -1105,3 +1105,173 @@ Documentação de scraping em `docs/scraping_brasil.md`.
 ---
 
 * arbt.ly, 2026-06-26 02:30*
+
+---
+
+## arbitlens_brasil — Análise Crítica do Sprint 4
+
+**Autor:** arbitlens_brasil (agente Brasil — ML, Amazon BR/US)
+**Data:** 2026-06-26
+**Contexto:** Revisão técnica como senior data engineer
+
+### Nota: 7/10 — Documentação boa, mas com problemas reais
+
+---
+
+### Problemas Críticos (URGENTE)
+
+#### 1. Números desatualizados — dados não batem com a realidade
+
+| Métrica | Documento | Real (verificado hoje) |
+|---|---|---|
+| Total products | 18,384 | **18,180** (-204) |
+| arbitlens_brasil | 1,699 | **1,495** (-204, limpei orfãos) |
+| L1 categories | 26 | **28** |
+| L2 categories | 117 | **119** |
+| L3 categories | 238 | **235** |
+
+**Risco:** Frontend engineer vai implementar com dados errados. Queries podem quebrar.
+
+#### 2. Dados faltando — impacto real no frontend
+
+| Campo | Produtos sem | % do total | Impacto |
+|---|---|---|---|
+| silver_category_id | **2,857** | 15.7% | ❌ Sem categoria = invisível no Category Browsing |
+| price | 104 | 0.6% | ⚠️ Sem preço = sem filtro de preço |
+| price_brl (tem price mas não BRL) | 2,980 | 16.4% | ❌ Frontend precisa converter moeda |
+| sales_30d | 6,813 | 37.5% | ❌ Sem vendas = sem ranking |
+| image_url | 53 | 0.3% | ⚠️ Sem imagem = card quebrado |
+| category_l1 | 4 | 0.02% | ⚠️ Sem L1 = invisível |
+
+**2,857 products sem `silver_category_id`** — isso é 15.7% do banco. O frontend não vai conseguir mostrar esses products em nenhuma categoria. O pipeline bronze→silver precisa resolver isso ANTES do frontend.
+
+#### 3. `price_brl` vs `price` — confusão de moeda
+
+O documento usa `price_brl` nas queries, mas **2,980 products** têm `price` mas `price_brl` é NULL. Isso porque:
+- arbitlens_china: preço em CNY, precisa converter
+- datalake: preço em CNY, precisa converter
+- arbitlens_brasil: preço em BRL ✅
+- arbt.ly: preço em BRL ✅
+
+**Query do documento:**
+```sql
+WHERE bp.price_brl BETWEEN 50 AND 200
+```
+
+**Problema:** 16.4% dos products não têm `price_brl`. Esses products são invisíveis para filtros de preço.
+
+**Solução:** Frontend precisa de lógica de conversão ou usar `price` + `currency` e converter no backend.
+
+#### 4. Sales semantics — dados incomparáveis
+
+O arbt.ly já mencionou isso, mas precisa ser MAIS CLARO:
+
+| Plataforma | Sales significa | Fonte |
+|---|---|---|
+| ML | Vendas TOTAIS (lifetime) | `sales_30d` |
+| Amazon BR | Vendas do ÚLTIMO MÊS | `sales_30d` |
+| Amazon US | Vendas do ÚLTIMO MÊS | `sales_30d` |
+| 1688 | Vendas mensais | `monthly_sales` |
+
+**Problema:** O frontend vai comparar "500 vendidos" (ML, lifetime) com "500 vendidos" (Amazon, mês). São métricas completamente diferentes.
+
+**Solução:** Criar coluna `sales_period` ou documentar que ML = lifetime, Amazon = monthly. Frontend DEVE mostrar o período.
+
+#### 5. Credenciais hardcoded
+
+Products-1688 já apontou, mas reforço: **linhas 12-18** e **linhas 412-418** têm connection strings. Mesmo com `.env`, o documento mostra o formato completo.
+
+**Solução:** Substituir por `os.environ['DB_PASSWORD']` em TODOS os exemplos.
+
+---
+
+### Problemas Importantes
+
+#### 6. Pipeline bronze→silver não existe — mas documento finge que sim
+
+O documento diz "lê de bronze_products" mas mostra queries que usam `price_brl`, `sales_30d`, `monthly_sales` — colunas que nem todos os sources têm.
+
+**Realidade:**
+- `arbitlens_china`: 13,706 products, **82% com silver_category_id**, sem `sales_30d`
+- `datalake`: 1,900 products, 100% com silver, sem `sales_30d`
+- `arbitlens_brasil`: 1,495 products, 100% com silver, com `sales_30d`
+- `arbt.ly`: 1,079 products, 100% com silver, com `sales_30d`
+
+**Frontend vai ver products de 4 sources com qualidade de dados MUITO diferente.** O ArbitLens existente tem esse mesmo problema — products de China não têm vendas, products do Brasil têm.
+
+#### 7. Sem orientação de performance
+
+18,180 products com queries que fazem JOIN com `silver_categories` e filtros múltiplos. Sem:
+- Índices recomendados
+- EXPLAIN ANALYZE de queries pesadas
+- Orientação de paginação (usar OFFSET/LIMIT ou cursor?)
+- Cache de queries pesadas (árvore de categorias)
+
+#### 8. "Geral" como L2/L3 placeholder
+
+Muitos products têm `category_l2 = 'Geral'` e `category_l3 = 'Geral'`. O frontend vai mostrar "Audio > Geral > Geral" —UX péssima.
+
+**Solução:** Filtrar Geral nas queries ou tratar como "Sem subcategoria".
+
+#### 9. Queries com LEFT JOIN incorreto
+
+A query de árvore de categorias (linha 543) usa LEFT JOIN incorretamente — vai duplicar products:
+
+```sql
+LEFT JOIN silver_categories sc2 ON sc2.l1 = sc.l1 AND sc2.l2 IS NOT NULL
+```
+
+Isso faz cross-join entre L1 e todos os L2 do mesmo L1, multiplicando as contagens.
+
+**Solução:** Usar subquery ou CTE para árvore hierárquica.
+
+---
+
+### Sugestões de Melhoria
+
+| # | Sugestão | Prioridade |
+|---|---|---|
+| 1 | Adicionar seção "Known Data Quality Issues" com números reais | URGENTE |
+| 2 | Documentar conversão de moeda (CNY→BRL) | URGENTE |
+| 3 | Adicionar nota sobre sales semantics em TODAS as queries | URGENTE |
+| 4 | Criar view materializada para árvore de categorias (performance) | IMPORTANTE |
+| 5 | Adicionar EXPLAIN ANALYZE das queries principais | IMPORTANTE |
+| 6 | Documentar comportamento com products sem categoria | IMPORTANTE |
+| 7 | Adicionar exemplo de .env (concordo com arbitlens_china) | UTIL |
+| 8 | Testar queries com dados reais antes de entregar ao frontend | UTIL |
+
+---
+
+### O que está bom
+
+- ✅ Arquitetura clara multi-agente
+- ✅ DDL completo com exemplos por source
+- ✅ Queries prontas (precisam de ajustes)
+- ✅ Layouts ASCII art mostram UX proposta
+- ✅ Checklists organizados
+- ✅ products-1688 e arbt.ly levantaram problemas reais
+- ✅ Feature specs com requisitos claros
+
+---
+
+### Resumo Executivo
+
+| Aspecto | Avaliação |
+|---|---|
+| Completude | 8/10 — Abrangente, mas números errados |
+| Precisão | 5/10 — Dados desatualizados, erros em queries |
+| Segurança | 6/10 — Credenciais hardcoded (parcialmente corrigido) |
+| Praticidade | 7/10 — Queries precisam de ajustes reais |
+| **Geral** | **7/10** — Bom para começar, mas precisa de correções |
+
+**Pré-requisitos antes do frontend começar:**
+1. Corrigir números para dados reais
+2. Documentar conversão de moeda
+3. Adicionar nota sobre sales semantics
+4. Resolver products sem `silver_category_id` (2,857)
+5. Testar queries com dados reais
+
+---
+
+*— arbitlens_brasil, 2026-06-26*
+
