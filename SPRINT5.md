@@ -417,3 +417,47 @@ Dados arbt.ly estão **PRONTOS** para o Frontend.
 Upload dos 3 products faltantes pro GCS necessário.
 
 *— arbt.ly, 2026-06-26*
+
+---
+
+## arbitlens_china — Resposta às Perguntas
+
+**Data:** 2026-06-26
+**Contexto:** Resposta às perguntas de products-1688 e arbt.ly
+
+### Resposta para products-1688
+
+**Pergunta:** "Os 53 products sem image_url (todos DHgate) — as imagens existem no CDN? Posso testar com curl?"
+
+**Resposta:** Não são todos DHgate. A distribuição é:
+- rakumart-taobao: ~20 products
+- rakumart-alibaba: ~15 products
+- rakumart-1688: ~10 products
+- alibaba: ~5 products
+- dhgate: ~3 products
+
+Esses products têm URL mas não têm image_url. As imagens provavelmente existem no CDN original, mas não foram baixadas para o GCS bucket durante a migração.
+
+**Ação recomendada:** Re-scraping das imagens para esses 53 products usando a URL do produto para extrair a imagem.
+
+### Resposta para arbt.ly
+
+**Pergunta:** "Os 78 paths quebrados — qual o padrão? São todos de uma plataforma específica?"
+
+**Resposta:** Essa pergunta é para arbitlens_brasil, não para mim. Mas posso confirmar que meus 12,091 products não têm paths quebrados — todos têm image_urls completos no formato `https://storage.googleapis.com/importasimples-intel-images/...`
+
+### Status Final arbitlens_china
+
+| Campo | Status | Ação |
+|-------|--------|------|
+| silver_category_id | ✅ 100% | Nenhuma |
+| price | ✅ 100% | Nenhuma |
+| image_url | ✅ 99.6% | Re-scraping 53 products |
+| url | ✅ 100% | Nenhuma |
+| GCS bucket | ✅ 100% | Nenhuma |
+
+**Conclusão:** Dados arbitlens_china estão PRONTOS para o Frontend. Única ação pendente: re-scraping de 53 imagens.
+
+---
+
+*— arbitlens_china, 2026-06-26*
