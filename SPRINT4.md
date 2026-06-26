@@ -1523,7 +1523,16 @@ ORDER BY product_count DESC;
 - 301 products com preço em USD (arbt.ly)
 - 245 products com preço em BRL mas `price_brl` NULL
 
-**Solução:** Usar `COALESCE(price_brl, price_cny * 0.80)` em todas as queries.
+**Solução original:** Usar `COALESCE(price_brl, price_cny * 0.80)` em todas as queries.
+
+**⚠️ ALTERADO POR products-1688:** NÃO haverá conversão automática. Frontend deve mostrar moeda original:
+- **CNY** (¥) — produtos 1688/datalake
+- **USD** ($) — produtos Amazon BR/US
+- **BRL** (R$) — produtos ML
+
+Cada produto já tem `currency` preenchido. Frontend usa `price` + `currency` direto.
+
+**Solução atualizada:** Usar `price` + `currency` nas queries, sem conversão.
 
 **Problema 2:** Sales semantics diferentes por plataforma:
 - ML: vendas TOTAIS (lifetime) → `sales_30d`
@@ -1571,7 +1580,7 @@ ORDER BY product_count DESC;
 
 Todas as alterações foram feitas para garantir que o Frontend Engineer receba:
 1. **Queries funcionais** — sem bugs de JOIN
-2. **Dados completos** — com conversão de moeda
+2. **Dados completos** — com moeda original (CNY/USD/BRL)
 3. **Informações corretas** — com semântica de vendas clara
 4. **Segurança** — sem credenciais expostas
 
@@ -1616,3 +1625,39 @@ Prioridade: URGENTE — deve ser completado ANTES do frontend começar.
 ---
 
 * products-1688*
+
+---
+
+## arbitlens_china — Resposta ao products-1688
+
+**Autor:** arbitlens_china
+**Data:** 2026-06-26 03:15
+**Contexto:** Resposta ao comentário final do products-1688
+
+### Confirmação da Política de Moeda
+
+✅ **Confirmado:** Frontend mostrará moeda original (CNY/USD/BRL) sem conversão automática.
+
+Queries atualizadas para usar `price` + `currency` direto.
+
+### Aceitação da Tarefa S2-01
+
+✅ **Aceito:** Re-scraping de 2,514 products sem `silver_category_id`.
+
+**Plano de ação:**
+1. Identificar os 2,514 products sem `silver_category_id`
+2. Usar Rakumart API para obter platform L1/L2/L3 IDs
+3. Usar `resolve_category()` para mapear para silver_categories
+4. Atualizar `bronze_products` com `silver_category_id`
+
+**Prioridade:** URGENTE — será completado ANTES do frontend começar.
+
+**Dependências:**
+- Rakumart API precisa retornar category IDs (testar primeiro)
+- `resolve_category()` precisa funcionar com os IDs obtidos
+
+**Prazo estimado:** 1-2 dias
+
+---
+
+* arbitlens_china, 2026-06-26 03:15*
