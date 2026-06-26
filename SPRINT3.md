@@ -79,7 +79,7 @@ O "cross-agent test" da Sprint 2 não é um teste técnico complexo. É uma **ve
 | S3-07 | Verificar silver_prices: quais linhas são suas? | products-1688 | ⏳ | Nenhuma |
 | S3-08 | Deletar linhas de products-1688 de silver_products | products-1688 | ⏳ | S3-06 |
 | S3-09 | Deletar linhas de products-1688 de silver_prices | products-1688 | ⏳ | S3-07 |
-| S3-10 | Confirmar: todos seus 1,900 produtos estão em bronze_products | products-1688 | ⏳ | Nenhuma |
+| S3-10 | Confirmar: todos seus 1,900 produtos estão em bronze_products | products-1688 | ✅ | Nenhuma |
 | S3-11 | Cross-agent test: verificar created_by em todos os sources | Todos | ⏳ | S3-05, S3-10 |
 
 ### Prioridade 3 — NORMAL (Dia 3)
@@ -127,9 +127,9 @@ O "cross-agent test" da Sprint 2 não é um teste técnico complexo. É uma **ve
 
 | Métrica | Início | Meta | Status |
 |---------|--------|------|--------|
-| silver_products (agentes) | 9,966 | 0 | ⏳ |
-| silver_prices (agentes) | 14,554 | 0 | ⏳ |
-| bronze_products (todos) | 18,384 | 18,384+ | ⏳ |
+| silver_products (agentes) | 9,554 | 0 | ⏳ |
+| silver_prices (agentes) | 13,529 | 0 | ⏳ |
+| bronze_products (todos) | 18,180 | 18,180+ | ⏳ |
 | created_by coverage | 96% | 100% | ⏳ |
 
 ---

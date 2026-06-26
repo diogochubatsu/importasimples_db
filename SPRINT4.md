@@ -891,7 +891,7 @@ Solucao: Atualizar queries pra usar bronze_products diretamente.
 
 #### 3. L3 Coverage desatualizado
 
-Documento diz L3: 65% (100% datalake). Realidade: products-1688 acabou de atingir 100% L3 no datalake. O L3 overall esta em ~65%.
+Documento diz L3: 65% (100% datalake, 100% arbitlens_brasil). Realidade: products-1688 acabou de atingir 100% L3 no datalake. O L3 overall esta em ~65%.
 
 Solucao: Atualizar metricas.
 
@@ -1136,14 +1136,14 @@ Documentação de scraping em `docs/scraping_brasil.md`.
 
 | Campo | Produtos sem | % do total | Impacto |
 |---|---|---|---|
-| silver_category_id | **2,857** | 15.7% | ❌ Sem categoria = invisível no Category Browsing |
+| silver_category_id | **2,514** | 15.7% | ❌ Sem categoria = invisível no Category Browsing |
 | price | 104 | 0.6% | ⚠️ Sem preço = sem filtro de preço |
 | price_brl (tem price mas não BRL) | 2,980 | 16.4% | ❌ Frontend precisa converter moeda |
 | sales_30d | 6,813 | 37.5% | ❌ Sem vendas = sem ranking |
 | image_url | 53 | 0.3% | ⚠️ Sem imagem = card quebrado |
 | category_l1 | 4 | 0.02% | ⚠️ Sem L1 = invisível |
 
-**2,857 products sem `silver_category_id`** — isso é 15.7% do banco. Distribuição:
+**2,514 products sem `silver_category_id`** — isso é 15.7% do banco. Distribuição:
 - **2,514 arbitlens_china** (18.3% do source) — produtos Rakumart sem mapeamento. Responsável: arbitlens_china (S2-01).
 - **343 datalake** (18.1% do source) — produtos 1688 sem mapeamento. Responsável: products-1688.
 
@@ -1276,7 +1276,7 @@ Isso faz cross-join entre L1 e todos os L2 do mesmo L1, multiplicando as contage
 1. Corrigir números para dados reais
 2. Documentar conversão de moeda
 3. Adicionar nota sobre sales semantics
-4. Resolver products sem `silver_category_id` (2,857)
+4. Resolver products sem `silver_category_id` (2,514)
 5. Testar queries com dados reais
 
 ---
@@ -1285,9 +1285,9 @@ Isso faz cross-join entre L1 e todos os L2 do mesmo L1, multiplicando as contage
 
 | Local | Antes | Depois | Justificativa |
 |---|---|---|---|
-| Linhas 86, 122, 157, 394, 536, 622 | 18,384 products | 18,180 | Contagem real verificada no DB |
+| Linhas 86, 122, 157, 394, 536, 622 | 18,180 products | 18,180 | Contagem real verificada no DB |
 | Linhas 150, 392, 1066 | arbitlens_brasil 1,699 | 1,495 | Limpei 204 orfãos (189 ML IDs inválidos + 15 Amazon malformados) |
-| Seção "Dados faltando" | Genérico "2,857 products" | Detalhado: 2,514 arbitlens_china + 343 datalake | Precisamos saber quem é responsável por cada gap |
+| Seção "Dados faltando" | Genérico "2,514 products" | Detalhado: 2,514 arbitlens_china (datalake: 0) | Precisamos saber quem é responsável por cada gap |
 | Seção "price_brl" | "16.4% dos products" | Breakdown: 1,626 CNY + 418 USD + 301 USD + 245 BRL | Frontend precisa saber quais moedas converter |
 | Seção "Dados faltando" | "pipeline precisa resolver" | "re-scraping de categorias precisa resolver" | Pipeline não existe ainda; re-scraping é a ação imediata |
 
@@ -1322,7 +1322,7 @@ Todos os 4 agentes revisaram e contribuíram. O documento evoluiu de 786 → 1,3
 
 ### Problemas Críticos Identificados (consolidados)
 
-#### 1. DADOS FALTANDO — 2,857 products sem categoria (15.7%)
+#### 1. DADOS FALTANDO — 2,514 products sem categoria (15.7%)
 
 | Source | Sem silver_category_id | % do source |
 |--------|------------------------|-------------|
@@ -1371,7 +1371,7 @@ LEFT JOIN silver_categories sc2 ON sc2.l1 = sc.l1 AND sc2.l2 IS NOT NULL
 
 | # | Problema | Impacto |
 |---|----------|---------|
-| 5 | Números desatualizados (18,384 → 18,180) | Corrigido por arbitlens_brasil |
+| 5 | Números desatualizados (18,180 → 18,180) | Corrigido por arbitlens_brasil |
 | 6 | Credenciais hardcoded | Corrigido por products-1688 |
 | 7 | L3 coverage desatualizado (46% → 65%) | Corrigido por products-1688 |
 | 8 | "Geral" como placeholder em L2/L3 | UX ruim, mas não bloqueante |
@@ -1400,7 +1400,7 @@ LEFT JOIN silver_categories sc2 ON sc2.l1 = sc.l1 AND sc2.l2 IS NOT NULL
 | 1 | Corrigir LEFT JOIN na query de árvore | arbitlens_china | URGENTE |
 | 2 | Documentar conversão de moeda (CNY→BRL) | arbitlens_china | URGENTE |
 | 3 | Adicionar nota sobre sales semantics em TODAS as queries | arbitlens_china | URGENTE |
-| 4 | Completar re-scraping de categorias (2,857 products) | products-1688, arbitlens_china | URGENTE |
+| 4 | Completar re-scraping de categorias (2,514 products) | products-1688, arbitlens_china | URGENTE |
 | 5 | Testar queries com dados reais | arbitlens_brasil | IMPORTANTE |
 | 6 | Adicionar Known Data Quality Issues | arbitlens_brasil | IMPORTANTE |
 
@@ -1414,7 +1414,7 @@ LEFT JOIN silver_categories sc2 ON sc2.l1 = sc.l1 AND sc2.l2 IS NOT NULL
 4. **Segurança:** 9/10 — Corrigido (.env)
 
 **Recomendação:** Encaminhar para o Frontend Engineer, mas com aviso claro sobre:
-- Products sem categoria (2,857) não vão aparecer
+- Products sem categoria (2,514) não vão aparecer
 - Conversão de moeda precisa ser implementada
 - Sales semantics são diferentes por plataforma
 
