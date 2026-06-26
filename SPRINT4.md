@@ -1,3 +1,4 @@
+/usr/bin/bash: warning: setlocale: LC_ALL: cannot change locale (pt_BR.UTF-8)
 # Sprint 4
 
 ## Quick Start (pro Frontend Engineer)
@@ -1029,48 +1030,26 @@ Sugestoes acima sao melhorias incrementais, nao bloqueantes.
 ## arbt.ly - Avaliação do Sprint 4
 
 **Autor:** arbt.ly (agente ML/Amazon)
-**Data:** 2026-06-26 02:15
-**Contexto:** Revisão completa da documentação técnica pro Frontend
+**Data:** 2026-06-26 02:30
+**Contexto:** Revisão da documentação técnica pro Frontend (atualizada com feedback do time)
 
 ### Geral
 
-Documentação **muito bem estruturada**. Cobertura excelente de:
-- Arquitetura multi-agente
-- Modelo de dados com DDL completo
-- Queries SQL prontas para uso
-- Layouts ASCII art (UX clara)
-- Checklists organizados
+Documentação **muito bem estruturada**. Cobertura excelente.
 
-**Nota: 9/10** — Sólido trabalho, com algumas observações importantes.
+**Nota: 8.5/10** — Sólido, com ajustes baseados no feedback do time.
 
-### Observações Críticas
+### Observações
 
-#### 1. Matching por Categoria (não por Imagem)
+#### 1. Matching por Categoria (sem matching de produtos)
 
-**Ponto importante:** O matching entre plataformas agora é por `silver_category_id`, não por similaridade visual/CLIP.
+Neste momento, NÃO teremos matching de produtos entre plataformas. O matching é apenas por CATEGORIA silver.
 
-Isso significa que:
-- Dois produtos na mesma categoria silver são "matches" potenciais
-- Frontend pode mostrar "produtos similares" por categoria
-- Não precisa de pipeline de embeddings para matching
-
-**Recomendação para Frontend:**
-```sql
--- Encontrar produtos da mesma categoria em diferentes plataformas
-SELECT bp1.title, bp1.price_brl, bp1.marketplace as source_marketplace,
-       bp2.title, bp2.price_brl, bp2.marketplace as target_marketplace,
-       sc.l1, sc.l2, sc.l3
-FROM bronze_products bp1
-JOIN bronze_products bp2 ON bp1.silver_category_id = bp2.silver_category_id
-    AND bp1.source != bp2.source
-JOIN silver_categories sc ON bp1.silver_category_id = sc.id
-WHERE bp1.source = 'arbt.ly' AND bp2.source = 'arbitlens_china'
-LIMIT 20;
-```
+- Frontend mostra produtos agrupados por categoria silver
+- Não há necessidade de mostrar "produtos similares" cross-platform
+- Matching de produtos pode vir em fase posterior
 
 #### 2. Dados arbt.ly no ImportaSimples
-
-Status atual dos 1,079 produtos arbt.ly:
 
 | Métrica | Valor |
 |---------|-------|
@@ -1080,15 +1059,13 @@ Status atual dos 1,079 produtos arbt.ly:
 | URLs | 100% |
 | Imagens | 100% |
 
-**Fonte de dados:** `bronze_products WHERE source = 'arbt.ly'`
+**Fonte:** `bronze_products WHERE source = 'arbt.ly'`
 
-**Nota:** arbt.ly e arbitlens_brasil são agentes DIFERENTES com sources diferentes:
+**Nota:** arbt.ly e arbitlens_brasil são agentes DIFERENTES:
 - arbt.ly → source = 'arbt.ly' (1,079 produtos)
 - arbitlens_brasil → source = 'arbitlens_brasil' (1,699 produtos)
 
 #### 3. Sales Semantics (CRITICAL)
-
-Frontend precisa entender que sales significam coisas diferentes:
 
 | Plataforma | Sales Significa | Exemplo |
 |------------|-----------------|---------|
@@ -1096,114 +1073,35 @@ Frontend precisa entender que sales significam coisas diferentes:
 | Amazon BR | Vendas do ÚLTIMO MÊS | "Mais de 2 mil compras no mês passado" |
 | Amazon US | Vendas do ÚLTIMO MÊS | "5K+ bought in past month" |
 
-**Recomendação:** Adicionar label explicativo no frontend:
-- ML: "Vendas totais"
-- Amazon: "Vendas/mês"
+**Label recomendado:** ML = "Vendas totais", Amazon = "Vendas/mês"
 
-#### 4. Decodo Scraping Status
+### Recomendações (aprovadas pelo time)
 
-Para o frontend, é importante saber que:
+| # | Recomendação | Prioridade | Status |
+|---|--------------|------------|--------|
+| 1 | Label "Vendas totais" vs "Vendas/mês" | URGENTE | Aprovado |
+| 2 | Mostrar source (arbt.ly vs arbitlens_brasil) | IMPORTANTE | Aprovado |
+| 3 | Filtro por source | IMPORTANTE | Aprovado |
+| 4 | Gap de sales por categoria | UTIL | Aprovado |
 
-| Método | ML | Amazon BR | Amazon US |
-|--------|-----|-----------|-----------|
-| Decodo HTML + `geo: "Brazil"` | ✅ Funciona | ❌ Erro 400 | ❌ Erro 400 |
-| Decodo HTML (sem geo) | ❌ Erro 613 | ✅ Funciona | ❌ Bloqueado |
-| Site Unblocker | ✅ | ✅ | ✅ |
-
-**Implicação:** Dados já estão no banco. Frontend não precisa se preocupar com scraping.
-
-#### 5. Categorias L2/L3 para Frontend
-
-Árvore de categorias arbt.ly (19 L1):
-
-```
-Audio (250 produtos)
-├── Fones (120)
-│   ├── Bluetooth (85)
-│   └── Fio (35)
-├── Caixas de Som (65)
-└── Microfones (65)
-
-Moda (160 produtos)
-├── Roupa (80)
-├── Acessórios (45)
-└── Calçados (35)
-
-... (17 categorias L1 restantes)
-```
-
-Frontend pode usar `silver_categories` para a árvore completa (383 categorias).
-
-#### 6. Queries Adicionais Úteis
-
-```sql
--- Top produtos por vendas (arbt.ly)
-SELECT bp.title, bp.price, bp.sales_30d, bp.url, bp.image_url
-FROM bronze_products bp
-WHERE bp.source = 'arbt.ly' AND bp.sales_30d > 0
-ORDER BY bp.sales_30d DESC
-LIMIT 20;
-
--- Comparação de preços entre plataformas (mesma categoria)
-SELECT sc.l1, sc.l2,
-       AVG(CASE WHEN bp.source = 'arbt.ly' THEN bp.price END) as avg_price_br,
-       AVG(CASE WHEN bp.source = 'arbitlens_china' THEN bp.price_brl END) as avg_price_china,
-       ROUND(AVG(CASE WHEN bp.source = 'arbitlens_china' THEN bp.price_brl END) / 
-             AVG(CASE WHEN bp.source = 'arbt.ly' THEN bp.price END) * 100, 1) as china_vs_br_pct
-FROM bronze_products bp
-JOIN silver_categories sc ON bp.silver_category_id = sc.id
-WHERE sc.l2 IS NOT NULL
-GROUP BY sc.l1, sc.l2
-HAVING COUNT(*) > 5
-ORDER BY china_vs_br_pct DESC;
-
--- Produtos sem sales (gap de dados)
-SELECT bp.source, bp.platform, COUNT(*) as gap
-FROM bronze_products bp
-WHERE bp.sales_30d IS NULL OR bp.sales_30d = 0
-GROUP BY bp.source, bp.platform
-ORDER BY gap DESC;
-```
-
-#### 7. Known Issues (arbt.ly)
-
-| Issue | Status | Impacto |
-|-------|--------|---------|
-| 58 produtos sem sales (baixo tráfego) | Aceito | Dados genuínamente indisponíveis |
-| amazon_br sales 94.7% | ✅ | 24 produtos sem dados |
-| ml sales 90.2% | ✅ | 32 produtos sem dados |
-| Pipeline bronze→silver não existe | Pendente | Frontend lê bronze |
-
-#### 8. Recomendações
-
-| # | Recomendação | Prioridade |
-|---|--------------|------------|
-| 1 | Adicionar label "Vendas totais" vs "Vendas/mês" | URGENTE |
-| 2 | Mostrar source (arbt.ly vs arbitlens_brasil) no frontend | IMPORTANTE |
-| 3 | Adicionar filtro por source | IMPORTANTE |
-| 4 | Mostrar gap de sales por categoria | UTIL |
-| 5 | Adicionar exportação por source | UTIL |
+**NOTA:** Exportação NÃO será implementada nesta fase.
 
 ### O que está excelente
 
-- Arquitetura: diagrama claro do fluxo multi-agente
+- Arquitetura: diagrama claro multi-agente
 - Modelo de dados: DDL completo com exemplos por source
-- Queries: prontas para usar, bem documentadas
+- Queries: prontas para usar
 - Layouts: ASCII art mostra a UX proposta
 - Checklists: organizados e completos
-- Feature specs: requisitos claros para Category Browsing e Data Warehouse
+- Feature specs: requisitos claros
 
-### Minha Posição
+### Posição
 
-Sprint 4 está **pronto para avançar**. As correções do products-1688 resolveram os problemas críticos.
+Sprint 4 está **pronto para avançar**.
 
-Minhas contribuições adicionais:
-- Dados arbt.ly prontos (1,079 produtos, 100% silver categories)
-- Matching por categoria implementado
-- Documentação de scraping em `docs/scraping_brasil.md`
-
-O frontend pode começar a trabalhar com os dados atuais em bronze_products.
+Dados arbt.ly prontos (1,079 produtos, 100% silver categories).
+Documentação de scraping em `docs/scraping_brasil.md`.
 
 ---
 
-* arbt.ly, 2026-06-26 02:15*
+* arbt.ly, 2026-06-26 02:30*
