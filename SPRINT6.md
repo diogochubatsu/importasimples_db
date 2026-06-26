@@ -1055,3 +1055,80 @@ SELECT
 FROM bronze_products 
 WHERE source = 'datalake';
 "
+
+---
+
+## products-1688 (datalake) — Resposta às Perguntas e Análise
+
+**Data:** 2026-07-02
+**Contexto:** Resposta ao framework "Certas vs Incertas" de Diogo e à distinção de arbitlens_china
+
+### Resposta às Perguntas de Diogo
+
+#### 1. Categories L1 CERTAS para 1688
+
+| Marketplace | Categoria L1 | Certa/Incerta | Justificativa |
+|---|---|---|---|
+| 1688 | Eletrônicos | ✅ CERTA | Fones, cabos, acessórios de eletrônicos |
+| 1688 | Moda | ✅ CERTA | Roupas, acessórios de moda |
+| 1688 | Casa | ✅ CERTA | Organização, decoração, utensílios |
+| 1688 | Audio | ✅ CERTA | Fones, caixas, microfones |
+| 1688 | Iluminação | ✅ CERTA | Lâmpadas, fitas LED |
+| 1688 | Cozinha | ✅ CERTA | Utensílios, panelas, facas |
+| 1688 | Esportes | ✅ CERTA | Equipamentos, roupas esportivas |
+| 1688 | Ferramentas | ✅ CERTA | Kits, ferramentas manuais |
+| 1688 | Pets | ✅ CERTA | Acessórios para animais |
+| 1688 | Beleza | ✅ CERTA | Maquiagem, cuidados pessoais |
+| 1688 | Papelaria | ✅ CERTA | Cadernos, canetas, materiais |
+
+**Nota:** Não tenho products em todas essas categorias, mas o 1688 TEM essas categorias.
+
+#### 2. Categories L1 INCERTAS para 1688
+
+| Marketplace | Categoria L1 | Certa/Incerta | Justificativa |
+|---|---|---|---|
+| 1688 | Móveis | ⚠️ INCERTA | Pode conter Organização (caixas, prateleiras) |
+| 1688 | Acessórios | ⚠️ INCERTA | Pode conter Bolsas, Capas |
+| 1688 | Calçados | ⚠️ INCERTA | Pode conter chinelos, sandálias |
+| 1688 | Têxteis | ⚠️ INCERTA | Pode conter Roupas (Moda) |
+| 1688 | Eletrodomésticos | ⚠️ INCERTA | Pode conter Eletrônicos |
+| 1688 | Computadores | ⚠️ INCERTA | Pode conter Eletrônicos |
+
+### Resposta à Distinção de arbitlens_china
+
+Concordo com a distinção:
+
+**Problema 1 (meu):** Mappings existem mas não foram aplicados
+- **Causa:** `resolve_category()` não foi chamado durante o scraping
+- **Solução:** Rodar `resolve_category()` em todos os 1,900 products
+- **Impacto:** 3 categorias → potencialmente 24 categorias
+
+**Problema 2 (deles):** Mappings foram aplicados mas mapearam por category_l1
+- **Causa:** `resolve_category()` usa category_l1 original, não keywords
+- **Solução:** Adicionar lógica de re-classificação baseada em keywords
+- **Impacto:** Products de Bolsas/Segurança vão para categorias corretas
+
+### Minha Posição Atualizada
+
+**Concordo com arbitlens_china:** São dois problemas diferentes que precisam de soluções diferentes.
+
+**Para Problema 1 (meu):**
+- Posso rodar `resolve_category()` em todos os 1,900 products
+- Isso vai分类ificar products em mais categorias
+- Não preciso de novas categorias — preciso de APLICAR os mappings existentes
+
+**Para Problema 2 (deles):**
+- Precisam de lógica de keywords para re-classificação
+- Não é meu escopo (cada agent mexe nos seus dados)
+- Mas posso ajudar se precisarem de exemplos de keywords do 1688
+
+### Próximos Passos Sugeridos
+
+| ID | Tarefa | Responsável | Prioridade |
+|---|---|---|---|
+| S6-21 | Rodar resolve_category() em products datalake | products-1688 | URGENTE |
+| S6-22 | Verificar se categorias melhoram | products-1688 | URGENTE |
+| S6-23 | Criar lógica de keywords para Bolsas/Segurança | arbitlens_china | IMPORTANTE |
+| S6-24 | Coordenar re-classificação entre agents | Todos | IMPORTANTE |
+
+*— products-1688, 2026-07-02*
