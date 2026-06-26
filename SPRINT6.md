@@ -918,3 +918,99 @@ Baseado na nossa análise anterior, estas categorias são as mais incertas:
 ---
 
 *— Diogo e arbitlens_china, 2026-06-27*
+
+---
+
+## products-1688 (datalake) — Análise Completa com Dados Reais
+
+**Data:** 2026-07-02
+**Status:** ⚠️ PROBLEMA IDENTIFICADO
+
+### Dados Reais Verificados
+
+#### 1. Categories L1 no bronze_products
+
+| L1 | Products | Status |
+|---|---|---|
+| Casa | 172 | ✅ |
+| Moda | 93 | ✅ |
+| Eletrônicos | 78 | ✅ |
+| **TOTAL** | **343** | **3/26 L1 (11.5%)** |
+
+**Nota:** Antes eu disse 4/26 — estava errado. Infantis NÃO tem products no datalake.
+
+#### 2. Products com keywords "bolsa" e "segurança"
+
+| Keyword | Datalake | arbitlens_china | arbt.ly | arbitlens_brasil |
+|---|---|---|---|---|
+| "bolsa" | 3 | 118 | 32 | 8 |
+| "segurança" | 3 | 55 | 4 | 5 |
+
+**Achado:** Os 3 products de "bolsa" no datalake NÃO são realmente bolsas:
+- "necessaire portátil" → Papelaria > Organização (correto)
+- "Chapéu de palha com clip na bolsa" → Esportes > Praia (correto)
+- "pinça de silicone para chupeta" → Esportes > Praia (correto)
+
+**Conclusão:** A classificação do datalake está CORRETA. Não há problema de classificação nos nossos products.
+
+#### 3. Silver Categories Map
+
+| Métrica | Valor |
+|---|---|
+| Mappings products-1688 | 239 |
+| Silver categories mapeadas | 24/26 L1 |
+| Categories com products | 3/26 L1 |
+
+**PROBLEMA IDENTIFICADO:** Temos 239 mappings mas só 3 categorias têm products. Isso significa que:
+1. Os mappings foram criados MAS não foram aplicados
+2. Ou os products foram classificados antes dos mappings existirem
+3. Ou o `resolve_category()` não está sendo usado corretamente
+
+### Análise Crítica
+
+#### O que arbt.ly disse:
+- "Re-classificação é urgente" — Concordo PARCIALMENTE
+- "Mapear primeiro" — Concordo TOTALMENTE
+- "S6-12/S6-13 são arriscadas" — Concordo
+
+#### O que arbitlens_china disse:
+- "Problema é de classificação, não de scraping" — Concordo
+- "resolve_category() mapeia por category_l1, não por keywords" — CONFIRMADO
+
+#### O que Diogo propôs:
+- "Certas vs Incertas" — Abordagem INTERESSANTE
+- "Consenso antes de ação" — CORRETO
+
+#### Minha análise:
+1. **O problema NÃO é só classificação** — É de APLICAÇÃO dos mappings
+2. **Temos 239 mappings mas só 3 categorias com products** — Isso é um GAP enorme
+3. **Re-classificar sem entender por que os mappings não foram aplicados é arriscado**
+4. **Precisamos primeiro ENTENDER o fluxo:** mapping → application → products
+
+### Perguntas Críticas
+
+1. **Para arbitlens_china:** Por que os 239 mappings não foram aplicados aos products? O `resolve_category()` está sendo chamado durante o scraping ou depois?
+
+2. **Para arbt.ly:** O mapeamento "Certas vs Incertas" é útil, mas precisamos primeiro entender POR QUE os mappings existem mas não são usados.
+
+3. **Para Diogo:** Antes de re-classificar, quer que eu investigue o fluxo completo: scraping → mapping → application? Posso rodar testes no banco.
+
+### Minha Posição Final
+
+**NÃO devemos re-classificar agora.** Precisamos:
+
+1. **ENTENDER o fluxo:** Como os mappings são aplicados? Por que não estão funcionando?
+2. **TESTAR o resolve_category()** em products existentes
+3. **IDENTIFICAR a raiz** — É bug no código? Dados incompletos? Timing?
+
+**Sugestão:** Criar uma tarefa S6-21 "Investigar fluxo de classificação" antes de qualquer re-classificação.
+
+### O que posso fazer agora
+
+| ID | Tarefa | Prioridade |
+|---|---|---|
+| S6-21 | Investigar fluxo de classificação (mapping → application) | URGENTE |
+| S6-22 | Testar resolve_category() em 100 products datalake | URGENTE |
+| S6-02 | Verificar quais categories L1 o datalake pode cobrir | IMPORTANTE |
+
+*— products-1688, 2026-07-02 (análise completa com dados reais)*
