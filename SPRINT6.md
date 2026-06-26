@@ -811,3 +811,110 @@ resolve_category(conn, platform='1688', l1='moda', l2='...', l3='...')
 ---
 
 *— arbitlens_china, 2026-06-27 (análise técnica)*
+
+---
+
+## SUGESTÃO DE DIAGO — Análise de Categorias Incertas
+
+**Data:** 2026-06-27
+**Contexto:** Precisamos entender como cada marketplace lida com categorias incertas
+
+### Objetivo
+
+Chegar a um **consenso** sobre quais categorias são **certas** e quais são **incertas** para cada marketplace. Isso vai resultar em **atualização de categorias no DB**.
+
+### Pergunta para TODOS os agents
+
+**Liste as categorias que você considera CERTAS e INCERTAS para cada marketplace:**
+
+#### Template de Resposta
+
+Para cada marketplace que você opera:
+
+| Marketplace | Categoria L1 | Certa/Incerta | Justificativa |
+|-------------|--------------|---------------|---------------|
+| [marketplace] | [L1] | [✅ CERTA / ⚠️ INCERTA] | [Por quê?] |
+
+#### Exemplo (arbitlens_china)
+
+| Marketplace | Categoria L1 | Certa/Incerta | Justificativa |
+|-------------|--------------|---------------|---------------|
+| rakumart-1688 | Audio | ✅ CERTA | Fones, caixas de som são claramente Audio |
+| rakumart-1688 | Moda | ✅ CERTA | Roupas, acessórios de moda |
+| rakumart-1688 | Eletrônicos | ⚠️ INCERTA | Pode conter Bolsas de Notebook, Capas |
+| rakumart-1688 | Segurança | ⚠️ INCERTA | Câmeras de segurança podem ser Eletrônicos |
+
+---
+
+### Perguntas Específicas
+
+#### Para arbitlens_china
+
+1. **Quais categorias L1 você considera CERTAS para rakumart-1688?**
+   - Ex: Audio, Moda, Casa, etc. — onde não há dúvida?
+
+2. **Quais categorias L1 você considera INCERTAS para rakumart-1688?**
+   - Ex: Eletrônicos pode conter Bolsas de Notebook, Segurança pode conter Câmeras
+
+3. **Para rakumart-taobao e rakumart-alibaba:**
+   - As mesmas perguntas se aplicam?
+   - Há diferenças entre marketplaces?
+
+#### Para products-1688 (datalake)
+
+1. **Quais categorias L1 você considera CERTAS para 1688?**
+   - Ex: O que você tem hoje (Eletrônicos, Moda, Casa, Infantis) são todos CERTOS?
+
+2. **Quais categorias L1 você considera INCERTAS?**
+   - Categories que o 1688 tem mas que podem ser ambíguas
+
+#### Para arbitlens_brasil
+
+1. **Quais categorias L1 você considera CERTAS para ML/Amazon BR?**
+   - Ex: O que você tem hoje são todos CERTOS?
+
+2. **Quais categorias L1 você considera INCERTAS?**
+   - Categories que ML/Amazon tem mas que podem ser ambíguas
+
+#### Para arbt.ly
+
+1. **Quais categorias L1 você considera CERTAS para ML/Amazon?**
+   - Ex: As 8 categorias que você tem são todos CERTOS?
+
+2. **Quais categorias L1 você considera INCERTAS?**
+   - Categories que você não tem mas que são ambíguas
+
+---
+
+### Categorias que Precisam de Análise
+
+Baseado na nossa análise anterior, estas categorias são as mais incertas:
+
+| Categoria | Por que é incerta | Exemplos de products |
+|-----------|-------------------|----------------------|
+| **Bolsas** | Products podem ser Moda, Eletrônicos, ou Casa | Bolsa de mão (Moda), Bolsa de notebook (Eletrônicos), Bolsa térmica (Cozinha) |
+| **Segurança** | Câmeras podem ser Eletrônicos | Câmera de segurança (Eletrônicos), Alarme (Segurança) |
+| **Eletrônicos** | Pode conter Bolsas, Capas, Acessórios | Bolsa de notebook, Capa de celular |
+| **Moda** | Pode conter Bolsas, Acessórios | Bolsa de mão, Cinto, Carteira |
+| **Acessórios** | Pode conter Bolsas, Capas | Bolsa de couro, Capa de celular |
+| **Casa** | Pode conter Organização, Decoração | Organizador, Caixa |
+
+---
+
+### Próximos Passos
+
+1. **Cada agent lista suas categorias certas e incertas** (até 2026-06-28)
+2. **arbitlens_china consolida** as respostas (até 2026-06-29)
+3. **Diogo aprova** a lista final (até 2026-06-29)
+4. **Atualização no DB** — Mover products para categorias corretas (até 2026-06-30)
+
+### Benefícios
+
+1. **Consensus** — Todos os agents concordam com as categorias
+2. **Dados corretos** — Products na categoria certa
+3. **Frontend melhor** — Mais categories com products reais
+4. **Database atualizado** — silver_categories com products
+
+---
+
+*— Diogo e arbitlens_china, 2026-06-27*
