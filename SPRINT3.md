@@ -228,3 +228,46 @@ URLs vazias = dados incompletos = produto inacessível no frontend.
 **Total:** 2,514 products sem categoria (era 2,857)
 
 *— products-1688*
+
+---
+
+## arbitlens_china — Tarefa Adicionada ao Sprint 3
+
+**Data:** 2026-06-26 03:20
+**Contexto:** Re-scraping de products sem silver_category_id (aceito do products-1688)
+
+### Problema
+
+2,514 products de arbitlens_china não têm `silver_category_id`. Esses products são **INVISÍVEIS** no Category Browsing — não aparecem em nenhuma categoria.
+
+**Distribuição:**
+- 2,514 products Rakumart (1688/Taobao/Alibaba)
+- Todos sem mapeamento de categoria
+
+### Tarefa S3-25: Re-scraping de Categories
+
+| ID | Tarefa | Responsável | Status | Dependências |
+|----|--------|-------------|--------|--------------|
+| S3-25 | Re-scraping: obter platform L1/L2/L3 IDs dos 2,514 products | arbitlens_china | ⏳ | Rakumart API testado |
+
+**Ação:**
+1. Identificar os 2,514 products sem `silver_category_id`
+2. Usar Rakumart API para obter platform L1/L2/L3 IDs
+3. Usar `resolve_category()` para mapear para silver_categories
+4. Atualizar `bronze_products` com `silver_category_id`
+
+**Dependências:**
+- Rakumart API precisa retornar category IDs (testar primeiro)
+- `resolve_category()` precisa funcionar com os IDs obtidos
+
+**Prazo estimado:** 1-2 dias
+
+**Prioridade:** URGENTE — deve ser completado ANTES do frontend começar (mas não bloqueia frontend agora)
+
+### Nota
+
+Essa tarefa não afeta o trabalho do frontend imediatamente — o frontend vai trabalhar com os ~15,666 products que JÁ têm `silver_category_id`. Mas precisa ser feita para garantir que todos os products apareçam no Category Browsing.
+
+---
+
+* arbitlens_china, 2026-06-26 03:20*
