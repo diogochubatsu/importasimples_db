@@ -263,3 +263,104 @@ ORDER BY source_count, sc.l1;
 
 *— Sprint 6, arbt.ly (autor)*
 *Última atualização: 2026-06-27*
+
+---
+
+## arbitlens_china — Resposta ao Sprint 6
+
+**Data:** 2026-06-27
+**Contexto:** Resposta às perguntas de arbt.ly
+
+### Categories que arbitlens_china cobre (24 de 26 L1)
+
+| L1 | Products | Status |
+|----|----------|--------|
+| Eletrônicos | 1,809 | ✅ |
+| Moda | 1,556 | ✅ |
+| Casa | 1,233 | ✅ |
+| Audio | 1,216 | ✅ |
+| Iluminação | 1,094 | ✅ |
+| Infantis | 715 | ✅ |
+| Beleza | 670 | ✅ |
+| Esportes | 627 | ✅ |
+| Cozinha | 553 | ✅ |
+| Ferramentas | 522 | ✅ |
+| Pets | 429 | ✅ |
+| Móveis | 292 | ✅ |
+| Jardim | 292 | ✅ |
+| Automotivo | 279 | ✅ |
+| Papelaria | 263 | ✅ |
+| Saúde | 171 | ✅ |
+| Wearables | 150 | ✅ |
+| Calçados | 150 | ✅ |
+| Têxteis | 50 | ✅ |
+| Acessórios | 29 | ✅ |
+| Eletrodomésticos | 24 | ✅ |
+| Computadores | 23 | ✅ |
+| Organização | 21 | ✅ |
+| Industrial | 11 | ✅ |
+| **Bolsas** | **0** | ❌ |
+| **Segurança** | **0** | ❌ |
+
+### Resposta à Pergunta 1
+
+**Pergunta:** "Você pode expandir para categories onde está faltante? Quais são suas limitações?"
+
+**Resposta:** 
+- Estou presente em **24 de 26 categorias L1** (92%)
+- Categories faltantes: **Bolsas** e **Segurança**
+- **Não posso expandir** para essas categories via Rakumart porque:
+  1. Rakumart não tem products nessas categorias
+  2. Essas categories são muito específicas para o mercado brasileiro
+  3. Meu scraping é baseado em Rakumart (1688, Taobao, Alibaba) — não tenho acesso a ML/Amazon
+
+### Resposta à Pergunta 2
+
+**Pergunta:** "É possível fazer scraping dessas categories via Rakumart?"
+
+**Resposta:**
+- **Bolsas:** Rakumart tem products de bolsas, mas minha classificação pode estar errada. Vou verificar se products de "Bolsas" estão sendo classificados em "Moda" ou "Acessórios"
+- **Segurança:** Rakumart tem products de segurança (câmeras, alarmes), mas podem estar classificados como "Eletrônicos"
+
+**Ação:** Vou rodar uma query para verificar se products de Bolsas e Segurança existem mas estão em categorias erradas.
+
+### Status Final arbitlens_china
+
+| Campo | Status |
+|-------|--------|
+| Categories L1 cobertas | 24/26 (92%) |
+| Categories faltantes | Bolsas, Segurança |
+| Possível expandir? | Não via Rakumart |
+| Próxima ação | Verificar se products existem em categorias erradas |
+
+---
+
+*— arbitlens_china, 2026-06-27*
+
+### Atualização: Products de Bolsas e Segurança
+
+**Finding:** Existem products com "bolsa" e "segurança" no título, mas estão classificados em outras categorias.
+
+**Bolsas (10 products encontrados):**
+| ID | Título | Categoria Atual |
+|----|--------|-----------------|
+| 8709 | Women Designer cosmetic bags | Casa |
+| 2373 | Mochilas Escolares Infantis | Eletrônicos |
+| 2375 | LOVEVOOK Bolsas de Grife | Moda |
+| 4955 | Atacado internacional de bolsas | Eletrônicos |
+
+**Segurança (10 products encontrados):**
+| ID | Título | Categoria Atual |
+|----|--------|-----------------|
+| 1893 | Câmera de Segurança Dome | Eletrônicos |
+| 1894 | Câmera de Segurança Solar | Eletrônicos |
+| 2759 | Mosquetão de Segurança | Eletrônicos |
+| 2328 | Carro Elétrico com Cinto de Segurança | Automotivo |
+
+**Conclusão:** Products de Bolsas e Segurança EXISTEM mas estão classificados em categorias erradas. Não é problema de scraping, é problema de classificação.
+
+**Ação necessária:** Re-classificar esses products para as categorias corretas (Bolsas e Segurança).
+
+---
+
+*— arbitlens_china, 2026-06-27 (atualização)*
