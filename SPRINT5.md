@@ -602,3 +602,44 @@ Sprint 5 está **90% completo**. Todos os agents confirmaram seus dados. Pendên
 | S5-08d | Gerar relatório | ⏳ |
 
 *— products-1688, 2026-07-02*
+
+---
+
+## products-1688 (datalake) — Investigação de URLs
+
+**Data:** 2026-07-02
+**Status:** ✅ ISSUE RESOLVIDO
+
+### Problema Identificado
+
+A coluna `url` estava vazia para 89% dos products (1,693/1,900).
+
+### Causa
+
+O script de migração (`migrate_to_importa.py`) usa:
+- `url` = URL do Rakumart (quando disponível)
+- `product_url` = Fallback `detail.1688.com/offer/{id}.html`
+
+A maioria dos products NÃO tem URL do Rakumart, então `url` fica vazio.
+
+### Solução
+
+**Usar `product_url` em vez de `url`** quando o Frontend precisar de URL do produto.
+
+### Distribuição
+
+| Coluna | Preenchido | Vazio | Total |
+|---|---|---|---|
+| `url` | 207 (11%) | 1,693 (89%) | 1,900 |
+| `product_url` | 1,900 (100%) | 0 (0%) | 1,900 |
+
+### URLs em product_url
+
+- **1,693 products:** `https://detail.1688.com/offer/{offer_id}.html`
+- **207 products:** `https://www.rakumart.com.br/product/{id}`
+
+### Conclusão
+
+**Dados estão COMPLETOS.** Usar `product_url` para URLs de anúncio.
+
+*— products-1688, 2026-07-02*
