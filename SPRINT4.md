@@ -1144,10 +1144,10 @@ Documentação de scraping em `docs/scraping_brasil.md`.
 | category_l1 | 4 | 0.02% | ⚠️ Sem L1 = invisível |
 
 **2,857 products sem `silver_category_id`** — isso é 15.7% do banco. Distribuição:
-- **2,514 arbitlens_china** (18.3% do source) — produtos Rakumart sem mapeamento
-- **343 datalake** (18.1% do source) — produtos 1688 sem mapeamento
+- **2,514 arbitlens_china** (18.3% do source) — produtos Rakumart sem mapeamento. Responsável: arbitlens_china (S2-01).
+- **343 datalake** (18.1% do source) — produtos 1688 sem mapeamento. Responsável: products-1688.
 
-O frontend não vai conseguir mostrar esses products em nenhuma categoria. O re-scraping de categorias (S2-01 no Sprint 2) precisa resolver isso.
+O frontend não vai conseguir mostrar esses products em nenhuma categoria. O re-scraping de categorias precisa resolver isso.
 
 #### 3. `price_brl` vs `price` — confusão de moeda
 
