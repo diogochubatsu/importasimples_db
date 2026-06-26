@@ -364,3 +364,68 @@ ORDER BY source_count, sc.l1;
 ---
 
 *— arbitlens_china, 2026-06-27 (atualização)*
+
+---
+
+## SUGESTÃO DE BACKLOG — arbitlens_china e Diogo
+
+**Data:** 2026-06-27
+**Contexto:** Sugestão de melhoria para Sprint 6
+
+### Problema Identificado
+
+**Bolsas e Segurança têm products MAS estão classificados incorretamente!**
+
+| Categoria | Products com keyword | Classificação Atual | Products na Categoria Correta |
+|-----------|---------------------|---------------------|-------------------------------|
+| **Bolsas** | 428 (arbitlens_china) | Moda (265), Eletrônicos (58), Casa (29)... | **0** |
+| **Segurança** | 65 (arbitlens_china) | Eletrônicos (51), Beleza (3)... | **0** |
+
+### Sugestão de Backlog para TODOS os agents
+
+**Diogo e arbitlens_china propõem as seguintes ações para Sprint 6:**
+
+#### 1. Re-classificação de Products (URGENTE)
+
+| ID | Tarefa | Responsável | Descrição |
+|----|--------|-------------|-----------|
+| S6-12 | Re-classificar products de Bolsas | Todos | Identificar products com "bolsa/mochila/bag" no título e mover para categoria Bolsas |
+| S6-13 | Re-classificar products de Segurança | Todos | Identificar products com "segurança/alarme/câmera de segurança" e mover para categoria Segurança |
+| S6-14 | Verificar products "Geral" | Todos | Conforme trabalho anterior, verificar se products com classificação genérica podem ser reclassificados |
+
+#### 2. Análise de Cobertura por Categoria
+
+| ID | Tarefa | Responsável | Descrição |
+|----|--------|-------------|-----------|
+| S6-15 | Mapear products por L1/L2/L3 | Todos | Criar mapa completo de products por categoria para identificar gaps |
+| S6-16 | Identificar categories com poucos products | arbitlens_china | Categories com <10 products precisam de mais scraping |
+| S6-17 | Verificar blacklist | Todos | Confirmar que products na blacklist não deveriam estar em nenhuma categoria |
+
+#### 3. Validação de Classificação
+
+| ID | Tarefa | Responsável | Descrição |
+|----|--------|-------------|-----------|
+| S6-18 | Testar classificador por keywords | arbitlens_china | Rodar simple_classifier.py em todos os products e comparar com classificação atual |
+| S6-19 | Identificar products com L1 incerto | Todos | Products onde L1 não é claro (pode ser múltiplas categorias) |
+| S6-20 | Criar guidelines de classificação | Todos | Documentar regras para classificação consistente |
+
+### Prioridade
+
+1. **S6-12 e S6-13** — Re-classificação de Bolsas e Segurança (URGENTE)
+2. **S6-14** — Verificação de products "Geral" (IMPORTANTE)
+3. **S6-15 a S6-20** — Análise completa de cobertura (NORMAL)
+
+### Benefícios Esperados
+
+1. **Categories mais completas** — Bolsas e Segurança vão ter products
+2. **Melhor cobertura** — Identificar gaps reais vs gaps de classificação
+3. **Dados mais consistentes** — Todos os agents seguem mesmas regras
+4. **Frontend melhor** — Mais categories com products = mais comparações
+
+### Nota
+
+Esta sugestão vem de **Diogo (usuário) e arbitlens_china (agente)**. Trabalhamos juntos na identificação deste problema.
+
+---
+
+*— arbitlens_china e Diogo, 2026-06-27*
