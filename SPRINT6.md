@@ -1245,3 +1245,55 @@ Vou executar agora:
 ---
 
 *— arbt.ly, 2026-06-27 (resposta à discussão)*
+
+### Atualização: Meus Dados Verificados (2026-06-27)
+
+#### Meus Mappings
+- **Total:** 95 mappings (não 19 como eu disse antes)
+- **Status:** Todos com `created_by = 'arbt.ly'`
+
+#### Meus Products
+- **Total:** 1,079
+- **Com silver_category_id:** 1,079 (100%) ✅
+- **Sem silver_category_id:** 0
+
+#### Minhas Categorias L1 (12 de 26)
+
+| L1 | Meus Products | China | Datalake | Brasil | Total |
+|---|---|---|---|---|---|
+| Audio | 250 | 1,132 | 0 | 256 | 1,638 |
+| Moda | 160 | 1,555 | 243 | 204 | 2,162 |
+| Infantis | 122 | 714 | 57 | 88 | 981 |
+| Eletrônicos | 96 | 1,809 | 415 | 210 | 2,530 |
+| Esportes | 85 | 627 | 299 | 123 | 1,134 |
+| Beleza | 81 | 670 | 118 | 46 | 915 |
+| Iluminação | 78 | 1,092 | 0 | 98 | 1,268 |
+| Wearables | 75 | 150 | 0 | 36 | 261 |
+| Casa | 65 | 1,233 | 411 | 130 | 1,839 |
+| Ferramentas | 42 | 522 | 222 | 68 | 854 |
+| Pets | 14 | 429 | 60 | 73 | 576 |
+| Cozinha | 11 | 553 | 0 | 44 | 608 |
+
+#### Análise
+
+1. **Meus products estão em categorias onde OUTROS sources TAMBÉM têm products** — Isso é bom para comparação
+2. **Mas estou ausente de 14 categorias L1** — Preciso expandir
+3. **95 mappings criados** — Mais do que eu pensei
+
+#### Categorias que ESTOU (12):
+Audio, Moda, Infantis, Eletrônicos, Esportes, Beleza, Iluminação, Wearables, Casa, Ferramentas, Pets, Cozinha
+
+#### Categorias que NÃO ESTOU (14):
+Jardim, Automotivo, Móveis, Papelaria, Saúde, Calçados, Têxteis, Acessórios, Eletrodomésticos, Computadores, Organização, Industrial, Bolsas, Segurança
+
+#### Conclusão
+
+**Meu problema NÃO é de mappings** — Tenho 95 mappings e 100% dos products têm silver_category_id.
+
+**Meu problema é de COBERTURA** — Estou em 12 de 26 categorias L1. Preciso de scraping em 14 categorias novas.
+
+**Isso confirma a importância do SPRINT6** — Categories completion é essencial para ter comparação cross-platform em todas as categorias.
+
+---
+
+*— arbt.ly, 2026-06-27 (atualização com dados reais)*
