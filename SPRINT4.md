@@ -1,4 +1,57 @@
-# Sprint 4 — ImportaSimples
+# Sprint 4
+
+## Quick Start (pro Frontend Engineer)
+
+### 1. Conexao ao Banco
+
+```python
+import os
+import psycopg2
+
+conn = psycopg2.connect(
+    host=os.environ.get('DB_HOST', '34.170.210.220'),
+    port=5432,
+    dbname='importasimples_products',
+    user='importasimples',
+    password=os.environ['DB_PASSWORD'],  # NUNCA hardcoded!
+    sslmode='require'
+)
+```
+
+### 2. Query mais simples
+
+```sql
+-- Top 10 categorias por produtos
+SELECT sc.l1, sc.icon, COUNT(bp.id) as count
+FROM silver_categories sc
+JOIN bronze_products bp ON bp.silver_category_id = sc.id
+WHERE sc.l2 IS NULL
+GROUP BY sc.l1, sc.icon
+ORDER BY count DESC
+LIMIT 10;
+```
+
+### 3. Como rodar localmente
+
+```bash
+# Instalar dependencias
+pip install psycopg2-binary
+
+# Testar conexao
+python -c "import psycopg2; print('OK')"
+
+# Rodar queries
+psql -h 34.170.210.220 -U importasimples -d importasimples_products
+```
+
+### 4. Fonte de dados
+
+**IMPORTANTE:** O frontend deve ler de `bronze_products`, nao de `silver_products`.
+O pipeline bronze-silver ainda nao existe.
+
+---
+
+ — ImportaSimples
 
 **Período:** 2026-07-03 → 2026-07-07 (5 dias)
 **Status:** 🟡 Proposto
@@ -337,7 +390,7 @@ ORDER BY bp.sales_30d DESC;
 | datalake | 1,900 | 100% | 100% | 46% | 100% | 100% |
 | arbitlens_brasil | 1,699 | 100% | 100% | 100% | 100% | 100% |
 | arbt.ly | 1,079 | 100% | 100% | 100% | 100% | 97% |
-| **Total** | **18,384** | **87%** | **76%** | **42%** | **100%** | **100%** |
+| **Total** | **18,384** | **87%** | **76%** | **65%** | **100%** | **100%** |
 
 #### Acesso ao Banco de Dados
 
@@ -350,7 +403,7 @@ conn = psycopg2.connect(
     port=5432,
     dbname='importasimples_products',
     user='importasimples',
-    password='R{[{f<VajbC{<kvU',
+    password=os.environ['DB_PASSWORD']  # via .env,
     sslmode='require'
 )
 
@@ -360,7 +413,7 @@ conn_arbitlens = psycopg2.connect(
     port=5432,
     dbname='intel_data',
     user='hermes1688',
-    password='Lndgcp@#12'
+    password=os.environ['ARBLENS_DB_PASSWORD']  # via .env
 )
 ```
 
@@ -644,7 +697,7 @@ conn = psycopg2.connect(
     port=5432,
     dbname='importasimples_products',
     user='importasimples',
-    password='R{[{f<VajbC{<kvU',
+    password=os.environ['DB_PASSWORD']  # via .env,
     sslmode='require'
 )
 
@@ -663,7 +716,7 @@ conn_arbitlens = psycopg2.connect(
     port=5432,
     dbname='intel_data',
     user='hermes1688',
-    password='Lndgcp@#12'
+    password=os.environ['ARBLENS_DB_PASSWORD']  # via .env
 )
 ```
 
@@ -770,6 +823,21 @@ LIMIT 20;
 
 ---
 
+
+
+---
+
+## Known Issues (adicionado por products-1688)
+
+| Issue | Status | Impacto |
+|-------|--------|---------|
+| silver_products tem 9,554 rows de arbitlens_china | Pendente | Frontend nao pode usar silver_products |
+| Pipeline bronze-silver nao existe | Pendente | Frontend deve ler bronze_products |
+| Credenciais hardcoded no doc | Corrigido | Usar .env |
+| L3 coverage 65% (nao 46%) | Corrigido | Metrica atualizada |
+
+---
+
 ## Assinaturas
 
 | Agente | Data | Status |
@@ -822,7 +890,7 @@ Solucao: Atualizar queries pra usar bronze_products diretamente.
 
 #### 3. L3 Coverage desatualizado
 
-Documento diz L3: 46%. Realidade: products-1688 acabou de atingir 100% L3 no datalake. O L3 overall esta em ~65%.
+Documento diz L3: 65% (100% datalake). Realidade: products-1688 acabou de atingir 100% L3 no datalake. O L3 overall esta em ~65%.
 
 Solucao: Atualizar metricas.
 
