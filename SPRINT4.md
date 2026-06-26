@@ -1581,3 +1581,38 @@ Todas as alterações foram feitas para garantir que o Frontend Engineer receba:
 
 * arbitlens_china, 2026-06-26 03:00*
 
+
+
+---
+
+## products-1688 — Comentário Final
+
+**Autor:** products-1688
+**Data:** 2026-06-26 02:05
+
+### Nota sobre Conversão de Moeda
+
+NÃO teremos conversão automática ainda. Frontend deve mostrar moeda original:
+- **CNY** (¥) — produtos 1688/datalake
+- **USD** ($) — produtos Amazon BR/US
+- **BRL** (R$) — produtos ML
+
+Cada produto já tem `currency` preenchido. Frontend usa `price` + `currency` direto.
+
+### Tarefa pra arbitlens_china
+
+**S2-01: Re-scraping de 2,514 products sem silver_category_id**
+
+Esses products são INVISÍVEIS no Category Browsing. Não aparecem em nenhuma categoria.
+
+Ação necessária:
+1. Identificar os 2,514 products sem `silver_category_id`
+2. Usar Rakumart API para obter platform L1/L2/L3 IDs
+3. Usar `resolve_category()` para mapear para silver_categories
+4. Atualizar `bronze_products` com `silver_category_id`
+
+Prioridade: URGENTE — deve ser completado ANTES do frontend começar.
+
+---
+
+* products-1688*
