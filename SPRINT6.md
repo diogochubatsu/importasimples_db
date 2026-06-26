@@ -1552,3 +1552,103 @@ Após todas as respostas, chegamos a um consenso claro:
 ---
 
 *— Diogo e arbitlens_china, 2026-06-27 (atualização de escopo)*
+
+---
+
+## PROPOSTA DE TAXONOMIA — arbitlens_china
+
+**Data:** 2026-06-27
+**Contexto:** Nova proposta de categorias baseada na análise de products mal classificados
+
+### Novas Categorias Propostas
+
+| L1 | L2 | Justificativa | Products que se encaixam |
+|----|----|---------------|-------------------------|
+| **Industrial** | Equipamentos | Máquinas industriais, elevadores, transportadores | elevador (R$25.000), transportador espiral |
+| **Esportes** | Pesca | Varas de pesca, anzóis, iscas | vara de pesca (R$9.770), anzóis |
+| **Saúde** | Monitores | Oxímetros, glicosímetros, esfigmomanômetros | oxímetro, glicosímetro, esfigmomanômetro |
+| **Móveis** | Escritório | Cadeiras, mesas executivas | cadeira ergonômica, mesa executiva |
+| **Móveis** | Gamer | Cadeiras gamer, mesas gamer | cadeira gamer |
+| **Ferramentas** | Elétricas | Chaves de fenda, parafusadeiras elétricas | chave de fenda automática |
+| **Jardim** | Irrigação | Sistemas de rega, sprinklers | gramado rega spray |
+
+### Products por Categoria (análise detalhada)
+
+#### 1. Industrial > Equipamentos
+
+| ID | Título | Preço | Categoria Atual |
+|----|--------|-------|-----------------|
+| 11459 | Fabricante de elevador e transportador espiral | R$ 25.000 | Esportes |
+
+**Ação:** Mover para Industrial > Equipamentos
+
+#### 2. Esportes > Pesca
+
+| ID | Título | Preço | Categoria Atual |
+|----|--------|-------|-----------------|
+| 3291 | Vara de Pesca Hearty Rise Slow Jigging | R$ 9.770 | Cozinha |
+| 3288 | Vara de Pesca Telescópica JIEN A100 | R$ 1.267 | Cozinha |
+| 3286 | Vara de Pesca Telescópica JIEN A100 | R$ 222 | Cozinha |
+
+**Ação:** Mover para Esportes > Pesca
+
+#### 3. Saúde > Monitores
+
+| ID | Título | Preço | Categoria Atual |
+|----|--------|-------|-----------------|
+| 3821 | Oxímetro do pulso | R$ 26 | Computadores |
+| 2859 | Glicosímetro Digital | R$ 325 | Computadores |
+| 4020 | Monitor de Oximetria | R$ 23.542 | Computadores |
+| 2830 | Kit de Estetoscópio | R$ 31 | Computadores |
+| 3956 | Monitor Digital de Pressão Arterial | R$ 53 | Computadores |
+| 2840 | Esfigmomanômetro De Mercúrio | R$ 1.130 | Computadores |
+
+**Ação:** Mover para Saúde > Monitores
+
+#### 4. Móveis > Escritório
+
+| ID | Título | Preço | Categoria Atual |
+|----|--------|-------|-----------------|
+| 3179 | Mesa Executiva em L | R$ 95.791 | Audio |
+| 3190 | Cadeira de Escritório Ergonômica | R$ 340 | Audio |
+| 3193 | Cadeira de Escritório Ergonômica | R$ 1.935 | Audio |
+| 5378 | Cadeira gamer para computador | R$ 132 | Audio |
+| 5398 | Cadeira ergonômica 8D | R$ 720 | Audio |
+| 5403 | Cadeira de Escritório Hbada X7 | R$ 6.188 | Audio |
+| 5685 | Cadeira de Escritório Moderna | R$ 277 | Audio |
+| 5690 | Cadeira de Escritório Ergonômica | R$ 995 | Audio |
+| 5691 | Cadeira de Escritório Giratória | R$ 995 | Audio |
+| 5692 | Cadeira de Escritório de Luxo | R$ 1.510 | Audio |
+| 5688 | Cadeira de Jogos Ergonômica | R$ 639 | Audio |
+
+**Ação:** Mover para Móveis > Escritório
+
+#### 5. Ferramentas > Elétricas
+
+| ID | Título | Preço | Categoria Atual |
+|----|--------|-------|-----------------|
+| 14238 | Kit de pincéis de maquiagem | R$ 67 | Beleza |
+
+**Nota:** Este product é de Beleza, não Ferramentas. A keyword "ferramentas" no título é genérica.
+
+### Categorias que Precisam de Validação
+
+| Categoria | Produtos | Necessita Criação? | Prioridade |
+|-----------|----------|-------------------|------------|
+| Industrial > Equipamentos | 1 | SIM | ALTA |
+| Esportes > Pesca | 3 | SIM | ALTA |
+| Saúde > Monitores | 6 | SIM | ALTA |
+| Móveis > Escritório | 11 | SIM | ALTA |
+| Móveis > Gamer | 5 | SIM | MÉDIA |
+| Jardim > Irrigação | 1 | SIM | BAIXA |
+
+### Próximos Passos
+
+1. **Validar com todos os agents** — Todos devem aprovar a taxonomia
+2. **Criar categorias no DB** — Adicionar L2 nas silver_categories
+3. **Mover products** — Atualizar silver_category_id
+4. **Verificar** — Confirmar que todas as categorias têm products
+
+---
+
+*— arbitlens_china, 2026-06-27 (proposta de taxonomia)*
