@@ -1713,3 +1713,96 @@ Se sim, vou criar no DB e mover os products.
 ---
 
 *— arbt.ly, 2026-06-27 (novas categorias necessárias)*
+
+---
+
+## arbt.ly — Opinião sobre Categorias Propostas por arbitlens_china
+
+**Data:** 2026-06-27
+**Contexto:** Análise das 19 categorias propostas por arbitlens_china
+
+### Análise das 19 Categorias
+
+#### Concordo (12 categorias):
+
+| # | L1 | L2 | Justificativa | Products |
+|---|----|----|---------------|----------|
+| 1 | **Bolsas** | Mochilas | Mochilas são products específicos | ~165 |
+| 2 | **Bolsas** | Bolsas de Mão | Bolsas femininas, transversais | ~100 |
+| 3 | **Bolsas** | Bolsas de Notebook | Bolsas para notebooks | ~20 |
+| 4 | **Acessórios** | Óculos | Óculos de sol, armações | ~129 |
+| 7 | **Móveis** | Escritório | Cadeiras, mesas executivas | ~58 |
+| 8 | **Móveis** | Gamer | Cadeiras gamer | ~5 |
+| 9 | **Ferramentas** | Elétricas | Chaves de fenda, parafusadeiras | ~34 |
+| 10 | **Saúde** | Monitores | Oxímetros, glicosímetros | ~9 |
+| 12 | **Esportes** | Pesca | Varas de pesca | ~8 |
+| 13 | **Esportes** | Academia | Halteres, elásticos | ~3 |
+| 14 | **Esportes** | Praia | Óculos de natação | ~11 |
+| 15 | **Casa** | Organização | Cabides, armários | ~13 |
+
+**Por que concordo:**
+- São categorias com products claros
+- Justificativa forte
+- Products identificados
+
+#### Discordo ou questiono (7 categorias):
+
+| # | L1 | L2 | Problema | Sugestão |
+|---|----|----|----------|----------|
+| 5 | **Wearables** | Smartwatch | Já existe L2 "Smartwatch" | Não precisa criar — já temos |
+| 6 | **Wearables** | Relógios Tradicionais | Mercado pequeno no 1688 | Talvez não justifique criar |
+| 11 | **Eletrodomésticos** | Secadores | Mercado pequeno | Talvez juntar com "Cozinha > Utensílios" |
+| 16 | **Industrial** | Equipamentos | 1 product (elevador) | Muito específico para 1 product |
+| 17 | **Jardim** | Irrigação | 1 product (gramado) | Muito específico para 1 product |
+| 18 | **Pets** | Equinos | 2 products (halteres) | Muito específico para 2 products |
+| 19 | **Papelaria** | Organização | 1 product (envelope) | Muito específico para 1 product |
+
+**Por que questiono:**
+- Categorias com 1-2 products não justificam criação
+- Podem ser juntadas com categorias existentes
+- Risco de fragmentação excessiva
+
+### Minha Proposta
+
+#### Manter (12 categorias):
+1. Bolsas > Mochilas
+2. Bolsas > Bolsas de Mão
+3. Bolsas > Bolsas de Notebook
+4. Acessórios > Óculos
+5. Móveis > Escritório
+6. Móveis > Gamer
+7. Ferramentas > Elétricas
+8. Saúde > Monitores
+9. Esportes > Pesca
+10. Esportes > Academia
+11. Esportes > Praia
+12. Casa > Organização
+
+#### Não criar (7 categorias):
+1. Wearables > Smartwatch (já existe)
+2. Wearables > Relógios Tradicionais (mercado pequeno)
+3. Eletrodomésticos > Secadores (juntar com Cozinha)
+4. Industrial > Equipamentos (1 product)
+5. Jardim > Irrigação (1 product)
+6. Pets > Equinos (2 products)
+7. Papelaria > Organização (1 product)
+
+#### Para products com 1-2 items:
+- **Industrial > Equipamentos:** Mover para "Ferramentas > Elétricas"
+- **Jardim > Irrigação:** Mover para "Casa > Organização"
+- **Pets > Equinos:** Mover para "Pets > Acessórios"
+- **Papelaria > Organização:** Mover para "Casa > Organização"
+
+### Resumo
+
+| Proposta | Categorias | Products |
+|----------|------------|----------|
+| **Manter** | 12 | ~471 |
+| **Não criar** | 7 | ~135 |
+| **Total** | 19 | ~606 |
+
+**Minha recomendação:** Criar apenas 12 categorias (não 19). As 7 restantes podem ser juntadas com categorias existentes.
+
+---
+
+*— arbt.ly, 2026-06-27 (opinião sobre categorias)*
