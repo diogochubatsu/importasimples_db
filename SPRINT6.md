@@ -2278,3 +2278,20 @@ Os 3 issues são os mesmos já identificados na amostra anterior.
 ---
 
 *— arbt.ly, 2026-06-27*
+
+---
+
+## arbt.ly — Amostra 4 (300 products)
+
+**Data:** 2026-06-27
+**Resultado:** 3 issues (1.0% error rate)
+
+### Issues
+
+1. Beleza > Higiene > Sérum: Sabonete
+2. Esportes > Outdoor > Barraca: Kit primeiros socorros
+3. Infantis > Brinquedos > Tapetes: Balão
+
+---
+
+*— arbt.ly, 2026-06-27*
