@@ -2081,3 +2081,65 @@ Todos os 123 issues identificados foram corrigidos (mais 2 extras que encontrei)
 ---
 
 *— Diogo, 2026-06-27 (decisão)*
+
+---
+
+## arbt.ly — Blacklist e Categorias Novas (S6-01)
+
+**Data:** 2026-06-27
+**Status:** ✅ CONCLUÍDO
+
+### Blacklist — Categorias NÃO Criar
+
+| # | L1 | L2 | L3 | Motivo |
+|---|----|----|----|--------|
+| 1 | Pets | Gatos | Ração | BLACKLIST - ração |
+| 2 | Pets | Cães | Ração | BLACKLIST - ração |
+| 3 | Beleza | Cabelo | Shampoo | BLACKLIST - shampoo |
+| 4 | Beleza | Skincare | Cremes | BLACKLIST - creme |
+| 5 | Beleza | Maquiagem | Base | BLACKLIST - maquiagem |
+| 6 | Beleza | Maquiagem | Pomadas | BLACKLIST - pomada |
+| 7 | Saúde | Remédios | Remédios | BLACKLIST - remédio |
+| 8 | Infantis | Alimentação | Bebidas | BLACKLIST - bebida |
+| 9 | Infantis | Alimentação | Refeição | BLACKLIST - comida |
+
+**Regra:** NÃO criar categorias para:
+- Alimentos, ração, bebidas
+- Livros, software
+- Shampoo, papel higienico
+- Cremes, maquiagem, pomadas, remedios
+- Qualquer coisa de comer ou passar no corpo
+
+### Categorias a Criar (11)
+
+| # | L1 | L2 | L3 | Justificativa | Products |
+|---|----|----|----|---------------|----------|
+| 1 | Audio | Fones | Fone Bluetooth | Fones sem fio | 31 |
+| 2 | Iluminação | Painel LED | Softbox | Softboxes fotográficos | 3 |
+| 3 | Iluminação | Ring Light | Pequeno | Ring Lights 10-12" | 5 |
+| 4 | Iluminação | Ring Light | Grande | Ring Lights 18-40" | 5 |
+| 5 | Esportes | Acessórios Smart Tag | Capas | Capas para Smart Tags | 6 |
+| 6 | Esportes | Acessórios Smart Tag | Garrafas | Garrafas térmicas esportivas | 3 |
+| 7 | Esportes | Acessórios Smart Tag | Barracas | Barracas camping | 4 |
+| 8 | Infantis | Festa | Balões | Balões de festa | 4 |
+| 9 | Infantis | Splash/Água | Balões de Água | Bunch O Balloons | 1 |
+| 10 | Wearables | Pulseiras | Smartwatch | Pulseiras para smartwatches | 5 |
+| 11 | Moda | Auto | Almofadas | Almofadas de automóvel | 1 |
+
+### Próximos Passos
+
+1. Criar 11 categorias no DB
+2. Mover products para categorias corretas
+3. Documentar no SPRINT6.md
+
+---
+
+*— arbt.ly, 2026-06-27 (blacklist e categorias)*
+ENDBLACKLIST
+
+echo "Blacklist e categorias documentadas"
+cd /tmp/importasimples_db && git add SPRINT6.md && git commit -m "SPRINT6: arbt.ly blacklist e 11 categorias novas
+
+- Blacklist: ração, shampoo, creme, maquiagem, pomada, remédio, bebida, comida
+- 11 categorias a criar (fora da blacklist)
+- Próximo: criar no DB e mover products" 2>&1 | tail -3
