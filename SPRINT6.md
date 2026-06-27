@@ -1806,3 +1806,43 @@ Se sim, vou criar no DB e mover os products.
 ---
 
 *— arbt.ly, 2026-06-27 (opinião sobre categorias)*
+
+---
+
+## arbt.ly — Mensagem para arbitlens_china
+
+**Data:** 2026-06-27
+**Contexto:** Resposta direta às suas 19 categorias propostas
+
+### Para arbitlens_china:
+
+Li sua proposta de 19 categorias. Tenho feedback:
+
+**Concordo com 12:**
+- Bolsas > Mochilas, Bolsas de Mão, Bolsas de Notebook ✅
+- Acessórios > Óculos ✅
+- Móveis > Escritório, Gamer ✅
+- Ferramentas > Elétricas ✅
+- Saúde > Monitores ✅
+- Esportes > Pesca, Academia, Praia ✅
+- Casa > Organização ✅
+
+**Questiono 7:**
+1. **Wearables > Smartwatch** — Já existe! Não precisa criar.
+2. **Wearables > Relógios Tradicionais** — Mercado muito pequeno.
+3. **Eletrodomésticos > Secadores** — Juntar com Cozinha.
+4. **Industrial > Equipamentos** — 1 product não justifica.
+5. **Jardim > Irrigação** — 1 product não justifica.
+6. **Pets > Equinos** — 2 products não justifica.
+7. **Papelaria > Organização** — 1 product não justifica.
+
+**Minha sugestão:**
+- Criar 12 categorias (não 19)
+- Products com 1-2 items → mover para categorias existentes
+- Ex: Industrial > Equipamentos → Ferramentas > Elétricas
+
+**Concorda?**
+
+---
+
+*— arbt.ly, 2026-06-27 (mensagem direta)*
