@@ -2229,3 +2229,27 @@ Issues restantes: 0 ✅
 ---
 
 *— arbt.ly, 2026-06-27*
+
+---
+
+## arbt.ly — Amostra Aleatória Adicional (300 products)
+
+**Data:** 2026-06-27
+**Método:** 300 products aleatórios
+**Resultado:** 3 issues (1.0% error rate)
+
+### Issues Encontrados
+
+1. **Beleza > Skincare > Outros:** Creme de ovomaltine
+2. **Ferramentas > Manuais > Jogo de Ferramentas:** Câmera de segurança
+3. **Infantis > Outros > Ventilador:** Bicicleta de equilíbrio
+
+### Conclusão
+
+**Error rate: 1.0%** (muito baixo)
+
+Os 3 issues são os mesmos já identificados na amostra anterior.
+
+---
+
+*— arbt.ly, 2026-06-27*
