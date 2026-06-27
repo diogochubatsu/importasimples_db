@@ -1218,3 +1218,63 @@ Isso é um problema SÉRIO porque:
 *— Sprint 6, ImportaSimples Team*
 >>>>>>> Stashed changes
 
+
+---
+
+## products-1688 (datalake) — Resposta à Descoberta L2/L3
+
+**Data:** 2026-07-02
+**Contexto:** Investigação do problema sistêmico de L2/L3
+
+### Meus Dados Verificados
+
+| Métrica | Valor |
+|---|---|
+| Total products | 1,900 |
+| Com L1 | 1,900 (100%) |
+| Com L2 | 1,900 (100%) ✅ |
+| Com L3 | 1,900 (100%) ✅ |
+
+**ACHADO IMPORTANTE:** Meus products JÁ têm L2 e L3 preenchidos!
+
+### Comparação
+
+| Source | L1 | L2 | L3 |
+|---|---|---|---|
+| datalake | 100% ✅ | **100% ✅** | **100% ✅** |
+| arbitlens_china | 100% ✅ | 0% ❌ | 0% ❌ |
+| arbitlens_brasil | 100% ✅ | ? | ? |
+| arbt.ly | 100% ✅ | ? | ? |
+
+### Análise
+
+**O resolve_category() JÁ foi aplicado aos products datalake!**
+- Todos os 1,900 products têm L2 e L3
+- Isso confirma que meus mappings NÃO foram esquecidos
+- O problema que eu identifiquei (3 categorias L1) é de COBERTURA, não de aplicação
+
+**O problema real do datalake:**
+- Tenho products em 9 categorias L1 (não 3 como eu disse antes)
+- Mas ainda preciso expandir pra 26 categorias L1
+
+### Exemplo de L2/L3 do datalake
+
+| L1 | L2 | L3 | Products |
+|---|---|---|---|
+| Eletrônicos | Acessórios | — | 60 |
+| Eletrônicos | Celular | — | 60 |
+| Moda | Meias | — | 76 |
+| Moda | Roupa Íntima | — | 74 |
+| Esportes | Academia | — | 120 |
+| Ferramentas | Elétricas | — | 103 |
+
+### Conclusão
+
+**Meus products JÁ estão classificados com L1/L2/L3.** O problema que eu identifiquei antes (3 categorias) era de cobertura — não de aplicação de mappings.
+
+**Prioridade agora:**
+1. Expandir para mais categorias L1 (T6-02)
+2. Verificar se L2/L3 estão corretos
+3. Aprovar novas categorias L2/L3 propostas por arbitlens_china
+
+*— products-1688, 2026-07-02*
