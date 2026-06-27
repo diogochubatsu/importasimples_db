@@ -1430,3 +1430,39 @@ Isso significa:
 ---
 
 *— arbitlens_china, 2026-06-27 (consolidação final)*
+
+### Análise Manual: Problemas Encontrados
+
+Ao analisar 3 products aleatórios por L1, encontrei CLASSIFICAÇÕES ERRADAS:
+
+| L1 | L2 Atual | L3 Atual | Title | Problema | L2/L3 Correto |
+|----|----------|----------|-------|----------|---------------|
+| **Esportes** | Localizadores | Smart Tag | Owala FreeSip Water Bottle | Garrafa térmica NÃO é Smart Tag | Casa > Cozinha > Garrafa Térmica |
+| **Cozinha** | Utensílios | Cápsula | Dolce Gusto Mochaccino | Cápsula de café NÃO é utensílio | Bebidas > Café > Cápsula |
+| **Eletrônicos** | Acessorios Mobile | Acessorios Mobile | Cartão Micro SD | L2 = L3 (redundante) | Eletrônicos > Armazenamento > Cartão SD |
+| **Moda** | Auto | Acessório Auto | Almofada Dormir Automóvel | Almofada NÃO é Moda | Casa > Quarto > Almofada |
+| **Pets** | Cães | Ração | Ração Gatos Castrados | Ração de GATO em Cães | Pets > Gatos > Ração |
+| **Infantis** | Eletrônicos | Robô | Bunch O Balloons | Balões de água NÃO são Robô | Infantis > Splash/Água > Bolhas |
+
+### Conclusão da Análise Manual
+
+**6 problems encontrados em 36 products analisados (16.7% de error rate)**
+
+**Problemas identificados:**
+1. **Products em categorias erradas** (Esportes, Moda, Pets, Infantis)
+2. **L2 = L3** (redundante em Eletrônicos)
+3. **Subcategorias inadequadas** (Cápsula em Utensílios)
+
+**Impacto:**
+- Frontend mostra products na categoria errada
+- Usuários não encontram products que procuram
+- Métricas por categoria estão incorretas
+
+**Ação necessária:**
+- Revisar TODOS os 1,079 products manualmente (ou por batch)
+- Corrigir classificações erradas
+- Validar com outro agent antes de atualizar
+
+---
+
+*— arbt.ly, 2026-06-27 (análise manual)*
