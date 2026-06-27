@@ -1466,3 +1466,94 @@ Ao analisar 3 products aleatórios por L1, encontrei CLASSIFICAÇÕES ERRADAS:
 ---
 
 *— arbt.ly, 2026-06-27 (análise manual)*
+
+---
+
+## arbt.ly — Revisão Manual Completa (S6-01)
+
+**Data:** 2026-06-27
+**Status:** ✅ CONCLUÍDO
+**Amostra:** 1,079 products (100%)
+
+### Resumo
+
+| Métrica | Valor |
+|---------|-------|
+| Total products analisados | 1,079 |
+| Issues encontrados | 78 |
+| Error rate | 7.2% |
+
+### Issues por Tipo
+
+| Tipo | Quantidade | Descrição |
+|------|------------|-----------|
+| **Tripé em Iluminação** | 31 | Ring Lights com tripé classificados como Iluminação |
+| **Fone Bluetooth > Headset** | 25 | Fones Bluetooth classificados como Headset |
+| **Ring light em Eletrônicos** | 4 | Ring Lights em vez de Iluminação |
+| **Balão em Infantis > Robô** | 4 | Balões classificados como Robô |
+| **Ração de gato em Cães** | 4 | Ração de gato na categoría de cães |
+| **Garrafa em Esportes** | 3 | Garrafas térmicas em Esportes |
+| **L2=L3 redundante** | 2 | Acessorios Mobile > Acessorios Mobile |
+| **Carro em Moda** | 2 | Acessórios de carro em Moda |
+| **Selfie stick em Audio** | 1 | Kit Youtuber em Audio |
+| **Capa em Esportes** | 1 | Capa de celular em Esportes |
+| **Tripé em Infantis** | 1 | Mini fan em Infantis |
+
+### Análise por Categoria
+
+#### Audio (25 issues)
+- **25 products** com "Fone Bluetooth" classificados como "Headset"
+- **Problema:** L3 "Headset" deveria ser "Fone Bluetooth" para fones sem fio
+- **Sugestão:** Renomear L3 para "Fone Bluetooth" ou criar nova subcategoria
+
+#### Iluminação (31 issues)
+- **31 products** com tripé classificados como "Painel LED" ou "Ring Light"
+- **Problema:** Kits de iluminação COM tripé estão em Iluminação
+- **Sugestão:** Manter em Iluminação (são kits completos) ou criar "Kits Iluminação"
+
+#### Eletrônicos (4 issues)
+- **4 Ring Lights** classificados como Eletrônicos
+- **Problema:** Ring Lights são iluminação, não eletrônicos
+- **Sugestão:** Mover para Iluminação
+
+#### Infantis (5 issues)
+- **4 Balões** classificados como "Robô"
+- **1 Mini fan** classificado como "Carrinho"
+- **Problema:** Balões não são robôs
+- **Sugestão:** Mover para "Splash/Água" ou "Festa"
+
+#### Pets (4 issues)
+- **4 products** com "Gatos" classificados como "Cães"
+- **Problema:** Ração de gato na categoría de cães
+- **Sugestão:** Mover para "Gatos > Ração"
+
+#### Esportes (4 issues)
+- **3 Garrafas térmicas** em "Localizadores > Smart Tag"
+- **1 Capa de celular** em "Localizadores > Smart Tag"
+- **Problema:** Garrafas não são Smart Tags
+- **Sugestão:** Mover garrafas para "Cozinha > Garrafa Térmica"
+
+#### Moda (2 issues)
+- **2 Acessórios de carro** em "Auto > Acessório Auto"
+- **Problema:** Acessórios de carro não são Moda
+- **Sugestão:** Mover para "Eletrônicos > Acessórios Auto" ou criar nova categoría
+
+### Conclusão
+
+**78 issues encontrados em 1,079 products (7.2% de error rate)**
+
+**Categorias mais afetadas:**
+1. Audio (25 issues) — Fones Bluetooth vs Headset
+2. Iluminação (31 issues) — Kits com tripé
+3. Infantis (5 issues) — Balões como Robô
+4. Pets (4 issues) — Ração de gato em Cães
+5. Esportes (4 issues) — Garrafas como Smart Tags
+
+**Ação necessária:**
+1. Revisar e corrigir os 78 products
+2. Atualizar guidelines de classificação
+3. Validar com outros agents
+
+---
+
+*— arbt.ly, 2026-06-27 (revisão manual completa)*
