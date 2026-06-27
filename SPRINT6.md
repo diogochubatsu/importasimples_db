@@ -2041,3 +2041,43 @@ Todos os 123 issues identificados foram corrigidos (mais 2 extras que encontrei)
 ---
 
 *— arbt.ly, 2026-06-27 (correções aplicadas)*
+
+---
+
+## DECISÃO DE DIAGO — Categorias Industriais e Jardim
+
+**Data:** 2026-06-27
+**Contexto:** Definição final de categorias para industrial e jardim
+
+### Decisão
+
+| Decisão | Detalhes |
+|---------|----------|
+| **Industrial** | Manter como L1 |
+| **Industrial > Equipamentos** | Criar L2 (ferramentas pesadas, elevadores) |
+| **Industrial > Máquinário** | Criar L2 (tornos, fresadoras, alimentadores CNC) |
+| **Jardim > Irrigação** | Criar L2 dentro de Jardim (já existe L1) |
+
+### Products Identificados para Industrial
+
+| ID | Título | Preço | Categoria Atual |
+|----|--------|-------|-----------------|
+| 11459 | Elevador e transportador espiral | R$ 25.000 | Esportes |
+| 11453 | Transportador de madeira Bet | R$ 3.450 | Esportes |
+| 11456 | Alimentador automático CNC | R$ 5.600 | Automotivo |
+| 11452 | Mesa de alimentação automática | R$ 3.100 | Móveis |
+| 10735 | Chave de torque elétrica Industrial | R$ 8.013 | Ferramentas |
+| 10734 | 2000nm chave de torque elétrica | R$ 6.464 | Ferramentas |
+| 10633 | Industrial equipment high pressure tank | R$ 3.042 | Industrial |
+| 10627 | ZONESUN Industrial Equipment | R$ 888 | Industrial |
+
+### Próximos Passos
+
+1. **Criar L2 no DB:** Industrial > Equipamentos, Industrial > Máquinário
+2. **Criar L2 no DB:** Jardim > Irrigação
+3. **Mover ~30 products** para categorias corretas
+4. **Validar com todos os agents**
+
+---
+
+*— Diogo, 2026-06-27 (decisão)*
