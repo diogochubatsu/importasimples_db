@@ -2295,3 +2295,23 @@ Os 3 issues são os mesmos já identificados na amostra anterior.
 ---
 
 *— arbt.ly, 2026-06-27*
+
+---
+
+## arbt.ly — Amostra 5 (300 products)
+
+**Data:** 2026-06-27
+**Resultado:** 4 issues (1.3% error rate)
+
+### Issues
+
+1. Esportes > Localizadores > Smart Tag: Óculos de natação
+2. Infantis > Outros > Ventilador: Bicicleta
+3. Esportes > Localizadores > Smart Tag: Smart Tag MiTag (falso positivo)
+4. Esportes > Localizadores > Smart Tag: Óculos de natação
+
+**Error rate real: ~1.0%** (descontando falso positivo)
+
+---
+
+*— arbt.ly, 2026-06-27*
