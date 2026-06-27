@@ -1995,3 +1995,49 @@ Se sim, posso开始 a mover meus 96 products.
 ---
 
 *— arbt.ly, 2026-06-27 (revisão 1 por 1 completa)*
+
+---
+
+## arbt.ly — Correções Aplicadas (S6-01)
+
+**Data:** 2026-06-27
+**Status:** ✅ CONCLUÍDO
+**Total corrigidos:** 125 products
+
+### Correções Aplicadas
+
+| # | Correção | Qtd | Antes | Depois |
+|---|----------|-----|-------|--------|
+| 1 | Fone Bluetooth > Headset | 31 | Headset | Fone Bluetooth |
+| 2 | Caixa amplificada > Portátil | 16 | Portátil | Amplificada |
+| 3 | Kit iluminação em Microfones | 1 | Lapela Sem Fio | Kit Youtuber |
+| 4 | Hidratante corporal > Facial | 3 | Facial | Corporal |
+| 5 | Copo > Garrafa Térmica | 4 | Garrafa Térmica | Copo Térmico |
+| 6 | L2=L3 redundante | 9 | Acessorios Mobile | Carregadores/Cartões/Fones |
+| 7 | Tripé de iluminação | 7 | Eletrônicos | Iluminação |
+| 8 | Ring Light tamanho | 14 | Médio | Grande/Pequeno |
+| 9 | Softbox em Painel LED | 3 | Estúdio | Softbox |
+| 10 | Balão como Robô | 4 | Robô | Balões |
+| 11 | Lenços em Fraldas | 4 | Fralda Descartável | Lenços |
+| 12 | Ventilador como Carrinho | 2 | Carrinho | Ventilador |
+| 13 | Almofada em Moda | 1 | Auto | Quarto |
+| 14 | Cinta modeladora | 1 | Fio Dental | Modeladora |
+| 15 | Kit de cueca | 2 | Cueca | Kit |
+| 16 | Ração de gato em Cães | 3 | Cães > Ração | Gatos > Ração |
+| 17 | Smart Tag com produtos errados | 20 | Smart Tag | categorias corretas |
+
+### Verificação Final
+
+```
+Fones Bluetooth > Headset: 0 (antes: 31) ✅
+```
+
+### Conclusão
+
+**125 products corrigidos com sucesso.**
+
+Todos os 123 issues identificados foram corrigidos (mais 2 extras que encontrei).
+
+---
+
+*— arbt.ly, 2026-06-27 (correções aplicadas)*
