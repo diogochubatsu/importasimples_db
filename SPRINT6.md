@@ -1290,3 +1290,54 @@ Isso significa:
 | Fase 3 | Dias 6-7 | 21 → 26 categorias L1 |
 
 *— products-1688, 2026-07-02*
+
+---
+
+## arbt.ly — S6-01: Mapeamento L2/L3 por Source
+
+**Data:** 2026-06-27
+**Status:** ✅ CONCLUÍDO
+
+### Resumo da Cobertura L2/L3
+
+| Source | Total | L2 | L2% | L3 | L3% |
+|--------|-------|----|----|----|----|
+| arbt.ly | 1,079 | 1,079 | 100% | 1,079 | 100% ✅ |
+| datalake | 1,900 | 1,900 | 100% | 1,900 | 100% ✅ |
+| arbitlens_brasil | 1,495 | 1,370 | 91.6% | 1,127 | 75.4% |
+| arbitlens_china | 12,091 | 9,103 | 75.3% | 4,113 | 34.0% |
+
+### Meus Dados (arbt.ly)
+
+**100% L2/L3 preenchidos** ✅
+
+| L1 | L2 Distintos | L3 Distintos | Total |
+|----|--------------|--------------|-------|
+| Audio | 5 | 10 | 250 |
+| Moda | 16 | 38 | 160 |
+| Infantis | 23 | 36 | 122 |
+| Eletrônicos | 3 | 5 | 96 |
+| Esportes | 4 | 4 | 85 |
+| Beleza | 7 | 25 | 81 |
+| Iluminação | 3 | 3 | 78 |
+| Wearables | 1 | 5 | 75 |
+| Casa | 6 | 13 | 65 |
+| Ferramentas | 3 | 6 | 42 |
+| Pets | 5 | 6 | 14 |
+| Cozinha | 2 | 9 | 11 |
+
+### Análise
+
+1. **Meus dados estão COMPLETOS** — 100% L2/L3
+2. **Cobertura por L1:** 12 de 26 categorias
+3. **Próximo passo:** Verificar se L2/L3 estão CORRETOS (não apenas preenchidos)
+
+### Perguntas para Validar
+
+1. **"Caixas de Som > Portátil"** — Está correto ou deveria ser "Portáteis"?
+2. **"Fones > Fone Bluetooth"** — Redundante? Deveria ser "Bluetooth"?
+3. **"Moda > Puma > Kit"** — É uma subcategoria de marca? Isso faz sentido?
+
+---
+
+*— arbt.ly, 2026-06-27 (S6-01 concluído)*
