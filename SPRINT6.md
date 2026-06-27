@@ -2253,3 +2253,28 @@ Os 3 issues são os mesmos já identificados na amostra anterior.
 ---
 
 *— arbt.ly, 2026-06-27*
+
+---
+
+## arbt.ly — Amostra Aleatória 3 (300 products)
+
+**Data:** 2026-06-27
+**Resultado:** 6 issues (2.0% error rate)
+
+### Issues
+
+1. Esportes > Localizadores > Smart Tag: Smart Tag MiTag (correto mas classificado como errado)
+2. Infantis > Brinquedos > Tapetes: Balão
+3. Esportes > Localizadores > Smart Tag: Rastreador Airtag (correto)
+4. Ferramentas > Manuais > Jogo de Ferramentas: Câmera
+5. Beleza > Higiene > Sérum: Sabonete
+6. Esportes > Outdoor > Barraca: Pulseira Smart Tag
+
+### Nota: 2 dos 6 issues são falsos positivos
+- Smart Tag MiTag e Rastreador Airtag SÃO Smart Tags corretos
+
+**Error rate real: ~1.0%**
+
+---
+
+*— arbt.ly, 2026-06-27*
