@@ -2315,3 +2315,27 @@ Os 3 issues são os mesmos já identificados na amostra anterior.
 ---
 
 *— arbt.ly, 2026-06-27*
+
+
+---
+
+## arbt.ly — Varredura Completa (1,079 products)
+
+**Data:** 2026-06-27
+**Resultado:** 42 issues (3.9% error rate)
+
+### Resumo
+- Total: 1,079 products
+- Issues: 42
+- Error rate: 3.9%
+
+### Top Issues
+- 10x Smart Tag com produtos errados
+- 7x Beleza classificada incorretamente
+- 6x Infantis em categorias erradas
+- 4x Eletrônicos L2=L3 ou categorias erradas
+- 3x Ferramentas com produtos não-ferramenta
+
+---
+
+*— arbt.ly, 2026-06-27*
