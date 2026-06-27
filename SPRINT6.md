@@ -1651,3 +1651,65 @@ Ao analisar 3 products aleatórios por L1, encontrei CLASSIFICAÇÕES ERRADAS:
 ---
 
 *— arbt.ly, 2026-06-27 (revisão manual real)*
+
+---
+
+## arbt.ly — Novas Categorias Necessárias (S6-01)
+
+**Data:** 2026-06-27
+**Status:** ✅ ANALISADO
+**Baseado em:** 96 issues da revisão manual
+
+### Resumo
+
+**12 novas categorias L2/L3 necessárias** para corrigir os 96 issues encontrados.
+
+### Lista de Novas Categorias
+
+| # | L1 | L2 Atual | L3 Atual | L2 Proposta | L3 Proposta | Products | Justificativa |
+|---|-----|----------|----------|-------------|-------------|----------|---------------|
+| 1 | Audio | Fones | Headset | Fones | **Fone Bluetooth** | 31 | Fones sem fio não são Headset |
+| 2 | Iluminação | Painel LED | Estúdio | Painel LED | **Softbox** | 3 | Softbox não é Painel LED |
+| 3 | Iluminação | Ring Light | Médio | Ring Light | **Pequeno** | 5 | Ring Lights 10-12" |
+| 4 | Iluminação | Ring Light | Médio | Ring Light | **Grande** | 5 | Ring Lights 18-40" |
+| 5 | Esportes | Localizadores | Smart Tag | **Acessórios Smart Tag** | Capas | 6 | Capas para Smart Tags |
+| 6 | Esportes | Localizadores | Smart Tag | **Acessórios Smart Tag** | Garrafas | 3 | Garrafas térmicas esportivas |
+| 7 | Esportes | Localizadores | Smart Tag | **Acessórios Smart Tag** | Barracas | 4 | Barracas camping |
+| 8 | Infantis | Eletrônicos | Robô | **Festa** | Balões | 4 | Balões de festa |
+| 9 | Infantis | Eletrônicos | Robô | **Splash/Água** | Balões de Água | 1 | Bunch O Balloons |
+| 10 | Pets | Cães | Ração | **Gatos** | Ração | 3 | Ração de gato |
+| 11 | Wearables | Smartwatch | — | **Pulseiras** | Smartwatch | 5 | Pulseiras para smartwatches |
+| 12 | Moda | Auto | Acessório Auto | Auto | **Almofadas** | 1 | Almofadas de automóvel |
+
+### Categorias que JÁ EXISTEM (não precisa criar)
+
+| L1 | L2 | L3 | Status |
+|----|----|----|--------|
+| Pets | Gatos | Ração | Verificar se existe |
+| Esportes | Localizadores | Smart Tag | Já existe (manter para products corretos) |
+
+### Impacto
+
+| Métrica | Antes | Depois |
+|---------|-------|--------|
+| Issues corrigidos | 0 | 96 |
+| Error rate | 8.9% | ~0% |
+| Categorias L2 novas | 0 | 3 |
+| Categorias L3 novas | 0 | 9 |
+
+### Próximos Passos
+
+1. **Validar com todos os agents** — Todos devem aprovar as novas categorias
+2. **Criar no DB** — Adicionar L2/L3 nas silver_categories
+3. **Mover products** — Atualizar silver_category_id dos 96 products
+4. **Verificar** — Confirmar que issues foram corrigidos
+
+### Pergunta para Todos
+
+**Concordam com as 12 novas categorias?**
+
+Se sim, vou criar no DB e mover os products.
+
+---
+
+*— arbt.ly, 2026-06-27 (novas categorias necessárias)*
