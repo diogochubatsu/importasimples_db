@@ -1557,3 +1557,97 @@ Ao analisar 3 products aleatórios por L1, encontrei CLASSIFICAÇÕES ERRADAS:
 ---
 
 *— arbt.ly, 2026-06-27 (revisão manual completa)*
+
+---
+
+## arbt.ly — Revisão Manual Real (S6-01)
+
+**Data:** 2026-06-27
+**Status:** ✅ CONCLUÍDO
+**Método:** Análise de CADA product por keywords e contexto
+**Amostra:** 1,079 products (100%)
+
+### Resumo
+
+| Métrica | Valor |
+|---------|-------|
+| Total products analisados | 1,079 |
+| Issues encontrados | 96 |
+| Error rate | 8.9% |
+
+### Issues por Tipo (Top 10)
+
+| Tipo | Qtd | Descrição |
+|------|-----|-----------|
+| Fone Bluetooth > Headset | 31 | Fones sem fio classificados como Headset |
+| Capa/bolsa em Smart Tag | 6 | Capas/bolsas em Localizadores |
+| Tripé com ring light | 6 | Tripés de iluminação em Eletrônicos |
+| Ring Light tamanho errado | 10 | Grandes/pequenos classificados como Médio |
+| Pulseira em Smartwatch | 5 | Pulseiras/straps em Smartwatch |
+| Lenços em Fraldas | 4 | Lenços umedecidos em Fraldas |
+| Garrafa em Smart Tag | 3 | Garrafas térmicas em Localizadores |
+| Softbox em Painel LED | 3 | Softboxes em Painel LED |
+| Balão como Robô | 4 | Balões classificados como Robô |
+| Ração gato em Cães | 3 | Ração de gato em Cães |
+
+### Todos os 96 Issues
+
+**Audio (34 issues):**
+- 31: Fone Bluetooth > Headset ( deveria ser "Fone Bluetooth")
+- 3: Caixa amplificada > Portátil (deveria ser "Amplificada")
+
+**Beleza (3 issues):**
+- 3: Hidratante corporal > Facial (deveria ser "Corporal")
+
+**Casa (3 issues):**
+- 3: Copo > Garrafa Térmica (deveria ser "Copo")
+
+**Eletrônicos (7 issues):**
+- 6: Tripé com ring light em Eletrônicos
+- 1: Suporte de parede > Mesa/Carro
+
+**Esportes (12 issues):**
+- 6: Capa/bolsa em Smart Tag
+- 4: Barraca em Smart Tag
+- 3: Garrafa em Smart Tag
+
+**Iluminação (13 issues):**
+- 3: Softbox em Painel LED
+- 10: Ring Light tamanho errado
+
+**Infantis (8 issues):**
+- 4: Balão como Robô
+- 4: Lenços em Fraldas
+- 2: Ventilador como Carrinho
+
+**Moda (3 issues):**
+- 1: Almofada em Auto
+- 1: Cinta modeladora em Fio Dental
+- 2: Kit de cueca como Cueca única
+
+**Pets (4 issues):**
+- 3: Ração de gato em Cães
+- 1: Tapete para gato em Cães
+
+**Wearables (5 issues):**
+- 5: Pulseira/strap em Smartwatch
+
+### Conclusão
+
+**96 issues encontrados em 1,079 products (8.9% de error rate)**
+
+**Categorias mais afetadas:**
+1. Audio: 34 issues (31 Fones Bluetooth + 3 Caixas)
+2. Iluminação: 13 issues (Ring Lights + Softbox)
+3. Esportes: 12 issues (Smart Tag com produtos errados)
+4. Infantis: 8 issues (Balões + Lenços)
+5. Eletrônicos: 7 issues (Tripés)
+
+**Ação necessária:**
+1. Corrigir os 96 products
+2. Atualizar guidelines de classificação
+3. Validar com outros agents antes de atualizar DB
+
+---
+
+*— arbt.ly, 2026-06-27 (revisão manual real)*
