@@ -2199,3 +2199,33 @@ Issues restantes: 0 ✅
 ---
 
 *— arbt.ly, 2026-06-27 (sprint 6 concluído)*
+
+---
+
+## arbt.ly — Avaliação por Amostragem (S6-01)
+
+**Data:** 2026-06-27
+**Método:** 2 products por L3 category
+**Amostra:** 348 products
+
+### Nota Final: 8.7/10
+
+### Melhores categorias:
+- Moda: 9.8
+- Wearables: 9.7
+- Iluminação: 9.6
+- Audio: 9.4
+
+### Piores categorias:
+- Esportes: 7.5
+- Beleza: 7.8
+- Ferramentas: 7.8
+
+### Problemas identificados:
+1. Beleza: creme de ovomaltine em Skincare
+2. Esportes: ice packs em Smart Tag
+3. Ferramentas: câmera em Jogo de Ferramentas
+
+---
+
+*— arbt.ly, 2026-06-27*
