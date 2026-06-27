@@ -2143,3 +2143,59 @@ cd /tmp/importasimples_db && git add SPRINT6.md && git commit -m "SPRINT6: arbt.
 - Blacklist: ração, shampoo, creme, maquiagem, pomada, remédio, bebida, comida
 - 11 categorias a criar (fora da blacklist)
 - Próximo: criar no DB e mover products" 2>&1 | tail -3
+
+---
+
+## arbt.ly — Categorias Criadas e Products Movidos (S6-01)
+
+**Data:** 2026-06-27
+**Status:** ✅ CONCLUÍDO
+
+### Categorias Criadas (10 novas)
+
+| # | L1 | L2 | L3 | ID |
+|---|----|----|----|----|
+| 1 | Iluminação | Painel LED | Softbox | 402 |
+| 2 | Iluminação | Ring Light | Pequeno | 403 |
+| 3 | Iluminação | Ring Light | Grande | 404 |
+| 4 | Esportes | Acessórios Smart Tag | Capas | 405 |
+| 5 | Esportes | Acessórios Smart Tag | Garrafas | 406 |
+| 6 | Esportes | Acessórios Smart Tag | Barracas | 407 |
+| 7 | Infantis | Festa | Balões | 408 |
+| 8 | Infantis | Splash/Água | Balões de Água | 409 |
+| 9 | Wearables | Pulseiras | Smartwatch | 410 |
+| 10 | Moda | Auto | Almofadas | 411 |
+
+**Nota:** Audio > Fones > Fone Bluetooth já existia (ID=75)
+
+### Products Movidos (24)
+
+| Categoria | Products Movidos |
+|-----------|------------------|
+| Esportes > Acessórios Smart Tag > Capas | 3 |
+| Wearables > Pulseiras > Smartwatch | 21 |
+| **Total** | **24** |
+
+### Verificação Final
+
+```
+Total products arbt.ly: 1,079
+Com L2: 1,079 (100%) ✅
+Com L3: 1,079 (100%) ✅
+Issues restantes: 0 ✅
+```
+
+### Conclusão
+
+**Sprint 6 - arbt.ly: CONCLUÍDO ✅**
+
+1. ✅ Mapeamento L2/L3 completo
+2. ✅ Revisão 1 por 1 feita
+3. ✅ 125 products corrigidos
+4. ✅ 10 categorias novas criadas
+5. ✅ 24 products movidos para novas categorias
+6. ✅ Blacklist definida
+
+---
+
+*— arbt.ly, 2026-06-27 (sprint 6 concluído)*
