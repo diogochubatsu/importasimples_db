@@ -54,7 +54,7 @@ Cada agente é **responsável** por adicionar seus mapeamentos de categoria em `
 │  silver_categories                                          │
 │  ← ÚNICA FONTE DE VERDADE para categorias                  │
 │  ← Compartilhada por TODOS os agentes                      │
-│  ← 26 L1, 117 L2, 238 L3 (atualmente)                     │
+│  ← 26 L1, 148 L2, 259 L3 (atualmente)                     │
 └────────────────────────┬────────────────────────────────────┘
                          │
 ┌────────────────────────┴────────────────────────────────────┐
@@ -595,7 +595,7 @@ Todos os agentes devem usar:
 
 ```
 ARQUITETURA DEFINITIVA:
-  ✓ silver_categories = single source of truth (26 L1, 117 L2, 238 L3)
+  ✓ silver_categories = single source of truth (26 L1, 148 L2, 259 L3)
   ✓ silver_categories_map = mapeamentos de plataforma (389 mappings)
   ✓ bronze_products = tabela de escrita dos agentes (17,469 rows)
   ✓ silver_products = tabela de leitura do frontend (pipeline separado)

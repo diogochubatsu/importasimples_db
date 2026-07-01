@@ -251,7 +251,7 @@ O frontend **apenas lê** do banco. Não escreve. Os agentes são responsáveis 
 ```
 Frontend (React/Next.js)
   ↓ lê
-silver_categories (19 L1 + L2/L3)
+silver_categories (26 L1 + L2/L3)
 silver_products (via category_id FK)
 silver_prices (preços por plataforma)
 ```
