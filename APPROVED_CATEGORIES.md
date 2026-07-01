@@ -28,10 +28,33 @@
 
 ### Ordem de trabalho (por volume de products sem L2)
 
-| # | L1 | Products sem L2 | Responsável |
-|---|-----|-----------------|-------------|
-| 1 | Eletrônicos | 2,010 | products-1688 |
-| 2 | Moda | 1,169 | arbt.ly |
+**Atualizado:** 2026-07-01 por products-1688
+
+| # | L1 | Products sem L2 | Responsável | Status |
+|---|-----|-----------------|-------------|--------|
+| 1 | Eletrônicos | 0 | products-1688 | ✅ COMPLETO |
+| 2 | Moda | 1,169 | arbt.ly | ⏳ |
+| 3 | Casa | 0 | products-1688 | ✅ COMPLETO |
+| 4 | Infantis | 806 | arbt.ly | ⏳ |
+| 5 | Esportes | 0 | products-1688 | ✅ COMPLETO |
+| 6 | Beleza | 717 | arbt.ly | ⏳ |
+| 7 | Cozinha | 583 | arbitlens_brasil | ⏳ |
+| 8 | Ferramentas | 0 | products-1688 | ✅ COMPLETO |
+| 9 | Pets | 503 | arbitlens_brasil | ⏳ |
+| 10 | Iluminação | 485 | arbitlens_china | ⏳ |
+| 11 | Móveis | 291 | arbitlens_china | ⏳ |
+| 12 | Papelaria | 0 | products-1688 | ✅ COMPLETO |
+| 13 | Saúde | 240 | arbitlens_china | ⏳ |
+| 14 | Wearables | 186 | arbitlens_china | ⏳ |
+| 15 | Calçados | 150 | arbitlens_china | ⏳ |
+| 16 | Jardim | 115 | arbitlens_china | ⏳ |
+| 17 | Automotivo | 53 | arbitlens_china | ⏳ |
+| 18 | Têxteis | 50 | arbitlens_china | ⏳ |
+| 19 | Acessórios | 30 | arbitlens_china | ⏳ |
+| 20 | Eletrodomésticos | 24 | arbitlens_china | ⏳ |
+| 21 | Computadores | 23 | arbitlens_china | ⏳ |
+| 22 | Organização | 21 | arbitlens_china | ⏳ |
+| 23 | Industrial | 8 | arbitlens_china | ⏳ |
 | 3 | Casa | 1,021 | products-1688 / arbitlens_brasil |
 | 4 | Infantis | 806 | arbt.ly |
 | 5 | Esportes | 719 | products-1688 / arbitlens_brasil |
@@ -491,3 +514,31 @@
 ---
 
 *Referência: [SPRINT6.md](SPRINT6.md) | [ASSESSMENT_CATEGORIES.md](ASSESSMENT_CATEGORIES.md)*
+
+
+---
+
+## products-1688 — Status Atualizado (2026-07-01)
+
+### Cobertura
+
+| Métrica | Valor |
+|---------|-------|
+| Total products | 1,899 |
+| Com L1 | 1,899 (100%) |
+| Com L2 | 1,899 (100%) |
+| Com L3 | 1,899 (100%) |
+| Com silver_category_id | 1,899 (100%) |
+
+### Mappings
+
+| Platform | Count |
+|----------|-------|
+| 1688 | 264 |
+| datalake | 0 (renomeado para 1688) |
+
+### Conclusão
+
+**products-1688 NÃO tem products sem L2.** Todos os 1,899 products já têm L1 + L2 + L3.
+
+O documento original estava desatualizado — os 2,010 products sem L2 eram de arbitlens_china, não de products-1688.
