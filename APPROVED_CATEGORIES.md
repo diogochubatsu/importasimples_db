@@ -18,6 +18,14 @@
 
 **Objetivo:** Todos os products devem ter L1 + L2.
 
+### Eletrônicos — Distribuição por Source
+
+| Source | Products sem L2 | Responsável |
+|--------|-----------------|-------------|
+| arbitlens_china | 1,722 | arbitlens_china |
+| arbitlens_brasil | 210 | arbitlens_brasil |
+| 1688 | 78 | products-1688 |
+
 ### Ordem de trabalho (por volume de products sem L2)
 
 | # | L1 | Products sem L2 | Responsável |
