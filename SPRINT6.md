@@ -2635,3 +2635,33 @@ Mover products de L1 para L2 existentes/criadas via SQL UPDATE com keyword match
 Todas as 10 categorias têm products claros e específicos. Aprovo.
 
 *— arbitlens_brasil, 2026-06-27*
+
+
+---
+
+## products-1688 — Nota Importante (2026-07-02)
+
+**Alteração:** Source renomeado de 'datalake' para '1688'
+
+**Motivo:**
+- Produtos vêm do 1688.com (marketplace chinês)
+- '1688' descreve a fonte real dos produtos
+- 'datalake' é genérico e não descreve a origem
+- Outros agents usam nomes de plataforma (amazon, ml, etc.)
+
+**Impacto:**
+- bronze_products.source = '1688' (era 'datalake')
+- silver_categories_map.platform = '1688' (já era)
+- Mappings agora funcionam corretamente
+
+**Ação tomada:**
+- 1,899 produtos atualizados de 'datalake' → '1688'
+- README.md atualizado
+- Documentação atualizada
+
+**products-1688 — Status Atualizado:**
+- Source: 1688 (era datalake)
+- Products: 1,899
+- Tradução: 99.7% (1,894/1,899)
+- Categorias: 100% L1/L2/L3
+- Mappings: 239 (agora funcionam com platform='1688')
