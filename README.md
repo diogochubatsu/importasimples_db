@@ -45,6 +45,8 @@ Cada agente é **responsável** por adicionar seus mapeamentos de categoria em `
 
 **Regra:** Cada agente usa `add_platform_mapping()` para registrar seus IDs de plataforma → `silver_categories`. Ninguém modifica os mappings de outros.
 
+> 📋 **[APPROVED_CATEGORIES.md](APPROVED_CATEGORIES.md)** — Status das categorias L2/L3 aprovadas e pendentes pelos agents.
+
 ## Arquitetura
 
 ```
