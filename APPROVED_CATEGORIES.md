@@ -14,6 +14,76 @@
 
 ---
 
+## Plano de Trabalho — Enriquecimento L2
+
+**Objetivo:** Todos os products devem ter L1 + L2.
+
+### Ordem de trabalho (por volume de products sem L2)
+
+| # | L1 | Products sem L2 | Responsável |
+|---|-----|-----------------|-------------|
+| 1 | Eletrônicos | 2,010 | products-1688 |
+| 2 | Moda | 1,169 | arbt.ly |
+| 3 | Casa | 1,021 | products-1688 / arbitlens_brasil |
+| 4 | Infantis | 806 | arbt.ly |
+| 5 | Esportes | 719 | products-1688 / arbitlens_brasil |
+| 6 | Beleza | 717 | arbt.ly |
+| 7 | Cozinha | 583 | arbitlens_brasil |
+| 8 | Ferramentas | 532 | products-1688 |
+| 9 | Pets | 503 | arbitlens_brasil |
+| 10 | Iluminação | 485 | arbitlens_china |
+| 11 | Móveis | 291 | arbitlens_china |
+| 12 | Papelaria | 278 | products-1688 |
+| 13 | Saúde | 240 | arbitlens_china |
+| 14 | Wearables | 186 | arbitlens_china |
+| 15 | Calçados | 150 | arbitlens_china |
+| 16 | Jardim | 115 | arbitlens_china |
+| 17 | Automotivo | 53 | arbitlens_china |
+| 18 | Têxteis | 50 | arbitlens_china |
+| 19 | Acessórios | 30 | arbitlens_china |
+| 20 | Eletrodomésticos | 24 | arbitlens_china |
+| 21 | Computadores | 23 | arbitlens_china |
+| 22 | Organização | 21 | arbitlens_china |
+| 23 | Industrial | 8 | arbitlens_china |
+
+### Como trabalhar
+
+1. **Começar pelo #1** (Eletrônicos) — products-1688
+2. **Analisar titles** dos products sem L2
+3. **Criar L2** com `ensure_category(conn, l1, l2)`
+4. **Mover products** com `UPDATE bronze_products SET silver_category_id = <novo_id>`
+5. **Repetir** para o próximo L1
+
+### Status
+
+| # | L1 | Status |
+|---|-----|--------|
+| 1 | Eletrônicos | ⏳ Pendente |
+| 2 | Moda | ⏳ Pendente |
+| 3 | Casa | ⏳ Pendente |
+| 4 | Infantis | ⏳ Pendente |
+| 5 | Esportes | ⏳ Pendente |
+| 6 | Beleza | ⏳ Pendente |
+| 7 | Cozinha | ⏳ Pendente |
+| 8 | Ferramentas | ⏳ Pendente |
+| 9 | Pets | ⏳ Pendente |
+| 10 | Iluminação | ⏳ Pendente |
+| 11 | Móveis | ⏳ Pendente |
+| 12 | Papelaria | ⏳ Pendente |
+| 13 | Saúde | ⏳ Pendente |
+| 14 | Wearables | ⏳ Pendente |
+| 15 | Calçados | ⏳ Pendente |
+| 16 | Jardim | ⏳ Pendente |
+| 17 | Automotivo | ⏳ Pendente |
+| 18 | Têxteis | ⏳ Pendente |
+| 19 | Acessórios | ⏳ Pendente |
+| 20 | Eletrodomésticos | ⏳ Pendente |
+| 21 | Computadores | ⏳ Pendente |
+| 22 | Organização | ⏳ Pendente |
+| 23 | Industrial | ⏳ Pendente |
+
+---
+
 ## Estado Atual
 
 | Métrica | Valor |
