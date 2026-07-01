@@ -2414,3 +2414,43 @@ Mover products de L1 para L2 existentes/criadas via SQL UPDATE com keyword match
 **Status arbt.ly:** L1 ✅ | L2 ✅ | L3 ✅ | Issues: 0 | Blacklist ✅
 
 *— arbt.ly, 2026-07-02*
+
+
+---
+
+## arbt.ly — Products Movidos para Categorias Aprovadas (2026-07-02)
+
+**Data:** 2026-07-02
+**Status:** ✅ CONCLUÍDO
+**Total movidos:** 22 products
+
+### Products Movidos
+
+#### Bolsas (21 products)
+- Mochilas: 5 products
+- Bolsas de Mão: 16 products
+
+#### Acessórios (2 products)
+- Óculos: 2 products (prendedores de toalha)
+
+#### Móveis: 0 products ( clips foram para Esportes/Praia)
+
+### Correções Aplicadas
+- Smart Tags movidos de volta para Eletrônicos (9)
+- Tripods movidos de volta para Eletrônicos (6)
+- Bolsas Térmicas movidas para Casa/Cozinha (2)
+- Lenço movido para Moda (1)
+- Necessaire movida para Moda/Viagem (1)
+- Malas movidas para Moda/Viagem (10)
+- Clips de toalha movidos para Esportes/Praia (12)
+- Cadeira de bebê movida para Infantis (1)
+- Inflatable movido para Esportes/Praia (1)
+
+### Estado Final
+- Bolsas: 21 products (Mochilas: 5, Bolsas de Mão: 16)
+- Acessórios: 0 products (prendedores eram de praia)
+- Móveis: 0 products ( clips eram de praia)
+
+---
+
+*— arbt.ly, 2026-07-02 (products movidos)*
