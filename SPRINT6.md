@@ -2339,3 +2339,44 @@ Os 3 issues são os mesmos já identificados na amostra anterior.
 ---
 
 *— arbt.ly, 2026-06-27*
+
+
+---
+
+## arbt.ly — Correções em Lote (Análise dos Subagentes)
+
+**Data:** 2026-07-01
+**Status:** ✅ CONCLUÍDO
+**Total corrigidos:** 108 products
+
+### Correções CRÍTICAS (7)
+- Ovomaltine (comida) → Alimentos
+- Percarbonato (limpeza) → Casa/Limpeza
+- Papel Higiênico → Higiene
+- Dolce Gusto → Eletrodomésticos
+- Luvas Nitrílicas → Higiene
+- Sabão Dove → Higiene
+- Portão Pet → Pets
+
+### Correções ALTA (93)
+- 29 DVD Players → Eletrônicos
+- 25 Smart Tags → Eletrônicos
+- 21 Smartwatches → Wearables/Smartwatch
+- 11 Caixas Amplificadas → Portátil
+- 9 Beleza (correções diversas)
+- 6 Óculos natação → Natação
+- 5 Kids Smartwatches → Kids
+- 5 Esportes (bolas, cordas, etc.)
+- 3 Ferramentas (fita, cola)
+- 3 Casa (aspirador, etc.)
+
+### Resultado Final
+- Total: 1,079 products
+- Sem L2: 0 ✅
+- Sem L3: 0 ✅
+- L3='Outros': 30 (precisa refinamento)
+- L2=L3 redundante: 77 (precisa revisão)
+
+---
+
+*— arbt.ly, 2026-07-01 (correções em lote)*
