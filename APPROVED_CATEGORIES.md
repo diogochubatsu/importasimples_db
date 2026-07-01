@@ -1,6 +1,6 @@
 # Approved Categories
 
-Status das categorias L2/L3 propostas e aprovadas pelos agents.
+Status das categorias L2/L3 aprovadas pelos agents.
 
 **Última atualização:** 2026-07-02
 
@@ -23,9 +23,7 @@ Status das categorias L2/L3 propostas e aprovadas pelos agents.
 | Wearables | Pulseiras | Smartwatch | 421 |
 | Moda | Auto | Almofadas | 422 |
 
-### arbitlens_china — 17 categorias L2 (parcialmente aprovadas)
-
-**Aprovadas por arbt.ly (11):**
+### arbitlens_china — 11 categorias L2 aprovadas (L2 Reclassificação)
 
 | L1 | L2 | ID | Products |
 |----|----|----|----------|
@@ -41,88 +39,61 @@ Status das categorias L2/L3 propostas e aprovadas pelos agents.
 | Jardim | Plantas | 434 | 23 |
 | Automotivo | Acessórios | 436 | 201 |
 
-> ℹ️ Smart Home (428) e Decoração (435) deletadas — 0 products. Products "smart" já têm L2 melhor (Lâmpadas, Fita LED, Wearables, Saúde). Decoração → Casa > Decoracao (ID 29).
+### arbitlens_china — 16 categorias originais aprovadas (Sprint 6)
 
-**Aguardando aprovação de products-1688 e arbitlens_brasil (4):**
-
-| L1 | L2 | ID | Products | Problema |
-|----|----|----|----------|----------|
-| Automotivo | Iluminação | 437 | 1 | pouco |
-| Automotivo | Limpeza | 438 | 2 | pouco |
-| Automotivo | Peças | 439 | 3 | pouco |
-| Automotivo | Eletrônicos | 440 | 0 | sem products |
+| # | L1 | L2 | Observação |
+|---|----|----|------------|
+| 1 | Bolsas | Mochilas | ✅ |
+| 2 | Bolsas | Bolsas de Mão | ✅ |
+| 3 | Bolsas | Bolsas de Notebook | ✅ |
+| 4 | Acessórios | Óculos | ✅ |
+| 5 | Wearables | Smartwatch | ✅ |
+| 6 | Wearables | Relógios Tradicionais | ✅ Manter nome original |
+| 7 | Móveis | Escritório | ✅ |
+| 8 | Móveis | Gamer | ✅ Manter como L2 |
+| 9 | Ferramentas | Elétricas | ✅ |
+| 10 | Saúde | Monitores | ✅ |
+| 11 | Eletrodomésticos | Secadores | ✅ Manter como está |
+| 12 | Esportes | Pesca | ✅ |
+| 13 | Esportes | Academia | ✅ |
+| 14 | Esportes | Praia | ✅ |
+| 15 | Casa | Organização | ✅ |
+| 16 | Jardim | Irrigação e Aspersão | ✅ Renomeado |
 
 ---
 
-## Pendentes (aguardando aprovação)
+## Rejeitadas
 
-### arbitlens_china — 19 categorias originais (Sprint 6)
+| L1 | L2 | Motivo |
+|----|----|--------|
+| Industrial | Equipamentos | 1 product (elevador) — muito pouco |
+| Pets | Equinos | 2 products — muito pouco |
+| Papelaria | Organização | 1 product — muito pouco |
+| Iluminação | Smart Home | 0 products — deletado |
+| Jardim | Decoração | 0 products — deletado |
 
-| # | L1 | L2 | Status |
-|---|----|----|--------|
-| 1 | Bolsas | Mochilas | ⏳ |
-| 2 | Bolsas | Bolsas de Mão | ⏳ |
-| 3 | Bolsas | Bolsas de Notebook | ⏳ |
-| 4 | Acessórios | Óculos | ⏳ |
-| 5 | Wearables | Smartwatch | ⏳ |
-| 6 | Wearables | Relógios Tradicionais | ⏳ |
-| 7 | Móveis | Escritório | ⏳ |
-| 8 | Móveis | Gamer | ⏳ |
-| 9 | Ferramentas | Elétricas | ⏳ |
-| 10 | Saúde | Monitores | ⏳ |
-| 11 | Eletrodomésticos | Secadores | ⏳ |
-| 12 | Esportes | Pesca | ⏳ |
-| 13 | Esportes | Academia | ⏳ |
-| 14 | Esportes | Praia | ⏳ |
-| 15 | Casa | Organização | ⏳ |
-| 16 | Industrial | Equipamentos | ⏳ |
-| 17 | Jardim | Irrigação | ⏳ |
-| 18 | Pets | Equinos | ⏳ |
-| 19 | Papelaria | Organização | ⏳ |
+---
+
+## Automotivo — Aguardando decisão
+
+| L2 | ID | Products | Sugestão |
+|----|----|----------|----------|
+| Iluminação | 437 | 1 | Merge em Acessórios |
+| Limpeza | 438 | 2 | Merge em Acessórios |
+| Peças | 439 | 3 | Merge em Acessórios |
+| Eletrônicos | 440 | 0 | Deletar |
 
 ---
 
 ## Respostas dos Agents
 
-| Agent | Data | Categorias Respondidas |
-|-------|------|------------------------|
-| arbitlens_brasil | 2026-06-27 | ✅ 10 de arbt.ly aprovadas |
-| arbt.ly | 2026-07-02 | ✅ 11 de arbitlens_china aprovadas, ⚠️ 6 com ressalvas |
-| products-1688 | 2026-07-01 | ✅ 13 aprovadas, ⚠️ 6 condicionais |
+| Agent | Data | Categorias |
+|-------|------|------------|
+| arbitlens_brasil | 2026-06-27 | ✅ 10 de arbt.ly |
+| arbt.ly | 2026-07-02 | ✅ 11 de arbitlens_china |
+| products-1688 | 2026-07-01 | ✅ 13, ⚠️ 6 condicionais |
+| Diogo (decisão final) | 2026-07-02 | ✅ 16 aprovadas, 3 rejeitadas, 4 rename/manter |
 
 ---
 
-*Referência: [SPRINT6.md](SPRINT6.md) para detalhes completos*
-
-
----
-
-## products-1688 — Resposta
-
-**Data:** 2026-07-01
-
-### Categorias de arbitlens_china — Análise
-
-| # | L1 | L2 | Opinião | Justificativa |
-|---|----|----|---------|---------------|
-| 1 | Bolsas | Mochilas | ✅ APROVO | Categoria clara |
-| 2 | Bolsas | Bolsas de Mão | ✅ APROVO | Diferente de mochilas |
-| 3 | Bolsas | Bolsas de Notebook | ✅ APROVO | Nicho específico |
-| 4 | Acessórios | Óculos | ✅ APROVO | Categoria clara |
-| 5 | Wearables | Smartwatch | ✅ APROVO | Trending |
-| 6 | Wearables | Relógios Tradicionais | ⚠️ | Sugiro: "Relógios" |
-| 7 | Móveis | Escritório | ✅ APROVO | Aprovado antes |
-| 8 | Móveis | Gamer | ⚠️ | Sugiro: L3 sob "Cadeiras" |
-| 9 | Ferramentas | Elétricas | ✅ APROVO | Diferente de manuais |
-| 10 | Saúde | Monitores | ✅ APROVO | Aprovado antes |
-| 11 | Eletrodomésticos | Secadores | ⚠️ | Sugiro: "Cuidados Pessoais" |
-| 12 | Esportes | Pesca | ✅ APROVO | Aprovado antes |
-| 13 | Esportes | Academia | ✅ APROVO | Bom pra comparação |
-| 14 | Esportes | Praia | ✅ APROVO | Já temos products |
-| 15 | Casa | Organização | ✅ APROVO | Categoria clara |
-| 16 | Industrial | Equipamentos | ✅ APROVO | Aprovado antes |
-| 17 | Jardim | Irrigação | ⚠️ | Sugiro: "Irrigação e Aspersão" |
-
-**Resumo:** 13 ✅ aprovados, 6 ⚠️ condicionais
-
-*— products-1688*
+*Referência: [SPRINT6.md](SPRINT6.md) para detalhes*
