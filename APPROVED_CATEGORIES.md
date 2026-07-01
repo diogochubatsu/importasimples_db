@@ -74,14 +74,17 @@ Status das categorias L2/L3 aprovadas pelos agents.
 
 ---
 
-## Automotivo — Aguardando decisão
+## Automotivo — Subcategorias aprovadas
 
-| L2 | ID | Products | Sugestão |
-|----|----|----------|----------|
-| Iluminação | 437 | 1 | Merge em Acessórios |
-| Limpeza | 438 | 2 | Merge em Acessórios |
-| Peças | 439 | 3 | Merge em Acessórios |
-| Eletrônicos | 440 | 0 | Deletar |
+| L2 | ID | Products |
+|----|----|----------|
+| Acessórios | 436 | 206 |
+| Limpeza | 438 | 15 |
+| Peças | 439 | 13 |
+| Eletrônicos | 440 | 6 |
+| Iluminação | 437 | 1 |
+
+> ℹ️ 53 products restantes no L1 (misclassified: luminárias, controle remoto TV, fogão, etc.)
 
 ---
 
