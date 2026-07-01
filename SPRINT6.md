@@ -1019,6 +1019,30 @@ Isso significa:
 | 18 | **Pets** | Equinos | Halteres de cavalo | ~2 (Moda) |
 | 19 | **Papelaria** | Organização | Envelopes, pastas | ~1 (Moda) |
 
+### Categorias Criadas em 2026-07-01 (L2 Reclassificação Iluminação/Jardim/Automotivo)
+
+**Status:** AGUARDANDO APROVAÇÃO DOS AGENTES
+
+| # | Categoria L1 | L2 Proposta | Justificativa | Products Movidos |
+|---|--------------|-------------|---------------|------------------|
+| 20 | **Iluminação** | Lâmpadas | Lâmpadas LED, bulb, 灯泡 | 309 |
+| 21 | **Iluminação** | Fita LED | Fita LED, LED strip, 灯带 | 97 |
+| 22 | **Iluminação** | Luminárias | Luminárias de mesa/parede, desk lamp | 63 |
+| 23 | **Iluminação** | Flashlights | Lanterna, flashlight, tocha, torch | 127 |
+| 24 | **Iluminação** | Smart Home | Lâmpadas inteligentes, smart light | 0 |
+| 25 | **Iluminação** | Faróis LED | Faróis LED para carros | 22 |
+| 26 | **Iluminação** | Luzes Noturnas | Luz noturna, night light | 11 |
+| 27 | **Iluminação** | Projetores | Projetor galáxia, star projector | 6 |
+| 28 | **Jardim** | Ferramentas | Ferramentas de jardim, shovel, pá | 30 |
+| 29 | **Jardim** | Vasos | Vasos de planta, planters | 96 |
+| 30 | **Jardim** | Plantas | Plantas, sementes, fertilizantes | 23 |
+| 31 | **Jardim** | Decoração | Decoração de jardim | 0 |
+| 32 | **Automotivo** | Acessórios | Acessórios de carro, car mats, stickers | 201 |
+| 33 | **Automotivo** | Iluminação | Faróis, luzes de carro | 1 |
+| 34 | **Automotivo** | Limpeza | Shampoo de carro, cera, polish | 2 |
+| 35 | **Automotivo** | Peças | Peças de carro, condensador, óleo | 3 |
+| 36 | **Automotivo** | Eletrônicos | GPS de carro, câmera, charger | 0 |
+
 ### Resumo por Categoria
 
 | Categoria | Products que Entra | Products que Sai |
@@ -1043,8 +1067,8 @@ Isso significa:
 | Métrica | Antes | Depois |
 |---------|-------|--------|
 | Categories L1 com products | 24/26 | 26/26 |
-| Categories L2 novas | 0 | ~19 |
-| Products reclassificados | 0 | ~606 |
+| Categories L2 novas | 0 | ~36 |
+| Products reclassificados | 0 | ~983 |
 
 ### Próximos Passos
 
@@ -2510,3 +2534,79 @@ Os 3 issues são os mesmos já identificados na amostra anterior.
 ---
 
 *— arbt.ly, 2026-07-01 (rode 2 subagentes)*
+
+
+---
+
+## arbitlens_china — L2 Reclassificação Iluminação/Jardim/Automotivo
+
+**Data:** 2026-07-01
+**Status:** ✅ FASE 1 CONCLUÍDA
+
+### Ação Realizada
+
+Mover products de L1 para L2 existentes/criadas via SQL UPDATE com keyword matching.
+
+### Resultados
+
+| L1 | Antes | Depois | Products Movidos |
+|----|-------|--------|------------------|
+| **Iluminação** | 0% | 61.8% | 784/1,269 |
+| **Jardim** | 0% | 63.0% | 196/311 |
+| **Automotivo** | 0% | 70.4% | 207/294 |
+
+### Novas Categorias L2 Criadas (10)
+
+| ID | L1 | L2 | Products |
+|----|----|----|----------|
+| 424 | Iluminação | Lâmpadas | 309 |
+| 425 | Iluminação | Fita LED | 97 |
+| 426 | Iluminação | Luminárias | 63 |
+| 427 | Iluminação | Flashlights | 127 |
+| 428 | Iluminação | Smart Home | 0 |
+| 429 | Iluminação | Faróis LED | 22 |
+| 430 | Iluminação | Luzes Noturnas | 11 |
+| 431 | Iluminação | Projetores | 6 |
+| 432 | Jardim | Ferramentas | 30 |
+| 433 | Jardim | Vasos | 96 |
+| 434 | Jardim | Plantas | 23 |
+| 435 | Jardim | Decoração | 0 |
+| 436 | Automotivo | Acessórios | 201 |
+| 437 | Automotivo | Iluminação | 1 |
+| 438 | Automotivo | Limpeza | 2 |
+| 439 | Automotivo | Peças | 3 |
+| 440 | Automotivo | Eletrônicos | 0 |
+
+### Keywords Utilizadas
+
+**Iluminação:**
+- Lâmpadas: lâmpada, lampada, lamp, 灯泡, bulb
+- Fita LED: fita led, led strip, 灯带, led tape
+- Luminárias: luminária, luminaria, desk lamp
+- Flashlights: lanterna, flashlight, tocha, torch, 手电, 探照灯
+- Faróis LED: faróis led, farol led, headlight led
+- Luzes Noturnas: luz noturna, night light
+- Projetores: projetor, projector, galaxy projector
+
+**Jardim:**
+- Irrigação: irrigação, irrigacao, irrigation, regador, regar, 浇水, gotejamento
+- Ferramentas: ferramenta jardim, shovel, pá, enxada, hoe, weed, trimmer
+- Vasos: vaso, pot, 盆, planter
+- Plantas: planta, semente, seed, fertilizante, adubo
+
+**Automotivo:**
+- Acessórios: carro, car, vehicle, auto
+- Iluminação: farol, faróis, headlight
+- Limpeza: shampoo carro, limpa carro, car cleaner, cera, wax
+- Peças: peça carro, car part, condensador, óleo motor
+
+### Pendências
+
+1. **Aprovação dos agents** — 17 novas categorias L2 precisam de aprovação (adicionadas à lista consolidada)
+2. **Products restantes no L1** — ~687 products ainda em L1 (muitos misclassified: óculos, pulseira, cortinas, brinquedos)
+3. **Definir L3** — Products com L2 precisam de L3
+4. **Validação final** — Confirmar que todas as categorias têm products
+
+---
+
+*— arbitlens_china, 2026-07-01 (L2 reclassificação Iluminação/Jardim/Automotivo)*
