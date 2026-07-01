@@ -1,6 +1,6 @@
 # Assessment Completo — Categorias e Products por Source
 
-**Data:** 2026-07-02 | **Total:** 16,564 products | **431 categorias**
+**Data:** 2026-07-02 | **Total:** 16,564 products | **259 categorias com products**
 
 ---
 
@@ -15,296 +15,391 @@
 
 ---
 
-## 2. Products por L1 por Source
+## 2. Lista Completa por ID
 
-| L1 | China | 1688 | Brasil | arbt.ly | Total |
-|----|-------|------|--------|---------|-------|
-| Eletrônicos | 1,885 | 415 | 237 | 96 | **2,633** |
-| Moda | 1,184 | 243 | 204 | 160 | **1,791** |
-| Casa | 1,055 | 410 | 130 | 65 | **1,660** |
-| Audio | 867 | — | 227 | 250 | **1,344** |
-| Iluminação | 1,092 | — | 99 | 78 | **1,269** |
-| Esportes | 623 | 299 | 123 | 85 | **1,130** |
-| Infantis | 723 | 57 | 88 | 122 | **990** |
-| Beleza | 693 | 118 | 46 | 81 | **938** |
-| Ferramentas | 489 | 221 | 68 | 42 | **820** |
-| Cozinha | 577 | — | 44 | 11 | **632** |
-| Pets | 443 | 60 | 73 | 14 | **590** |
-| Móveis | 509 | — | 1 | — | **510** |
-| Acessórios | 428 | — | — | — | **428** |
-| Papelaria | 266 | 75 | 13 | — | **354** |
-| Jardim | 292 | — | 19 | — | **311** |
-| Automotivo | 275 | — | 19 | — | **294** |
-| Wearables | 165 | — | 36 | 75 | **276** |
-| Saúde | 173 | — | 68 | — | **241** |
-| Calçados | 150 | — | — | — | **150** |
-| Industrial | 49 | 1 | — | — | **50** |
-| Têxteis | 50 | — | — | — | **50** |
-| jardim | 30 | — | — | — | **30** |
-| Eletrodomésticos | 24 | — | — | — | **24** |
-| Computadores | 23 | — | — | — | **23** |
-| Organização | 21 | — | — | — | **21** |
-| Bolsas | 2 | — | — | — | **2** |
+### Acessórios
 
----
+| ID | L2 | L3 | China | 1688 | Brasil | arbt.ly | Total |
+|----|----|----|-------|------|--------|---------|-------|
+| 394 | Óculos | | 398 | — | — | — | **398** |
+| 383 | *(sem L2)* | | 30 | — | — | — | **30** |
 
-## 3. Detalhamento L2 por Source
+### Audio
 
-### Audio (1,344 products)
+| ID | L2 | L3 | China | 1688 | Brasil | arbt.ly | Total |
+|----|----|----|-------|------|--------|---------|-------|
+| 72 | Caixas de Som | Portátil | 211 | — | 69 | 76 | **356** |
+| 73 | Caixas de Som | Smart Speaker | — | — | — | 1 | **1** |
+| 75 | Fones | Fone Bluetooth | 299 | — | 136 | 41 | **476** |
+| 76 | Fones | Fone Gamer | — | — | — | 2 | **2** |
+| 77 | Fones | Headset | — | — | — | 39 | **39** |
+| 34 | Microfones | Lapela Sem Fio | 354 | — | 20 | 59 | **433** |
+| 81 | Players | DVD/Blu-ray | 3 | — | 2 | 29 | **34** |
+| 83 | Som Automotivo | Boombox | — | — | — | 1 | **1** |
+| 84 | Som Automotivo | Caixa Amplificada | — | — | — | 1 | **1** |
+| 85 | Som Automotivo | Processador | — | — | — | 1 | **1** |
 
-| L2 | L3 | China | Brasil | arbt.ly | Total |
-|----|----|-------|--------|---------|-------|
-| Fones | Fone Bluetooth | 299 | 136 | 41 | **476** |
-| Microfones | Lapela Sem Fio | 354 | 20 | 59 | **433** |
-| Caixas de Som | Portátil | 211 | 69 | 76 | **356** |
-| Fones | Headset | — | — | 39 | **39** |
-| Players | DVD/Blu-ray | 3 | 2 | 29 | **34** |
-| Som Automotivo | — | — | — | 3 | **3** |
-| **Total** | | **867** | **227** | **250** | **1,344** |
+### Automotivo
 
-### Iluminação (1,269 products)
+| ID | L2 | L3 | China | 1688 | Brasil | arbt.ly | Total |
+|----|----|----|-------|------|--------|---------|-------|
+| 436 | Acessórios | | 202 | — | 4 | — | **206** |
+| 440 | Eletrônicos | | 6 | — | — | — | **6** |
+| 437 | Iluminação | | 1 | — | — | — | **1** |
+| 438 | Limpeza | | 9 | — | 6 | — | **15** |
+| 439 | Peças | | 9 | — | 4 | — | **13** |
+| 18 | *(sem L2)* | | 48 | — | 5 | — | **53** |
 
-| L2 | L3 | China | Brasil | arbt.ly | Total |
-|----|----|-------|--------|---------|-------|
-| *(sem L2)* | | 460 | 25 | — | **485** |
-| Lâmpadas | | 304 | 5 | — | **309** |
-| Flashlights | | 126 | 1 | — | **127** |
-| Fita LED | | 96 | 1 | — | **97** |
-| Luminárias | | 62 | 1 | — | **63** |
-| Painel LED | Estúdio | — | — | 44 | **44** |
-| Ring Light | | 2 | 29 | — | **31** |
-| Bastão LED | | 3 | 12 | 8 | **23** |
-| Faróis LED | | 22 | — | — | **22** |
-| Ring Light | Médio | — | — | 26 | **26** |
-| Luzes Noturnas | | 11 | — | — | **11** |
-| Projetores | | 6 | — | — | **6** |
-| Painel LED | Softbox | — | 5 | — | **5** |
-| **Total** | | **1,092** | **99** | **78** | **1,269** |
+### Beleza
 
-### Automotivo (294 products)
+| ID | L2 | L3 | China | 1688 | Brasil | arbt.ly | Total |
+|----|----|----|-------|------|--------|---------|-------|
+| 111 | Barbear | Aparador | — | — | — | 3 | **3** |
+| 112 | Barbear | Barbeador | — | — | — | 2 | **2** |
+| 114 | Cabelo | Escova | 14 | — | — | 1 | **15** |
+| 115 | Cabelo | Finalizador | — | — | — | 1 | **1** |
+| 116 | Cabelo | Máscara Capilar | — | — | — | 1 | **1** |
+| 120 | Cabelo | Óleo Capilar | — | — | — | 3 | **3** |
+| 117 | Cabelo | Prancha | — | — | — | 1 | **1** |
+| 24 | Cabelo | Secador | — | — | — | 4 | **4** |
+| 119 | Cabelo | Shampoo | — | — | — | 2 | **2** |
+| 122 | Corpo & Banho | Reparador | — | — | — | 9 | **9** |
+| 124 | Higiene | Desodorante | — | — | — | 2 | **2** |
+| 125 | Higiene | Sabonete | — | — | — | 5 | **5** |
+| 127 | Industrial | Higiene | — | — | — | 1 | **1** |
+| 128 | Industrial | Limpeza | — | — | — | 1 | **1** |
+| 56 | Maquiagem | Base | — | 59 | — | 1 | **60** |
+| 131 | Maquiagem | Batom | — | — | — | 1 | **1** |
+| 132 | Maquiagem | Corretivo | — | — | — | 1 | **1** |
+| 133 | Maquiagem | Máscara de Cílios | — | — | — | 5 | **5** |
+| 134 | Maquiagem | Sobrancelha | — | — | — | 1 | **1** |
+| 20 | Maquiagem | *(sem L3)* | 4 | — | — | — | **4** |
+| 136 | Skincare | Hidratante Corporal | — | — | — | 7 | **7** |
+| 137 | Skincare | Hidratante Facial | — | — | — | 9 | **9** |
+| 365 | Skincare | Limpeza | — | 59 | — | — | **59** |
+| 138 | Skincare | Limpeza Facial | — | — | — | 10 | **10** |
+| 139 | Skincare | Outros | — | — | — | 1 | **1** |
+| 140 | Skincare | Protetor Solar | — | — | — | 6 | **6** |
+| 141 | Skincare | Sérum | — | — | — | 3 | **3** |
+| 135 | Skincare | *(sem L3)* | 4 | — | — | — | **4** |
+| 7 | *(sem L2)* | | 671 | — | 46 | — | **717** |
 
-| L2 | China | Brasil | Total |
-|----|-------|--------|-------|
-| Acessórios | 202 | 4 | **206** |
-| *(sem L2)* | 48 | 5 | **53** |
-| Limpeza | 9 | 6 | **15** |
-| Peças | 9 | 4 | **13** |
-| Eletrônicos | 6 | — | **6** |
-| Iluminação | 1 | — | **1** |
-| **Total** | **275** | **19** | **294** |
+### Bolsas
 
-### Jardim (311 products)
+| ID | L2 | L3 | China | 1688 | Brasil | arbt.ly | Total |
+|----|----|----|-------|------|--------|---------|-------|
+| 392 | Bolsas de Mão | | 2 | — | — | — | **2** |
 
-| L2 | China | Brasil | Total |
-|----|-------|--------|-------|
-| *(sem L2)* | 99 | 16 | **115** |
-| Vasos | 96 | — | **96** |
-| Irrigação e Aspersão | 47 | — | **47** |
-| Ferramentas | 28 | 2 | **30** |
-| Plantas | 22 | 1 | **23** |
-| **Total** | **292** | **19** | **311** |
+### Calçados
 
-### Eletrônicos (2,633 products)
+| ID | L2 | L3 | China | 1688 | Brasil | arbt.ly | Total |
+|----|----|----|-------|------|--------|---------|-------|
+| 17 | *(sem L2)* | | 150 | — | — | — | **150** |
 
-| L2 | China | 1688 | Brasil | arbt.ly | Total |
-|----|-------|------|--------|---------|-------|
-| *(sem L2)* | 1,722 | 78 | 210 | — | **2,010** |
-| PC | 81 | 60 | — | — | **141** |
-| Acessórios | 11 | 60 | 27 | — | **98** |
-| Eletrodomésticos | — | 80 | — | — | **80** |
-| Celular | — | 60 | — | — | **60** |
-| Iluminação | 52 | 10 | — | — | **62** |
-| Smart Home | — | 57 | — | — | **57** |
-| Suportes | — | — | — | 20 | **20** |
-| Acessorios Mobile | 19 | — | — | 9 | **28** |
-| Tripés | — | — | — | 67 | **67** |
-| Segurança | — | 10 | — | — | **10** |
-| **Total** | **1,885** | **415** | **237** | **96** | **2,633** |
+### Casa
 
-### Moda (1,791 products)
+| ID | L2 | L3 | China | 1688 | Brasil | arbt.ly | Total |
+|----|----|----|-------|------|--------|---------|-------|
+| 349 | Banheiro | | — | 60 | — | — | **60** |
+| 194 | Banho | Tapete de Banho | — | — | — | 29 | **29** |
+| 195 | Banho | Tapete de Entrada | — | — | — | 1 | **1** |
+| 193 | Banho | *(sem L3)* | 3 | — | — | — | **3** |
+| 197 | Cozinha | Bolsa Térmica | — | — | — | 1 | **1** |
+| 198 | Cozinha | Copo | — | — | — | 5 | **5** |
+| 199 | Cozinha | Garrafa Térmica | — | — | — | 9 | **9** |
+| 200 | Cozinha | Pote Hermético | — | — | — | 7 | **7** |
+| 196 | Cozinha | *(sem L3)* | 2 | 59 | — | — | **61** |
+| 29 | Decoracao | | 5 | — | — | — | **5** |
+| 45 | Jardim | | 22 | — | — | — | **22** |
+| 202 | Lavanderia | Varal | — | — | — | 1 | **1** |
+| 204 | Organização | Cabide | — | — | — | 1 | **1** |
+| 205 | Organização | Cesto | — | — | — | 2 | **2** |
+| 206 | Organização | Lixeira | — | — | — | 1 | **1** |
+| 207 | Organização | Organizador | 9 | — | — | 6 | **15** |
+| 203 | Organização | *(sem L3)* | 294 | — | — | — | **294** |
+| 209 | Outros | Outros | — | — | — | 1 | **1** |
+| 211 | Pote | Pote | — | — | — | 1 | **1** |
+| 353 | Quarto | | — | 60 | — | — | **60** |
+| 357 | Sala | | — | 60 | — | — | **60** |
+| 5 | *(sem L2)* | | 720 | 171 | 130 | — | **1,021** |
 
-| L2 | China | 1688 | Brasil | arbt.ly | Total |
-|----|-------|------|--------|---------|-------|
-| *(sem L2)* | 872 | 93 | 204 | — | **1,169** |
-| Bolsas | 266 | — | — | — | **266** |
-| Meias | — | 76 | — | — | **76** |
-| Roupa Íntima | — | 74 | — | — | **74** |
-| Cintas | — | — | — | 20 | **20** |
-| Puma | — | — | — | 18 | **18** |
-| Calcinhas | — | — | — | 18 | **18** |
-| Viagem | — | — | — | 17 | **17** |
-| Mochilas | — | — | — | 10 | **10** |
-| Acessórios | — | — | — | 15 | **15** |
-| Banho | 40 | — | — | 1 | **41** |
-| Feminina | — | — | — | 15 | **15** |
-| Roupas | — | — | — | 9 | **9** |
-| **Total** | **1,184** | **243** | **204** | **160** | **1,791** |
+### Computadores
 
-### Casa (1,660 products)
+| ID | L2 | L3 | China | 1688 | Brasil | arbt.ly | Total |
+|----|----|----|-------|------|--------|---------|-------|
+| 385 | *(sem L2)* | | 23 | — | — | — | **23** |
 
-| L2 | China | 1688 | Brasil | arbt.ly | Total |
-|----|-------|------|--------|---------|-------|
-| *(sem L2)* | 720 | 171 | 130 | — | **1,021** |
-| Organização | 294 | — | — | 10 | **304** |
-| Cozinha | 2 | 59 | — | 22 | **83** |
-| Banho | — | — | — | 30 | **30** |
-| Banheiro | — | 60 | — | — | **60** |
-| Quarto | — | 60 | — | — | **60** |
-| Sala | — | 60 | — | — | **60** |
-| Jardim | 22 | — | — | — | **22** |
-| Decoracao | 5 | — | — | — | **5** |
-| **Total** | **1,055** | **410** | **130** | **65** | **1,660** |
+### Cozinha
 
-### Esportes (1,130 products)
+| ID | L2 | L3 | China | 1688 | Brasil | arbt.ly | Total |
+|----|----|----|-------|------|--------|---------|-------|
+| 213 | Eletrodomésticos | Cafeteira | — | — | — | 1 | **1** |
+| 214 | Eletrodomésticos | Chaleira | — | — | — | 2 | **2** |
+| 215 | Eletrodomésticos | Liquidificador | — | — | — | 1 | **1** |
+| 217 | Utensílios | Bowl | — | — | — | 1 | **1** |
+| 218 | Utensílios | Cápsula | — | — | — | 1 | **1** |
+| 219 | Utensílios | Garrafa | — | — | — | 1 | **1** |
+| 220 | Utensílios | Pipoqueira | — | — | — | 1 | **1** |
+| 221 | Utensílios | Talher | — | — | — | 2 | **2** |
+| 222 | Utensílios | Utensílios | — | — | — | 1 | **1** |
+| 216 | Utensílios | *(sem L3)* | 38 | — | — | — | **38** |
+| 9 | *(sem L2)* | | 539 | — | 44 | — | **583** |
 
-| L2 | China | 1688 | Brasil | arbt.ly | Total |
-|----|-------|------|--------|---------|-------|
-| *(sem L2)* | 596 | — | 123 | — | **719** |
-| Academia | 4 | 120 | — | — | **124** |
-| Localizadores | — | — | — | 69 | **69** |
-| Praia | 4 | 59 | — | — | **63** |
-| Bolas | — | 60 | — | — | **60** |
-| Outdoor | — | 60 | — | — | **60** |
-| Automotivo | 12 | — | — | — | **12** |
-| Acessórios | — | — | — | 7 | **7** |
-| Pesca | 5 | — | — | — | **5** |
-| Acessórios Smart Tag | 1 | — | — | 3 | **4** |
-| **Total** | **623** | **299** | **123** | **85** | **1,130** |
+### Eletrodomésticos
 
-### Ferramentas (820 products)
+| ID | L2 | L3 | China | 1688 | Brasil | arbt.ly | Total |
+|----|----|----|-------|------|--------|---------|-------|
+| 384 | *(sem L2)* | | 24 | — | — | — | **24** |
 
-| L2 | China | 1688 | Brasil | arbt.ly | Total |
-|----|-------|------|--------|---------|-------|
-| *(sem L2)* | 462 | — | 68 | 2 | **530** |
-| Elétricas | 27 | 102 | — | 11 | **140** |
-| Manuais | — | 60 | — | 29 | **89** |
-| Medição | — | 59 | — | — | **59** |
-| **Total** | **489** | **221** | **68** | **42** | **820** |
+### Eletrônicos
 
-### Beleza (938 products)
+| ID | L2 | L3 | China | 1688 | Brasil | arbt.ly | Total |
+|----|----|----|-------|------|--------|---------|-------|
+| 390 | Acessórios | | 11 | 60 | 27 | — | **98** |
+| 68 | Acessorios Mobile | Acessorios Mobile | — | — | — | 9 | **9** |
+| 67 | Acessorios Mobile | *(sem L3)* | 19 | — | — | — | **19** |
+| 340 | Celular | | — | 60 | — | — | **60** |
+| 389 | Eletrodomésticos | | — | 80 | — | — | **80** |
+| 332 | Iluminação | | 52 | 10 | — | — | **62** |
+| 336 | PC | | 81 | 60 | — | — | **141** |
+| 334 | Segurança | | — | 10 | — | — | **10** |
+| 344 | Smart Home | | — | 57 | — | — | **57** |
+| 70 | Suportes | Mesa/Carro | — | — | — | 20 | **20** |
+| 233 | Tripés | Monopé | — | — | — | 3 | **3** |
+| 234 | Tripés | Profissional | — | — | — | 40 | **40** |
+| 235 | Tripés | Universais | — | — | — | 24 | **24** |
+| 3 | *(sem L2)* | | 1,722 | 78 | 210 | — | **2,010** |
 
-| L2 | China | 1688 | Brasil | arbt.ly | Total |
-|----|-------|------|--------|---------|-------|
-| *(sem L2)* | 671 | — | 46 | — | **717** |
-| Maquiagem | 4 | 59 | — | 8 | **71** |
-| Skincare | 4 | 59 | — | 36 | **99** |
-| Cabelo | 14 | — | — | 10 | **24** |
-| Corpo & Banho | — | — | — | 9 | **9** |
-| Higiene | — | — | — | 7 | **7** |
-| Barbear | — | — | — | 5 | **5** |
-| **Total** | **693** | **118** | **46** | **81** | **938** |
+### Esportes
 
-### Cozinha (632 products)
+| ID | L2 | L3 | China | 1688 | Brasil | arbt.ly | Total |
+|----|----|----|-------|------|--------|---------|-------|
+| 25 | Academia | | 4 | 120 | — | — | **124** |
+| 295 | Acessórios | Clips | — | — | — | 7 | **7** |
+| 405 | Acessórios Smart Tag | Capas | — | — | — | 3 | **3** |
+| 417 | Acessórios Smart Tag | Garrafas | 1 | — | — | — | **1** |
+| 423 | Automotivo | | 12 | — | — | — | **12** |
+| 320 | Bolas | | — | 60 | — | — | **60** |
+| 224 | Localizadores | Smart Tag | — | — | — | 69 | **69** |
+| 297 | Mobiliário | Cadeira de Praia | — | — | — | 3 | **3** |
+| 316 | Outdoor | | — | 60 | — | — | **60** |
+| 398 | Pesca | | 5 | — | — | — | **5** |
+| 312 | Praia | | 4 | 59 | — | — | **63** |
+| 299 | Têxtil | Toalha de Praia | — | — | — | 3 | **3** |
+| 298 | Têxtil | *(sem L3)* | 1 | — | — | — | **1** |
+| 8 | *(sem L2)* | | 596 | — | 123 | — | **719** |
 
-| L2 | China | Brasil | arbt.ly | Total |
-|----|-------|--------|---------|-------|
-| *(sem L2)* | 539 | 44 | — | **583** |
-| Utensílios | 38 | — | 7 | **45** |
-| Eletrodomésticos | — | — | 4 | **4** |
-| **Total** | **577** | **44** | **11** | **632** |
+### Ferramentas
 
-### Pets (590 products)
+| ID | L2 | L3 | China | 1688 | Brasil | arbt.ly | Total |
+|----|----|----|-------|------|--------|---------|-------|
+| 226 | Elétricas | Furadeira | — | — | — | 7 | **7** |
+| 227 | Elétricas | Lavadora | — | — | — | 1 | **1** |
+| 228 | Elétricas | Lixadeira | — | — | — | 2 | **2** |
+| 225 | Elétricas | *(sem L3)* | 27 | 102 | — | — | **129** |
+| 230 | Manuais | Jogo de Ferramentas | — | — | — | 29 | **29** |
+| 231 | Manuais | Soquete | — | — | — | 1 | **1** |
+| 63 | Manuais | *(sem L3)* | — | 60 | — | — | **60** |
+| 328 | Medição | | — | 59 | — | — | **59** |
+| 10 | *(sem L2)* | | 462 | — | 68 | 2 | **532** |
 
-| L2 | China | 1688 | Brasil | arbt.ly | Total |
-|----|-------|------|--------|---------|-------|
-| *(sem L2)* | 430 | — | 73 | — | **503** |
-| Ração | — | 21 | — | 4 | **25** |
-| Dia a Dia | — | 24 | — | 1 | **25** |
-| Acessórios | — | 15 | — | 2 | **17** |
-| Saúde | 13 | — | — | 4 | **17** |
-| **Total** | **443** | **60** | **73** | **14** | **590** |
+### Iluminação
 
-### Móveis (510 products)
+| ID | L2 | L3 | China | 1688 | Brasil | arbt.ly | Total |
+|----|----|----|-------|------|--------|---------|-------|
+| 237 | Bastão LED | RGB | — | — | — | 8 | **8** |
+| 236 | Bastão LED | *(sem L3)* | 3 | — | 12 | — | **15** |
+| 429 | Faróis LED | | 22 | — | — | — | **22** |
+| 425 | Fita LED | | 96 | — | 1 | — | **97** |
+| 427 | Flashlights | | 126 | — | 1 | — | **127** |
+| 424 | Lâmpadas | | 304 | — | 5 | — | **309** |
+| 426 | Luminárias | | 62 | — | 1 | — | **63** |
+| 430 | Luzes Noturnas | | 11 | — | — | — | **11** |
+| 239 | Painel LED | Estúdio | — | — | — | 44 | **44** |
+| 402 | Painel LED | Softbox | — | — | 5 | — | **5** |
+| 238 | Painel LED | *(sem L3)* | — | — | 20 | — | **20** |
+| 431 | Projetores | | 6 | — | — | — | **6** |
+| 241 | Ring Light | Médio | — | — | — | 26 | **26** |
+| 240 | Ring Light | *(sem L3)* | 2 | — | 29 | — | **31** |
+| 4 | *(sem L2)* | | 460 | — | 25 | — | **485** |
 
-| L2 | China | Brasil | Total |
-|----|-------|--------|-------|
-| *(sem L2)* | 290 | 1 | **291** |
-| Escritório | 199 | — | **199** |
-| Gamer | 20 | — | **20** |
-| **Total** | **509** | **1** | **510** |
+### Industrial
 
-### Infantis (990 products)
+| ID | L2 | L3 | China | 1688 | Brasil | arbt.ly | Total |
+|----|----|----|-------|------|--------|---------|-------|
+| 399 | Equipamentos | | 33 | 1 | — | — | **34** |
+| 400 | Máquinário | | 8 | — | — | — | **8** |
+| 387 | *(sem L2)* | | 8 | — | — | — | **8** |
 
-| L2 | China | 1688 | Brasil | arbt.ly | Total |
-|----|-------|------|--------|---------|-------|
-| *(sem L2)* | 716 | — | 88 | 2 | **806** |
-| Roupas | — | 45 | — | 1 | **46** |
-| Alimentação | — | 12 | — | 8 | **20** |
-| Splash/Água | — | — | — | 6 | **6** |
-| Fraldas & Lenços | — | — | — | 27 | **27** |
-| Brinquedos | 4 | — | — | — | **4** |
-| **Total** | **723** | **57** | **88** | **122** | **990** |
+### Infantis
 
-### Wearables (276 products)
+| ID | L2 | L3 | China | 1688 | Brasil | arbt.ly | Total |
+|----|----|----|-------|------|--------|---------|-------|
+| 87 | Alimentação | Bebida | — | — | — | 1 | **1** |
+| 88 | Alimentação | Cadeira | — | — | — | 1 | **1** |
+| 89 | Alimentação | Canguru | — | — | — | 1 | **1** |
+| 90 | Alimentação | Copo com Bico | — | — | — | 2 | **2** |
+| 91 | Alimentação | Forma | — | — | — | 1 | **1** |
+| 92 | Alimentação | Mamadeira | — | — | — | 3 | **3** |
+| 93 | Alimentação | Refeição | — | 12 | — | 1 | **13** |
+| 157 | Bebê | Bebê | — | — | — | 3 | **3** |
+| 159 | Bonecos | Action Figure | 3 | — | — | 2 | **5** |
+| 160 | Bonecos | Carrinho | — | — | — | 6 | **6** |
+| 369 | Brinquedos | | 4 | — | — | — | **4** |
+| 162 | Coleção | Figurinhas | — | — | — | 3 | **3** |
+| 164 | Cubo Mágico | Cubo Mágico | — | — | — | 1 | **1** |
+| 166 | Educativo | Blocos de Montar | — | — | — | 10 | **10** |
+| 168 | Eletrônicos | Robô | — | — | — | 4 | **4** |
+| 170 | Festa | Balão | — | — | — | 1 | **1** |
+| 95 | Fraldas & Lenços | Fralda Descartável | — | — | — | 27 | **27** |
+| 97 | Higiene | Sabonete | — | — | — | 3 | **3** |
+| 98 | Higiene | Shampoo | — | — | — | 3 | **3** |
+| 100 | Industrial | Luvas | — | — | — | 1 | **1** |
+| 101 | Industrial | Outros | — | — | — | 1 | **1** |
+| 102 | Industrial | Sabão | — | — | — | 1 | **1** |
+| 172 | Jogos | Cartas | — | — | — | 13 | **13** |
+| 173 | Jogos | Tabuleiro | — | — | — | 1 | **1** |
+| 175 | Livros | Livro | — | — | — | 3 | **3** |
+| 177 | Massinha | Massinha | — | — | — | 8 | **8** |
+| 104 | Mobilidade | Carrinho | — | — | — | 2 | **2** |
+| 181 | Pelúcia | Personagem | — | — | — | 5 | **5** |
+| 183 | Presentes | Presente | — | — | — | 1 | **1** |
+| 106 | Quarto | Swaddle | — | — | — | 1 | **1** |
+| 107 | Quarto | Toalha | — | — | — | 1 | **1** |
+| 368 | Roupas | Acessórios | — | 45 | — | — | **45** |
+| 109 | Roupas | Conjunto | — | — | — | 1 | **1** |
+| 185 | Sensory | Sensory | — | — | — | 1 | **1** |
+| 187 | Splash/Água | Bolhas | — | — | — | 1 | **1** |
+| 188 | Splash/Água | Educativo | — | — | — | 1 | **1** |
+| 189 | Splash/Água | Piscina/Água | — | — | — | 3 | **3** |
+| 190 | Splash/Água | Pistola Água | — | — | — | 1 | **1** |
+| 192 | Utensílios | Utensílios | — | — | — | 1 | **1** |
+| 6 | *(sem L2)* | | 716 | — | 88 | 2 | **806** |
 
-| L2 | China | Brasil | arbt.ly | Total |
-|----|-------|--------|---------|-------|
-| *(sem L2)* | 150 | 36 | — | **186** |
-| Smartwatch | 2 | — | 54 | **56** |
-| Pulseiras | — | — | 21 | **21** |
-| **Total** | **165** | **36** | **75** | **276** |
+### Jardim
 
-### Papelaria (354 products)
+| ID | L2 | L3 | China | 1688 | Brasil | arbt.ly | Total |
+|----|----|----|-------|------|--------|---------|-------|
+| 35 | Ferramentas | | 30 | — | — | — | **30** |
+| 432 | Ferramentas | | 28 | — | 2 | — | **30** |
+| 401 | Irrigação e Aspersão | | 47 | — | — | — | **47** |
+| 434 | Plantas | | 22 | — | 1 | — | **23** |
+| 433 | Vasos | | 96 | — | — | — | **96** |
+| 14 | *(sem L2)* | | 99 | — | 16 | — | **115** |
 
-| L2 | China | 1688 | Brasil | Total |
-|----|-------|------|--------|-------|
-| *(sem L2)* | 265 | — | 13 | **278** |
-| Escrita | 1 | 40 | — | **41** |
-| Organização | — | 35 | — | **35** |
-| **Total** | **266** | **75** | **13** | **354** |
+### Moda
 
-### Industrial (50 products)
+| ID | L2 | L3 | China | 1688 | Brasil | arbt.ly | Total |
+|----|----|----|-------|------|--------|---------|-------|
+| 249 | Acessórios | Boné | — | — | — | 1 | **1** |
+| 143 | Acessórios | Carteira | — | — | — | 2 | **2** |
+| 250 | Acessórios | Chapéu | — | — | — | 3 | **3** |
+| 251 | Acessórios | Chapéu/Boné | — | — | — | 1 | **1** |
+| 252 | Acessórios | Cinto | — | — | — | 1 | **1** |
+| 253 | Acessórios | Gravata | — | — | — | 2 | **2** |
+| 144 | Acessórios | Kit Bolsas | — | — | — | 2 | **2** |
+| 254 | Acessórios | Lenço | — | — | — | 1 | **1** |
+| 256 | Artesanato | Artesanato | — | — | — | 1 | **1** |
+| 146 | Auto | Acessório Auto | — | — | — | 1 | **1** |
+| 258 | Banho | Toalha | 6 | — | — | 1 | **7** |
+| 257 | Banho | *(sem L3)* | 40 | — | — | — | **40** |
+| 58 | Bolsas | | 266 | — | — | — | **266** |
+| 260 | Calçados | Chinelo | — | — | — | 2 | **2** |
+| 261 | Calçados | Tênis | — | — | — | 1 | **1** |
+| 277 | Calcinhas | Fio Dental | — | — | — | 18 | **18** |
+| 263 | Carteira | Carteira | — | — | — | 6 | **6** |
+| 279 | Cintas | Modeladora | — | — | — | 20 | **20** |
+| 281 | Cueca | Boxer | — | — | — | 15 | **15** |
+| 282 | Cueca | Cueca | — | — | — | 2 | **2** |
+| 148 | Feminina | Festa | — | — | — | 1 | **1** |
+| 149 | Feminina | Mochila Feminina | — | — | — | 2 | **2** |
+| 150 | Feminina | Ombro | — | — | — | 1 | **1** |
+| 151 | Feminina | Sacola | — | — | — | 4 | **4** |
+| 152 | Feminina | Tote | — | — | — | 7 | **7** |
+| 243 | Meia Calça | Cano Médio/Alto | — | — | — | 2 | **2** |
+| 244 | Meia Calça | Meia Calça | — | — | — | 2 | **2** |
+| 310 | Meias | | — | 76 | — | — | **76** |
+| 248 | Mochilas | Mochila | — | — | — | 10 | **10** |
+| 265 | Outros | Chaveiro | — | — | — | 1 | **1** |
+| 266 | Outros | Espelho | — | — | — | 3 | **3** |
+| 267 | Outros | Guarda-Chuva | — | — | — | 1 | **1** |
+| 268 | Outros | Máscara | — | — | — | 1 | **1** |
+| 269 | Outros | Pijama | — | — | — | 1 | **1** |
+| 246 | Puma | Kit | — | — | — | 18 | **18** |
+| 306 | Roupa Íntima | | — | 74 | — | — | **74** |
+| 271 | Roupas | Blusa | — | — | — | 1 | **1** |
+| 272 | Roupas | Calça | — | — | — | 3 | **3** |
+| 273 | Roupas | Camisa | — | — | — | 1 | **1** |
+| 274 | Roupas | Jaqueta | — | — | — | 3 | **3** |
+| 275 | Roupas | Moletom | — | — | — | 1 | **1** |
+| 154 | Viagem | Mala Bordo | — | — | — | 15 | **15** |
+| 155 | Viagem | Necessaire | — | — | — | 2 | **2** |
+| 2 | *(sem L2)* | | 872 | 93 | 204 | — | **1,169** |
 
-| L2 | China | 1688 | Total |
-|----|-------|------|-------|
-| *(sem L2)* | 8 | — | **8** |
-| Equipamentos | 33 | 1 | **34** |
-| Máquinário | 8 | — | **8** |
-| **Total** | **49** | **1** | **50** |
+### Móveis
 
-### L1 com poucos products
+| ID | L2 | L3 | China | 1688 | Brasil | arbt.ly | Total |
+|----|----|----|-------|------|--------|---------|-------|
+| 395 | Escritório | | 199 | — | — | — | **199** |
+| 396 | Gamer | | 20 | — | — | — | **20** |
+| 12 | *(sem L2)* | | 290 | — | 1 | — | **291** |
 
-| L1 | China | Total |
-|----|-------|-------|
-| Calçados | 150 | **150** |
-| Saúde | 173 | **241** |
-| Têxteis | 50 | **50** |
-| jardim | 30 | **30** |
-| Eletrodomésticos | 24 | **24** |
-| Computadores | 23 | **23** |
-| Organização | 21 | **21** |
-| Bolsas | 2 | **2** |
+### Organização
 
----
+| ID | L2 | L3 | China | 1688 | Brasil | arbt.ly | Total |
+|----|----|----|-------|------|--------|---------|-------|
+| 388 | *(sem L2)* | | 21 | — | — | — | **21** |
 
-## 4. L2 Coverage Summary
+### Papelaria
 
-| Status | L1 | Total | Com L2 | L2% |
-|--------|----|-------|--------|-----|
-| ✅ | Audio | 1,344 | 1,344 | 100% |
-| ✅ | Acessórios | 428 | 398 | 93% |
-| ✅ | Industrial | 50 | 42 | 84% |
-| ✅ | Automotivo | 294 | 241 | 82% |
-| ⚠️ | Jardim | 311 | 196 | 63% |
-| ⚠️ | Iluminação | 1,269 | 784 | 62% |
-| ⚠️ | Móveis | 510 | 219 | 43% |
-| ⚠️ | Casa | 1,660 | 639 | 39% |
-| ⚠️ | Esportes | 1,130 | 411 | 36% |
-| ⚠️ | Ferramentas | 820 | 288 | 35% |
-| ⚠️ | Moda | 1,791 | 622 | 35% |
-| ⚠️ | Wearables | 276 | 90 | 33% |
-| ⚠️ | Eletrônicos | 2,633 | 623 | 24% |
-| ⚠️ | Beleza | 938 | 221 | 24% |
-| ⚠️ | Papelaria | 354 | 76 | 22% |
-| ⚠️ | Infantis | 990 | 184 | 19% |
-| ⚠️ | Pets | 590 | 87 | 15% |
-| ⚠️ | Cozinha | 632 | 49 | 8% |
-| ❌ | Saúde | 241 | 1 | 0.4% |
-| ❌ | Calçados | 150 | 0 | 0% |
-| ❌ | Têxteis | 50 | 0 | 0% |
-| ❌ | Eletrodomésticos | 24 | 0 | 0% |
-| ❌ | Computadores | 23 | 0 | 0% |
-| ❌ | Organização | 21 | 0 | 0% |
+| ID | L2 | L3 | China | 1688 | Brasil | arbt.ly | Total |
+|----|----|----|-------|------|--------|---------|-------|
+| 377 | Escrita | *(sem L3)* | 1 | — | — | — | **1** |
+| 379 | Escrita | Canetas | — | 40 | — | — | **40** |
+| 381 | Organização | Pastas | — | 35 | — | — | **35** |
+| 13 | *(sem L2)* | | 265 | — | 13 | — | **278** |
+
+### Pets
+
+| ID | L2 | L3 | China | 1688 | Brasil | arbt.ly | Total |
+|----|----|----|-------|------|--------|---------|-------|
+| 284 | Acessórios | Acessório Pet | — | — | — | 2 | **2** |
+| 376 | Acessórios | Coleira | — | 15 | — | — | **15** |
+| 286 | Brinquedos | Brinquedo Pet | — | — | — | 1 | **1** |
+| 288 | Cães | Ração | — | — | — | 4 | **4** |
+| 289 | Cães | Tapete Higiênico | — | — | — | 2 | **2** |
+| 373 | Dia a Dia | Acessórios | — | 24 | — | — | **24** |
+| 291 | Gatos | Areia Sanitária | — | — | — | 1 | **1** |
+| 375 | Ração | Gatos | — | 21 | — | — | **21** |
+| 293 | Saúde | Antipulgas | — | — | — | 4 | **4** |
+| 292 | Saúde | *(sem L3)* | 13 | — | — | — | **13** |
+| 11 | *(sem L2)* | | 430 | — | 73 | — | **503** |
+
+### Saúde
+
+| ID | L2 | L3 | China | 1688 | Brasil | arbt.ly | Total |
+|----|----|----|-------|------|--------|---------|-------|
+| 397 | Monitores | | 1 | — | — | — | **1** |
+| 16 | *(sem L2)* | | 172 | — | 68 | — | **240** |
+
+### Têxteis
+
+| ID | L2 | L3 | China | 1688 | Brasil | arbt.ly | Total |
+|----|----|----|-------|------|--------|---------|-------|
+| 386 | *(sem L2)* | | 50 | — | — | — | **50** |
+
+### Wearables
+
+| ID | L2 | L3 | China | 1688 | Brasil | arbt.ly | Total |
+|----|----|----|-------|------|--------|---------|-------|
+| 410 | Pulseiras | Smartwatch | — | — | — | 21 | **21** |
+| 301 | Smartwatch | Amazfit | — | — | — | 7 | **7** |
+| 302 | Smartwatch | Apple Watch | — | — | — | 1 | **1** |
+| 303 | Smartwatch | Outros | 13 | — | — | 32 | **45** |
+| 304 | Smartwatch | Samsung | — | — | — | 8 | **8** |
+| 305 | Smartwatch | Xiaomi | — | — | — | 6 | **6** |
+| 300 | Smartwatch | *(sem L3)* | 2 | — | — | — | **2** |
+| 19 | *(sem L2)* | | 150 | — | 36 | — | **186** |
 
 ---
 
