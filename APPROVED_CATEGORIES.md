@@ -41,12 +41,12 @@ Status das categorias L2/L3 propostas e aprovadas pelos agents.
 | Jardim | Plantas | 434 | 23 |
 | Automotivo | Acessórios | 436 | 201 |
 
-**Aguardando aprovação de products-1688 e arbitlens_brasil (6):**
+> ℹ️ Smart Home (428) e Decoração (435) deletadas — 0 products. Products "smart" já têm L2 melhor (Lâmpadas, Fita LED, Wearables, Saúde). Decoração → Casa > Decoracao (ID 29).
+
+**Aguardando aprovação de products-1688 e arbitlens_brasil (4):**
 
 | L1 | L2 | ID | Products | Problema |
 |----|----|----|----------|----------|
-| Iluminação | Smart Home | 428 | 0 | sem products |
-| Jardim | Decoração | 435 | 0 | sem products |
 | Automotivo | Iluminação | 437 | 1 | pouco |
 | Automotivo | Limpeza | 438 | 2 | pouco |
 | Automotivo | Peças | 439 | 3 | pouco |
