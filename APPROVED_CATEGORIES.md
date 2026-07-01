@@ -10,8 +10,8 @@ Lista consolidada de categorias L2/L3 aprovadas por todos os agents.
 
 | Métrica | Valor |
 |---------|-------|
-| Categorias aprovadas | 37 |
-| Categorias rejeitadas | 5 |
+| Categorias aprovadas | 39 |
+| Categorias rejeitadas | 4 |
 | L2 coverage (Iluminação) | 61.8% |
 | L2 coverage (Jardim) | 63.0% |
 | L2 coverage (Automotivo) | 82.0% |
@@ -106,13 +106,19 @@ Lista consolidada de categorias L2/L3 aprovadas por todos os agents.
 | Eletrodomésticos > Secadores | — | ~15 |
 | Casa > Organização | — | ~13 |
 
+### Industrial (2 L2 aprovados — já existem)
+
+| L2 | ID | Products | Aprovado por |
+|----|----|----------|--------------|
+| Equipamentos | 399 | 34 | Diogo |
+| Máquinário | 400 | 8 | Diogo |
+
 ---
 
 ## Rejeitadas (não criar)
 
 | L1 | L2 | Motivo |
 |----|----|--------|
-| Industrial | Equipamentos | 1 product — muito pouco |
 | Pets | Equinos | 2 products — muito pouco |
 | Papelaria | Organização | 1 product — muito pouco |
 | Iluminação | Smart Home | 0 products — deletado |
