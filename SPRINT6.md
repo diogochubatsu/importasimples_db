@@ -2466,3 +2466,47 @@ Os 3 issues são os mesmos já identificados na amostra anterior.
 ---
 
 *— arbt.ly, 2026-07-01 (análise crítica + correções finais)*
+
+
+---
+
+## arbt.ly — Rode 2: Subagentes Melhorados + 17 Corrections
+
+**Data:** 2026-07-01
+**Status:** ✅ CONCLUÍDO
+**Total corrigidos:** 17 products
+
+### Melhorias nos Subagentes
+- Instruções mais detalhadas (7 checks por product)
+- Verificação de idioma título vs categoria
+- Verificação de hierarquia L2→L1 e L3→L2
+- Verificação de preços anômalos
+- Relatórios com severidade (CRITICO/HIGH/MEDIUM/LOW)
+
+### Issues Encontrados (HIGH - 15)
+1. EarPods → Fone com Fio (era Fone Bluetooth)
+2. iClever Headphones → Fone com Fio
+3. Clean Towels → Higiene/Lenços (era Máscara)
+4. Revlon Eyeliner → Lápis (era Máscara)
+5. Morte Súbita → Skincare/Máscara (era Cílios)
+6. Maybelline → Maquiagem/Máscara (era Skincare/Cílios)
+7. Mighty Patch → Skincare/Tratamento (era Cílios)
+8. Loção Cerave → Hidratante Corporal (era Tapetes)
+9. eos Body Wash → Sabonete Líquido (era Tapetes)
+10. 2 Tripés → Universais (era Tapetes)
+11. 1 Tripé → Portátil (era Tablets)
+12. Card Sleeves → Jogos (era Eletrônicos)
+13. 2 AirTags → Rastreadores (era Acessórios)
+14. Bicicleta → Bonecos/Veículos (era Ventilador)
+15. Glow Sticks → Festa/Outros (era Blocos)
+
+### Resultado Final
+- Total: 1,079 products
+- Sem L2: 0 ✅
+- Sem L3: 0 ✅
+- L3='Outros': 0 ✅
+- L2=L3 redundante: 0 ✅
+
+---
+
+*— arbt.ly, 2026-07-01 (rode 2 subagentes)*
