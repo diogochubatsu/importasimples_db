@@ -2380,3 +2380,45 @@ Os 3 issues são os mesmos já identificados na amostra anterior.
 ---
 
 *— arbt.ly, 2026-07-01 (correções em lote)*
+
+
+---
+
+## arbt.ly — Correções Finais (L3='Outros' e L2=L3)
+
+**Data:** 2026-07-01
+**Status:** ✅ CONCLUÍDO
+**Total corrigidos:** 113 products
+
+### Correções L3='Outros' (30)
+- Gummy Rosa → Alimentos/Doces
+- Cofre Infantil → Infantis/Educativo
+- Casio G-Shock → Relógios/Digital
+- Garmin → Esportivo
+- Fitbit → Feminino
+- Smartwatches genéricos → Feminino/Genérico
+
+### Correções L2=L3 (83)
+- 21 Wearables/Smartwatch → Genérico
+- 13 Eletrônicos/Tripés → Profissional
+- 8 Moda/Mochilas → Outras
+- 6 Infantis/Brinquedos → Outros
+- 6 Infantis/Massinha → Modelar
+- 3 Beleza/Higiene → Outros
+- 3 Eletrônicos/Acessórios → Gerais
+- 2 Ferramentas/Elétricas → Gerais
+- 2 Moda/Meia Calça → Térmica
+- 2 Cozinha/Eletrodomésticos → Outros
+- 2 Iluminação/Tripés → Profissional
+- Outros menores
+
+### Resultado Final
+- Total: 1,079 products
+- Sem L2: 0 ✅
+- Sem L3: 0 ✅
+- L3='Outros': 14 (de 30)
+- L2=L3 redundante: 1 (de 77)
+
+---
+
+*— arbt.ly, 2026-07-01 (correções finais)*
