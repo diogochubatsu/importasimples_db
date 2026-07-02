@@ -2557,3 +2557,51 @@ Mover products de L1 para L2 existentes/criadas via SQL UPDATE com keyword match
 ---
 
 *— arbt.ly, 2026-07-02 (scraping eletrônicos)*
+
+
+---
+
+## arbt.ly — Scraping Final Eletrônicos (2026-07-02)
+
+**Data:** 2026-07-02
+**Status:** ✅ CONCLUÍDO
+**Total final:** 197 products
+
+### Estado Final
+
+| L2 | L3 | Total |
+|----|-----|-------|
+| Acessórios | Capas | 20 |
+| Acessórios | Car Audio | 15 |
+| Acessórios | Elétricas | 16 |
+| Acessórios | Gerais | 17 |
+| Acessorios Mobile | Carregadores | 11 |
+| Acessorios Mobile | Cartões de Memória | 13 |
+| Babá Eletrônica | Acessórios | 51 |
+| Câmeras | Segurança | 13 |
+| Mídia | DVD | 17 |
+| Players | DVD/Blu-ray | 13 |
+| Players | Gravadores | 13 |
+| Rastreadores | Smart Tag | 18 |
+| Suportes | Mesa/Carro | 13 |
+| Suportes | Veicular | 16 |
+| Tripés | Monopé | 16 |
+| Tripés | Portátil | 11 |
+| Tripés | Profissional | 16 |
+| Tripés | Universais | 13 |
+
+### Qualidade
+- Sem imagem: 0 ✅
+- Sem URL: 0 ✅
+- Sem preco: 0 ✅
+- Source_id errado: 0 ✅
+- Todas categorias ≥10: 18/18 ✅
+
+### Método
+- Scraping direto via browser (Amazon BR)
+- Cada product com: titulo, preco, imagem HTTP, URL
+- Source: arbt.ly, source_id: amazon_br:{ASIN}
+
+---
+
+*— arbt.ly, 2026-07-02 (scraping final eletrônicos)*
