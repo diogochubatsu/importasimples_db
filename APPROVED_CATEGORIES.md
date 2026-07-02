@@ -73,6 +73,69 @@
 
 ---
 
+## Categorias Criadas — Registro
+
+### L3 Eletrônicos (2026-07-02)
+
+**Criado por:** arbitlens_china
+**Aprovado por:** Diogo
+**Total:** 50 categorias L3
+
+| L2 | L3 | ID |
+|----|----|----|
+| Relógios | Smartwatch | 486 |
+| Relógios | Relógio Tradicional | 487 |
+| Relógios | Pulseira | 488 |
+| Capas | Capa Celular | 489 |
+| Capas | Capa Tablet | 490 |
+| Capas | Película | 491 |
+| Acessórios | Mouse | 492 |
+| Acessórios | Película | 493 |
+| Acessórios | Acessório Geral | 494 |
+| Suportes | Tripé | 495 |
+| Suportes | Suporte Mesa | 496 |
+| Suportes | Suporte Veículo | 497 |
+| Câmeras | Câmera Segurança | 498 |
+| Câmeras | Câmera Ação | 499 |
+| Câmeras | Câmera Automotiva | 500 |
+| Câmeras | Câmera Digital | 501 |
+| Cabos | USB | 502 |
+| Cabos | Type-C | 503 |
+| Cabos | Lightning | 504 |
+| Cabos | HDMI | 505 |
+| Eletrodomésticos | Liquidificador | 506 |
+| Eletrodomésticos | Aspirador | 507 |
+| Eletrodomésticos | Ferro de Roupa | 508 |
+| Eletrodomésticos | Secador | 509 |
+| Eletrodomésticos | Fritadeira | 510 |
+| PC | Laptop | 511 |
+| PC | Monitor | 512 |
+| PC | Acessório PC | 513 |
+| Celular | Capa | 514 |
+| Celular | Película | 515 |
+| Celular | Acessório | 516 |
+| Fones | Fone Bluetooth | 517 |
+| Fones | Fone com Fio | 518 |
+| Fones | Fone Esportivo | 519 |
+| Iluminação | LED | 520 |
+| Iluminação | Lâmpada | 521 |
+| Iluminação | Fita LED | 522 |
+| Power Banks | Power Bank | 523 |
+| Power Banks | Power Bank Solar | 524 |
+| Carregadores | Carregador Parede | 525 |
+| Carregadores | Carregador Veículo | 526 |
+| Carregadores | Carregador Sem Fio | 527 |
+| Teclados | Teclado Mecânico | 528 |
+| Teclados | Teclado Sem Fio | 529 |
+| Smart Home | Lâmpada Inteligente | 530 |
+| Smart Home | Tomada Inteligente | 531 |
+| Smart Home | Sensor | 532 |
+| Segurança | Câmera Segurança | 533 |
+| Segurança | Alarme | 534 |
+| Segurança | Cofre | 535 |
+
+---
+
 ## Plano de Trabalho — Enriquecimento L2/L3
 
 **Objetivo:** Todos os products devem ter L1 + L2.
