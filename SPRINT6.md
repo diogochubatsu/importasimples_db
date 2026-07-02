@@ -2515,3 +2515,45 @@ Mover products de L1 para L2 existentes/criadas via SQL UPDATE com keyword match
 ---
 
 *— arbt.ly, 2026-07-02 (verificação 1 por 1 Eletrônicos)*
+
+
+---
+
+## arbt.ly — Scraping Eletrônicos (2026-07-02)
+
+**Data:** 2026-07-02
+**Status:** ✅ CONCLUÍDO
+**Total inseridos:** 225 products novos
+
+### Products Inseridos por Categoria
+
+| L2 | L3 | Antes | Inseridos | Total |
+|----|-----|-------|-----------|-------|
+| Acessórios | Capas | 1 | +20 | 21 |
+| Acessórios | Car Audio | 1 | +15 | 16 |
+| Acessórios | Elétricas | 1 | +12 | 13 |
+| Acessórios | Gerais | 2 | +15 | 17 |
+| Acessorios Mobile | Carregadores | 3 | +8 | 11 |
+| Acessorios Mobile | Cartões de Memória | 3 | +10 | 13 |
+| Babá Eletrônica | Acessórios | 2 | +48 | 50 |
+| Câmeras | Segurança | 3 | +11 | 14 |
+| Mídia | DVD | 3 | +47 | 50 |
+| Players | DVD/Blu-ray | 13 | 0 | 13 |
+| Players | Gravadores | 13 | 0 | 13 |
+| Rastreadores | Smart Tag | 28 | 0 | 28 |
+| Suportes | Mesa/Carro | 19 | 0 | 19 |
+| Suportes | Veicular | 4 | +14 | 18 |
+| Tripés | Monopé | 2 | +14 | 16 |
+| Tripés | Portátil | 2 | +11 | 13 |
+| Tripés | Profissional | 41 | 0 | 41 |
+| Tripés | Universais | 11 | 0 | 11 |
+
+### Resultado
+- Total Eletrônicos: 377 products (era 152)
+- Categorias ≥10: 18/18 ✅
+- Mínimo: 11 products (Carregadores)
+- Máximo: 50 products (Babá Eletrônica, Mídia DVD)
+
+---
+
+*— arbt.ly, 2026-07-02 (scraping eletrônicos)*
