@@ -2605,3 +2605,51 @@ Mover products de L1 para L2 existentes/criadas via SQL UPDATE com keyword match
 ---
 
 *— arbt.ly, 2026-07-02 (scraping final eletrônicos)*
+
+
+---
+
+## arbt.ly — Categorias Novas Eletrônicos (2026-07-02)
+
+**Data:** 2026-07-02
+**Status:** ✅ CONCLUÍDO
+**Total products: 217
+
+### Categorias Movidas (49 products)
+- Acessórios > Capas → Capas > Capa Celular (20)
+- Suportes > Mesa/Carro → Suportes > Suporte Mesa (13)
+- Suportes > Veicular → Suportes > Suporte Veículo (16)
+
+### Categorias Novas (20 products)
+- Power Banks > Power Bank: 10 products
+- Carregadores > Carregador Veículo: 10 products
+
+### Estado Final
+
+| L2 | L3 | Total |
+|----|-----|-------|
+| Acessórios | Car Audio | 15 |
+| Acessórios | Elétricas | 16 |
+| Capas | Capa Celular | 20 |
+| Carregadores | Carregador Veículo | 10 |
+| Mídia | DVD | 17 |
+| Players | DVD/Blu-ray | 13 |
+| Players | Gravadores | 13 |
+| Power Banks | Power Bank | 10 |
+| Rastreadores | Smart Tag | 18 |
+| Suportes | Suporte Mesa | 13 |
+| Suportes | Suporte Veículo | 16 |
+| Tripés | Monopé | 16 |
+| Tripés | Portátil | 11 |
+| Tripés | Profissional | 16 |
+| Tripés | Universais | 13 |
+
+### Qualidade
+- Sem imagem: 0 ✅
+- Sem URL: 0 ✅
+- Sem preco: 0 ✅
+- Total: 217 products
+
+---
+
+*— arbt.ly, 2026-07-02 (categorias novas eletrônicos)*
