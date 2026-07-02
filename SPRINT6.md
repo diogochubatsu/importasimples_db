@@ -2454,3 +2454,64 @@ Mover products de L1 para L2 existentes/criadas via SQL UPDATE com keyword match
 ---
 
 *— arbt.ly, 2026-07-02 (products movidos)*
+
+
+---
+
+## arbt.ly — Verificação 1 por 1: Eletrônicos (2026-07-02)
+
+**Data:** 2026-07-02
+**Status:** ✅ CONCLUÍDO
+**Products analisados:** 157 → 152 (5 movidos para outras categorias)
+
+### Issues Encontrados e Corrigidos (35)
+
+| # | Issue | Correção | Qtd |
+|---|-------|----------|-----|
+| 1 | Cartões de Memória em Acessorios Mobile > Capas | → Cartões de Memória | 2 |
+| 2 | Fones Bluetooth em Acessorios Mobile > Fones | → Audio > Fones > Fone Bluetooth | 3 |
+| 3 | Suportes em Acessórios > Gerais | → Suportes > Veicular | 2 |
+| 4 | Tripé em Acessórios > Profissional | → Tripés > Profissional | 1 |
+| 5 | Tripés em Acessórios > Universais | → Tripés > Universais | 3 |
+| 6 | Suporte em Acessórios > Veicular | → Suportes > Veicular | 1 |
+| 7 | Disco gravável em Players > DVD/Blu-ray | → Mídia > DVD | 3 |
+| 8 | Gravadores em Players > DVD/Blu-ray | → Players > Gravadores | 13 |
+| 9 | Pulseira em Rastreadores > Smart Tag | → Acessórios > Capas | 1 |
+| 10 | Softbox em Tripés > Profissional | → Iluminação > Painel LED > Softbox | 1 |
+| 11 | Varinha de luz em Tripés > Profissional | → Iluminação > Bastão LED | 1 |
+| 12 | Tripé em Suportes > Mesa/Carro | → Tripés > Portátil | 1 |
+| 13 | Tripé Banner em Tripés > Capas | → Tripés > Profissional | 1 |
+| 14 | Hand Grip em Tripés > Universais | → Acessórios > Gerais | 2 |
+
+### Estado Final Eletrônicos
+
+| L2 | L3 | Products |
+|----|-----|----------|
+| Acessórios | Capas | 1 |
+| Acessórios | Car Audio | 1 |
+| Acessórios | Elétricas | 1 |
+| Acessórios | Gerais | 2 |
+| Acessorios Mobile | Carregadores | 3 |
+| Acessorios Mobile | Cartões de Memória | 3 |
+| Babá Eletrônica | Acessórios | 2 |
+| Câmeras | Segurança | 3 |
+| Mídia | DVD | 3 |
+| Players | DVD/Blu-ray | 13 |
+| Players | Gravadores | 13 |
+| Rastreadores | Smart Tag | 28 |
+| Suportes | Mesa/Carro | 19 |
+| Suportes | Veicular | 4 |
+| Tripés | Monopé | 2 |
+| Tripés | Portátil | 2 |
+| Tripés | Profissional | 41 |
+| Tripés | Universais | 11 |
+| **TOTAL** | | **152** |
+
+### Products Movidos para Outras Categorias
+- 3 Fones Bluetooth → Audio > Fones
+- 1 Softbox → Iluminação > Painel LED > Softbox
+- 1 Varinha de luz → Iluminação > Bastão LED
+
+---
+
+*— arbt.ly, 2026-07-02 (verificação 1 por 1 Eletrônicos)*
