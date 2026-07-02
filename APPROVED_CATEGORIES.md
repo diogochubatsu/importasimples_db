@@ -159,6 +159,19 @@
 | Acessórios | Chaveiro | 558 | 184 |
 | Calçados | Chinelo | 260 | 1 |
 
+### Status Scraping (2026-07-02)
+
+**Ação:** Scraping DHgate concluído para 39 L3 categories
+**Resultado:** +585 products adicionados ao DB
+
+**Mercados restantes com gap:**
+- Rakumart-1688: 45 combinações < 15 products
+- Rakumart-Alibaba: 42 combinações < 15 products
+- Rakumart-Taobao: 22 combinações < 15 products
+- Alibaba: 44 combinações < 15 products
+
+**Próximo passo:** Scraping via Rakumart/Alibaba (requer configuração de proxy)
+
 ---
 
 ## Plano de Trabalho — Enriquecimento L2/L3
