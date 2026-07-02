@@ -138,25 +138,58 @@
 
 **Criado por:** arbitlens_china
 **Aprovado por:** Diogo
-**Total:** 15 categorias L3
+**Total:** 48 categorias L3
 
-| L2 | L3 | ID |
-|----|----|----|
-| Bolsas | Bolsa de Mão | 536 |
-| Bolsas | Bolsa de Ombro | 537 |
-| Bolsas | Bolsa Térmica | 538 |
-| Bolsas | Bolsa de Viagem | 539 |
-| Roupa Íntima | Calcinhas | 540 |
-| Roupa Íntima | Cuecas | 541 |
-| Roupa Íntima | Sutiã | 542 |
-| Roupa Íntima | Modeladora | 543 |
-| Meias | Meias Esportivas | 544 |
-| Meias | Meias Sociais | 545 |
-| Meias | Meias de Rosto | 546 |
-| Chapeus | Boné | 547 |
-| Chapeus | Chapéu | 548 |
-| Chapeus | Gorro | 549 |
-| Chapeus | Boné de Bass | 550 |
+| L2 | L3 | ID | Products |
+|----|----|----|----------|
+| Bolsas | Bolsa de Mão | 536 | 245 |
+| Bolsas | Bolsa de Ombro | 537 | 15 |
+| Bolsas | Bolsa de Viagem | 539 | 18 |
+| Chapeus | Boné | 547 | 46 |
+| Chapeus | Gorro | 553 | 12 |
+| Meias | Meias Esportivas | 544 | 110 |
+| Roupa Íntima | Calcinhas | 540 | 51 |
+| Roupa Íntima | Modeladora | 543 | 49 |
+| Roupa Íntima | Cuecas | 541 | 4 |
+| Roupas | Blusa | 271 | 206 |
+| Acessórios | Cinto | 252 | 141 |
+| Calçados | Chinelo | 260 | 104 |
+| Cintas | Modeladora | 279 | 132 |
+| Calcinhas | Fio Dental | 277 | 37 |
+| Puma | Kit | 246 | 18 |
+| Feminina | Festa | 148 | 16 |
+| Viagem | Mala Bordo | 154 | 15 |
+| Viagem | Necessaire | 155 | 10 |
+| Mochilas | Mochila | 248 | 10 |
+| Banho | Toalha | 258 | 7 |
+| Feminina | Tote | 152 | 7 |
+| Carteira | Carteira | 263 | 6 |
+| Feminina | Sacola | 151 | 4 |
+| Cueca | Boxer | 281 | 15 |
+| Roupas | Calça | 272 | 3 |
+| Roupas | Jaqueta | 274 | 3 |
+| Meia Calça | Cano Médio/Alto | 243 | 2 |
+| Meia Calça | Meia Calça | 244 | 2 |
+| Acessórios | Carteira | 143 | 2 |
+| Acessórios | Gravata | 253 | 2 |
+| Acessórios | Kit Bolsas | 144 | 2 |
+| Cueca | Cueca | 282 | 2 |
+| Feminina | Mochila Feminina | 149 | 2 |
+| Acessórios | Boné | 249 | 1 |
+| Acessórios | Chapéu | 250 | 3 |
+| Acessórios | Chapéu/Boné | 251 | 1 |
+| Acessórios | Lenço | 254 | 1 |
+| Artesanato | Artesanato | 256 | 1 |
+| Auto | Acessório Auto | 146 | 1 |
+| Feminina | Ombro | 150 | 1 |
+| Outros | Espelho | 266 | 3 |
+| Outros | Guarda-Chuva | 267 | 1 |
+| Outros | Máscara | 268 | 1 |
+| Outros | Pijama | 269 | 1 |
+| Roupas | Camisa | 273 | 1 |
+| Roupas | Moletom | 275 | 1 |
+| Calçados | Tênis | 261 | 1 |
+| Outros | Chaveiro | 265 | 186 |
 
 ---
 
