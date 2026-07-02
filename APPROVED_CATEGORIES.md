@@ -134,6 +134,30 @@
 | Segurança | Alarme | 534 |
 | Segurança | Cofre | 535 |
 
+### L3 Moda (2026-07-02)
+
+**Criado por:** arbitlens_china
+**Aprovado por:** Diogo
+**Total:** 15 categorias L3
+
+| L2 | L3 | ID |
+|----|----|----|
+| Bolsas | Bolsa de Mão | 536 |
+| Bolsas | Bolsa de Ombro | 537 |
+| Bolsas | Bolsa Térmica | 538 |
+| Bolsas | Bolsa de Viagem | 539 |
+| Roupa Íntima | Calcinhas | 540 |
+| Roupa Íntima | Cuecas | 541 |
+| Roupa Íntima | Sutiã | 542 |
+| Roupa Íntima | Modeladora | 543 |
+| Meias | Meias Esportivas | 544 |
+| Meias | Meias Sociais | 545 |
+| Meias | Meias de Rosto | 546 |
+| Chapeus | Boné | 547 |
+| Chapeus | Chapéu | 548 |
+| Chapeus | Gorro | 549 |
+| Chapeus | Boné de Bass | 550 |
+
 ---
 
 ## Plano de Trabalho — Enriquecimento L2/L3
