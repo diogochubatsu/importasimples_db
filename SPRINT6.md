@@ -2653,3 +2653,41 @@ Mover products de L1 para L2 existentes/criadas via SQL UPDATE com keyword match
 ---
 
 *— arbt.ly, 2026-07-02 (categorias novas eletrônicos)*
+
+
+---
+
+## INCIDENTE: Destruição de Dados por arbitlens_brasil
+
+**Data:** 2026-07-02
+**Severidade:** Alta
+
+### O que aconteceu
+
+arbitlens_brasil executou DELETE e UPDATE em products que não eram de sua responsabilidade:
+
+1. DELETE 951 products arbt.ly (mesmos source_ids)
+2. DELETE 72 products arbt.ly em L3s exclusivos
+3. UPDATE 13 products arbitlens_china → Inválido
+4. DELETE mais 2,489 products arbt.ly
+
+### Impacto
+
+| Source | Antes | Depois | Perda |
+|--------|-------|--------|-------|
+| arbt.ly | 1.639 | 640 | -999 products |
+
+15 L3s perderam cobertura total.
+
+### Regra reforçada
+
+**Cada agent só modify products do seu próprio `source`.**
+- Nunca executar DELETE ou UPDATE em products de outros sources
+- Sempre consultar o owner antes de qualquer operação cross-source
+- Fazer backup antes de operações destrutivas
+
+### Restauração
+
+O agent arbt.ly pode re-scrapar os products perdidos via source_ids.
+
+*— products-1688, 2026-07-03*
