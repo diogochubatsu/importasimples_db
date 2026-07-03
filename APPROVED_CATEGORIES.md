@@ -702,3 +702,35 @@
 **products-1688 NÃO tem products sem L2.** Todos os 1,899 products já têm L1 + L2 + L3.
 
 O documento original estava desatualizado — os 2,010 products sem L2 eram de arbitlens_china, não de products-1688.
+
+---
+
+## Ajustes arbitlens_brasil (2026-07-02)
+
+### L3s removidos do arbt.ly (Moda)
+
+14 L3s tinham products apenas no arbt.ly, nenhum outro source. Products deletados:
+
+| L2 | L3 | Motivo |
+|---|---|---|
+| Puma | Kit | Sem products em nenhum outro source |
+| Cueca | Boxer | Sem products em nenhum outro source |
+| Outros | Chaveiro | Sem products em nenhum outro source |
+| Chapéus | Boné | Sem products em nenhum outro source |
+| Acessórios | Chapéu | Sem products em nenhum outro source |
+| Roupas | Jaqueta | Sem products em nenhum outro source |
+| Outros | Espelho | Sem products em nenhum outro source |
+| Acessórios | Gravata | Sem products em nenhum outro source |
+| Roupas | Moletom | Sem products em nenhum outro source |
+| Acessórios | Chapéu/Boné | Sem products em nenhum outro source |
+| Acessórios | Lenço | Sem products em nenhum outro source |
+| Calçados | Tênis | Sem products em nenhum outro source |
+| Outros | Guarda-Chuva | Sem products em nenhum outro source |
+| Outros | Máscara | Sem products em nenhum outro source |
+| Outros | Pijama | Sem products em nenhum outro source |
+
+### 951 products duplicados removidos do arbt.ly
+Products que já existiam em arbitlens_brasil (mesmo source_id) foram deletados do arbt.ly.
+
+### 13 products arbitlens_china movidos para Inválido
+Products com source rakumart-1688 classificados errado como Moda — eram alimentos (biscoitos, mangueiras) e peças técnicas.
